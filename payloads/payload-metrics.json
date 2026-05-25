@@ -1,0 +1,113 @@
+{
+  "generatedAt" : "2026-05-24T10:01:18.858890400Z",
+  "generator" : "com.pearl.common.test.generator.PayloadGeneratorCli",
+  "fakerLibrary" : "net.datafaker:datafaker",
+  "loadTestingGuidance" : {
+    "financialMembersPerPage" : 250,
+    "indicativeEntitiesPerChunk" : 500,
+    "s3UploadMode" : "store full payload in S3 and pass S3 object pointers through SQS and Step Functions",
+    "ecsWorkerRecommendation" : "route each financial page or indicative entity chunk to an idempotent ECS worker task",
+    "lambdaRecommendation" : "use Lambda for orchestration and validation, not for full multi-MB payload transformation"
+  },
+  "files" : [ {
+    "file" : "D:/office-work/Empwr/Code/pearl-payroll-platform/payloads/financial/financial-payload-large.json",
+    "payloadType" : "FINANCIAL",
+    "bytes" : 10471832,
+    "sizeMb" : 9.99,
+    "recordCount" : 5000,
+    "pageCount" : 20,
+    "recommendedRecordsPerChunk" : 250,
+    "recommendedS3Parts" : 2,
+    "recommendation" : "Keep PrismHR financial pages at 250 members; fan out ECS work by page and split SQS messages to S3 pointers."
+  }, {
+    "file" : "D:/office-work/Empwr/Code/pearl-payroll-platform/payloads/financial/scenarios/financial-valid-small.json",
+    "payloadType" : "FINANCIAL",
+    "bytes" : 106863,
+    "sizeMb" : 0.1,
+    "recordCount" : 50,
+    "pageCount" : 2,
+    "recommendedRecordsPerChunk" : 250,
+    "recommendedS3Parts" : 1,
+    "recommendation" : "Keep PrismHR financial pages at 250 members; fan out ECS work by page and split SQS messages to S3 pointers."
+  }, {
+    "file" : "D:/office-work/Empwr/Code/pearl-payroll-platform/payloads/financial/scenarios/financial-malformed-records.json",
+    "payloadType" : "FINANCIAL",
+    "bytes" : 108468,
+    "sizeMb" : 0.1,
+    "recordCount" : 50,
+    "pageCount" : 2,
+    "recommendedRecordsPerChunk" : 250,
+    "recommendedS3Parts" : 1,
+    "recommendation" : "Keep PrismHR financial pages at 250 members; fan out ECS work by page and split SQS messages to S3 pointers."
+  }, {
+    "file" : "D:/office-work/Empwr/Code/pearl-payroll-platform/payloads/financial/scenarios/financial-retry-scenarios.json",
+    "payloadType" : "FINANCIAL",
+    "bytes" : 112799,
+    "sizeMb" : 0.11,
+    "recordCount" : 50,
+    "pageCount" : 2,
+    "recommendedRecordsPerChunk" : 250,
+    "recommendedS3Parts" : 1,
+    "recommendation" : "Keep PrismHR financial pages at 250 members; fan out ECS work by page and split SQS messages to S3 pointers."
+  }, {
+    "file" : "D:/office-work/Empwr/Code/pearl-payroll-platform/payloads/financial/scenarios/financial-partial-failure.json",
+    "payloadType" : "FINANCIAL",
+    "bytes" : 109298,
+    "sizeMb" : 0.1,
+    "recordCount" : 50,
+    "pageCount" : 2,
+    "recommendedRecordsPerChunk" : 250,
+    "recommendedS3Parts" : 1,
+    "recommendation" : "Keep PrismHR financial pages at 250 members; fan out ECS work by page and split SQS messages to S3 pointers."
+  }, {
+    "file" : "D:/office-work/Empwr/Code/pearl-payroll-platform/payloads/indicative/indicative-payload-large.json",
+    "payloadType" : "INDICATIVE",
+    "bytes" : 18531719,
+    "sizeMb" : 17.67,
+    "recordCount" : 5000,
+    "pageCount" : 0,
+    "recommendedRecordsPerChunk" : 500,
+    "recommendedS3Parts" : 4,
+    "recommendation" : "Split indicative payloads into 500-entity chunks; route Step Functions map states by S3 object pointer."
+  }, {
+    "file" : "D:/office-work/Empwr/Code/pearl-payroll-platform/payloads/indicative/scenarios/indicative-valid-small.json",
+    "payloadType" : "INDICATIVE",
+    "bytes" : 186295,
+    "sizeMb" : 0.18,
+    "recordCount" : 50,
+    "pageCount" : 0,
+    "recommendedRecordsPerChunk" : 500,
+    "recommendedS3Parts" : 1,
+    "recommendation" : "Split indicative payloads into 500-entity chunks; route Step Functions map states by S3 object pointer."
+  }, {
+    "file" : "D:/office-work/Empwr/Code/pearl-payroll-platform/payloads/indicative/scenarios/indicative-malformed-records.json",
+    "payloadType" : "INDICATIVE",
+    "bytes" : 192890,
+    "sizeMb" : 0.18,
+    "recordCount" : 50,
+    "pageCount" : 0,
+    "recommendedRecordsPerChunk" : 500,
+    "recommendedS3Parts" : 1,
+    "recommendation" : "Split indicative payloads into 500-entity chunks; route Step Functions map states by S3 object pointer."
+  }, {
+    "file" : "D:/office-work/Empwr/Code/pearl-payroll-platform/payloads/indicative/scenarios/indicative-retry-scenarios.json",
+    "payloadType" : "INDICATIVE",
+    "bytes" : 190135,
+    "sizeMb" : 0.18,
+    "recordCount" : 50,
+    "pageCount" : 0,
+    "recommendedRecordsPerChunk" : 500,
+    "recommendedS3Parts" : 1,
+    "recommendation" : "Split indicative payloads into 500-entity chunks; route Step Functions map states by S3 object pointer."
+  }, {
+    "file" : "D:/office-work/Empwr/Code/pearl-payroll-platform/payloads/indicative/scenarios/indicative-partial-failure.json",
+    "payloadType" : "INDICATIVE",
+    "bytes" : 193714,
+    "sizeMb" : 0.18,
+    "recordCount" : 50,
+    "pageCount" : 0,
+    "recommendedRecordsPerChunk" : 500,
+    "recommendedS3Parts" : 1,
+    "recommendation" : "Split indicative payloads into 500-entity chunks; route Step Functions map states by S3 object pointer."
+  } ]
+}

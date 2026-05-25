@@ -1,0 +1,14 @@
+[
+  {
+    "ParameterKey": "ProjectName",
+    "ParameterValue": "pearl-payroll"
+  },
+  {
+    "ParameterKey": "EnvironmentName",
+    "ParameterValue": "dev"
+  },
+  {
+    "ParameterKey": "ArtifactBucketName",
+    "ParameterValue": "replace-with-enterprise-artifact-bucket"
+  }
+]

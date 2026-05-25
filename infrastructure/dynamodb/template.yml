@@ -1,0 +1,46 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: PEARL payroll DynamoDB tables.
+
+Parameters:
+  ProjectName:
+    Type: String
+  EnvironmentName:
+    Type: String
+
+Resources:
+  BatchStatusTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub ${ProjectName}-${EnvironmentName}-batch-status
+      BillingMode: PAY_PER_REQUEST
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+      AttributeDefinitions:
+        - AttributeName: batchId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: batchId
+          KeyType: HASH
+      TimeToLiveSpecification:
+        AttributeName: expiresAt
+        Enabled: true
+
+  ParticipantStatusTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub ${ProjectName}-${EnvironmentName}-participant-status
+      BillingMode: PAY_PER_REQUEST
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+      AttributeDefinitions:
+        - AttributeName: participantId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: participantId
+          KeyType: HASH
+
+Outputs:
+  BatchStatusTableName:
+    Value: !Ref BatchStatusTable
+  ParticipantStatusTableName:
+    Value: !Ref ParticipantStatusTable

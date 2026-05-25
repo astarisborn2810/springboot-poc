@@ -1,0 +1,34 @@
+pipeline {
+  agent any
+
+  parameters {
+    choice(name: 'ENVIRONMENT', choices: ['dev', 'qa', 'stage', 'prod'], description: 'Deployment environment')
+    string(name: 'IMAGE_TAG', defaultValue: 'latest', description: 'Immutable image tag or Git SHA')
+  }
+
+  stages {
+    stage('Preflight') {
+      steps {
+        echo "Validate approvals, change ticket, and deployment window for ${params.ENVIRONMENT}."
+      }
+    }
+
+    stage('Deploy Infrastructure') {
+      steps {
+        echo 'Deploy CloudFormation stacks for S3, SQS, DynamoDB, IAM, ECS, and Lambda.'
+      }
+    }
+
+    stage('Deploy Applications') {
+      steps {
+        echo "Update ECS services and Lambda aliases with image tag ${params.IMAGE_TAG}."
+      }
+    }
+
+    stage('Post Deployment Verification') {
+      steps {
+        echo 'Run smoke tests, health checks, and rollback guardrails.'
+      }
+    }
+  }
+}

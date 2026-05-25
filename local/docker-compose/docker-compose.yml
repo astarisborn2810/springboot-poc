@@ -1,0 +1,76 @@
+name: pearl-payroll-platform
+
+services:
+  postgres:
+    image: postgres:16.4-alpine
+    container_name: pearl-postgres
+    environment:
+      POSTGRES_DB: pearl_payroll
+      POSTGRES_USER: pearl
+      POSTGRES_PASSWORD: pearl_local_only
+    ports:
+      - "5432:5432"
+    volumes:
+      - pearl-postgres-data:/var/lib/postgresql/data
+      - ../postgres/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pearl -d pearl_payroll"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - pearl-local
+
+  pgadmin:
+    image: dpage/pgadmin4:8.14
+    container_name: pearl-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@pearl.example.com
+      PGADMIN_DEFAULT_PASSWORD: pearl_local_only
+    ports:
+      - "5050:80"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - pearl-local
+
+  localstack:
+    image: localstack/localstack:4.0
+    container_name: pearl-localstack
+    environment:
+      AWS_DEFAULT_REGION: us-east-1
+      DEBUG: "1"
+      SERVICES: s3,sqs,dynamodb,lambda,stepfunctions,iam,cloudformation,logs,events,ecr
+      LAMBDA_EXECUTOR: docker
+      DOCKER_HOST: unix:///var/run/docker.sock
+    ports:
+      - "4566:4566"
+    volumes:
+      - pearl-localstack-data:/var/lib/localstack
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ../localstack/init:/etc/localstack/init/ready.d:ro
+    networks:
+      - pearl-local
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.113.0
+    container_name: pearl-otel-collector
+    command: ["--config=/etc/otelcol-contrib/config.yml"]
+    ports:
+      - "4317:4317"
+      - "4318:4318"
+      - "9464:9464"
+    volumes:
+      - ./otel-collector-config.yml:/etc/otelcol-contrib/config.yml:ro
+    networks:
+      - pearl-local
+
+volumes:
+  pearl-postgres-data:
+  pearl-localstack-data:
+
+networks:
+  pearl-local:
+    name: pearl-local
+    driver: bridge

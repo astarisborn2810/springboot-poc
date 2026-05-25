@@ -1,0 +1,41 @@
+name: deploy-ecs-placeholder
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target environment
+        required: true
+        default: dev
+        type: choice
+        options: [dev, qa, stage, prod]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy-ecs:
+    name: Build and Deploy ECS Services
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java 24
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "24"
+          cache: maven
+
+      - name: Build service artifacts
+        run: mvn -DskipTests package
+
+      - name: Configure AWS credentials
+        run: echo "Replace with aws-actions/configure-aws-credentials and enterprise OIDC role."
+
+      - name: Build and push images
+        run: echo "Build images, tag with Git SHA, scan, and push to ECR."
+
+      - name: Deploy ECS services
+        run: echo "Render task definitions and update ECS services for ${{ inputs.environment }}."

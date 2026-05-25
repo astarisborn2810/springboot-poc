@@ -1,0 +1,52 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: PEARL payroll downstream platform root stack placeholder.
+
+Parameters:
+  ProjectName:
+    Type: String
+    Default: pearl-payroll
+  EnvironmentName:
+    Type: String
+    AllowedValues: [dev, qa, stage, prod]
+  ArtifactBucketName:
+    Type: String
+    Description: Bucket containing packaged nested stack templates.
+
+Resources:
+  S3Stack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: !Sub https://${ArtifactBucketName}.s3.${AWS::Region}.amazonaws.com/infrastructure/s3/template.yml
+      Parameters:
+        ProjectName: !Ref ProjectName
+        EnvironmentName: !Ref EnvironmentName
+
+  SqsStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: !Sub https://${ArtifactBucketName}.s3.${AWS::Region}.amazonaws.com/infrastructure/sqs/template.yml
+      Parameters:
+        ProjectName: !Ref ProjectName
+        EnvironmentName: !Ref EnvironmentName
+
+  DynamoDbStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: !Sub https://${ArtifactBucketName}.s3.${AWS::Region}.amazonaws.com/infrastructure/dynamodb/template.yml
+      Parameters:
+        ProjectName: !Ref ProjectName
+        EnvironmentName: !Ref EnvironmentName
+
+  IamStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: !Sub https://${ArtifactBucketName}.s3.${AWS::Region}.amazonaws.com/infrastructure/iam/template.yml
+      Parameters:
+        ProjectName: !Ref ProjectName
+        EnvironmentName: !Ref EnvironmentName
+
+Outputs:
+  ProjectName:
+    Value: !Ref ProjectName
+  EnvironmentName:
+    Value: !Ref EnvironmentName

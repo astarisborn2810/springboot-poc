@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: financial-processing-service
+  profiles:
+    default: local
+  datasource:
+    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/pearl_payroll}
+    username: ${POSTGRES_USER:pearl}
+    password: ${POSTGRES_PASSWORD:pearl_local_only}
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      pool-name: financial-processing-pool
+
+server:
+  port: ${SERVER_PORT:8081}
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  tracing:
+    sampling:
+      probability: ${OTEL_TRACES_SAMPLER_ARG:1.0}
+
+otel:
+  exporter:
+    otlp:
+      endpoint: ${OTEL_EXPORTER_OTLP_ENDPOINT:http://localhost:4318}
+
+pearl:
+  aws:
+    region: ${AWS_REGION:us-east-1}
+    endpoint-override: ${LOCALSTACK_ENDPOINT:http://localhost:4566}
+  queues:
+    batch-events: pearl-batch-events-local
+  buckets:
+    payloads: pearl-payroll-payloads-local

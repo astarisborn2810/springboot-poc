@@ -1,0 +1,20 @@
+<configuration>
+    <appender name="JSON_CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <includeMdc>true</includeMdc>
+            <customFields>{"platform":"pearl-payroll-platform"}</customFields>
+            <fieldNames>
+                <timestamp>timestamp</timestamp>
+                <level>level</level>
+                <logger>logger</logger>
+                <thread>thread</thread>
+                <message>message</message>
+                <stackTrace>exception</stackTrace>
+            </fieldNames>
+        </encoder>
+    </appender>
+
+    <root level="${LOG_LEVEL_ROOT:-INFO}">
+        <appender-ref ref="JSON_CONSOLE"/>
+    </root>
+</configuration>

@@ -1,0 +1,77 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: PEARL payroll platform SQS queues for outbound payload trigger processing.
+
+Parameters:
+  Environment:
+    Type: String
+    Default: dev
+    AllowedValues:
+      - dev
+      - qa
+      - uat
+      - prod
+    Description: Deployment environment for PEARL payroll SQS resources.
+
+Resources:
+  PayrollOutboundTriggerDeadLetterQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub payroll-outbound-trigger-dlq-${Environment}
+      MessageRetentionPeriod: 1209600
+      ReceiveMessageWaitTimeSeconds: 20
+      SqsManagedSseEnabled: true
+      RedriveAllowPolicy:
+        redrivePermission: byQueue
+        sourceQueueArns:
+          - !Sub arn:${AWS::Partition}:sqs:${AWS::Region}:${AWS::AccountId}:payroll-outbound-trigger-queue-${Environment}
+      Tags:
+        - Key: Project
+          Value: PAYROLL
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: ManagedBy
+          Value: CloudFormation
+
+  PayrollOutboundTriggerQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub payroll-outbound-trigger-queue-${Environment}
+      VisibilityTimeout: 300
+      MessageRetentionPeriod: 1209600
+      ReceiveMessageWaitTimeSeconds: 20
+      SqsManagedSseEnabled: true
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt PayrollOutboundTriggerDeadLetterQueue.Arn
+        maxReceiveCount: 5
+      Tags:
+        - Key: Project
+          Value: PAYROLL
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: ManagedBy
+          Value: CloudFormation
+
+Outputs:
+  MainQueueName:
+    Description: Name of the outbound trigger SQS queue.
+    Value: !GetAtt PayrollOutboundTriggerQueue.QueueName
+
+  MainQueueUrl:
+    Description: URL of the outbound trigger SQS queue.
+    Value: !Ref PayrollOutboundTriggerQueue
+
+  MainQueueArn:
+    Description: ARN of the outbound trigger SQS queue.
+    Value: !GetAtt PayrollOutboundTriggerQueue.Arn
+
+  DeadLetterQueueName:
+    Description: Name of the outbound trigger dead letter queue.
+    Value: !GetAtt PayrollOutboundTriggerDeadLetterQueue.QueueName
+
+  DeadLetterQueueUrl:
+    Description: URL of the outbound trigger dead letter queue.
+    Value: !Ref PayrollOutboundTriggerDeadLetterQueue
+
+  DeadLetterQueueArn:
+    Description: ARN of the outbound trigger dead letter queue.
+    Value: !GetAtt PayrollOutboundTriggerDeadLetterQueue.Arn

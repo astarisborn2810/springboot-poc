@@ -1,0 +1,62 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: PEARL payroll Lambda functions.
+
+Parameters:
+  ProjectName:
+    Type: String
+  EnvironmentName:
+    Type: String
+  LambdaExecutionRoleArn:
+    Type: String
+  DatatypeRouterImageUri:
+    Type: String
+  SqsTriggerImageUri:
+    Type: String
+  BatchEventsQueueArn:
+    Type: String
+
+Resources:
+  DatatypeRouterFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub ${ProjectName}-${EnvironmentName}-datatype-router
+      Role: !Ref LambdaExecutionRoleArn
+      PackageType: Image
+      Code:
+        ImageUri: !Ref DatatypeRouterImageUri
+      MemorySize: 512
+      Timeout: 30
+      Environment:
+        Variables:
+          PEARL_ENV: !Ref EnvironmentName
+          AWS_REGION: !Ref AWS::Region
+
+  SqsTriggerFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub ${ProjectName}-${EnvironmentName}-sqs-trigger
+      Role: !Ref LambdaExecutionRoleArn
+      PackageType: Image
+      Code:
+        ImageUri: !Ref SqsTriggerImageUri
+      MemorySize: 512
+      Timeout: 60
+      Environment:
+        Variables:
+          PEARL_ENV: !Ref EnvironmentName
+          AWS_REGION: !Ref AWS::Region
+
+  BatchEventsMapping:
+    Type: AWS::Lambda::EventSourceMapping
+    Properties:
+      EventSourceArn: !Ref BatchEventsQueueArn
+      FunctionName: !Ref SqsTriggerFunction
+      BatchSize: 10
+      FunctionResponseTypes:
+        - ReportBatchItemFailures
+
+Outputs:
+  DatatypeRouterFunctionName:
+    Value: !Ref DatatypeRouterFunction
+  SqsTriggerFunctionName:
+    Value: !Ref SqsTriggerFunction

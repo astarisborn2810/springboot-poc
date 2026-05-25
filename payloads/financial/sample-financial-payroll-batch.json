@@ -1,0 +1,92 @@
+{
+  "batchId": "FIN-2026-05-24-001",
+  "tenantId": "pearl",
+  "sourceSystem": "payroll-core",
+  "payloadType": "financial",
+  "status": "RECEIVED",
+  "receivedAt": "2026-05-24T09:00:00Z",
+  "attributes": {
+    "payCycle": "biweekly",
+    "country": "US",
+    "currency": "USD"
+  },
+  "payrollRecords": [
+    {
+      "employeeId": "E10001",
+      "payPeriodStart": "2026-05-10",
+      "payPeriodEnd": "2026-05-23",
+      "grossPay": 4850.00,
+      "netPay": 3421.35,
+      "deductions": [
+        {
+          "deductionCode": "MED",
+          "description": "Medical premium",
+          "amount": 125.00,
+          "pretax": true
+        },
+        {
+          "deductionCode": "401K",
+          "description": "401k contribution",
+          "amount": 242.50,
+          "pretax": true
+        }
+      ],
+      "taxes": [
+        {
+          "jurisdiction": "FED",
+          "taxType": "INCOME",
+          "taxableWages": 4482.50,
+          "withheldAmount": 782.11
+        },
+        {
+          "jurisdiction": "CA",
+          "taxType": "STATE_INCOME",
+          "taxableWages": 4482.50,
+          "withheldAmount": 279.04
+        }
+      ],
+      "contributions": [
+        {
+          "contributionCode": "EMPLOYER_401K",
+          "source": "EMPLOYER",
+          "amount": 145.50
+        },
+        {
+          "contributionCode": "HSA_MATCH",
+          "source": "EMPLOYER",
+          "amount": 50.00
+        }
+      ]
+    },
+    {
+      "employeeId": "E10002",
+      "payPeriodStart": "2026-05-10",
+      "payPeriodEnd": "2026-05-23",
+      "grossPay": 3920.00,
+      "netPay": 2918.72,
+      "deductions": [
+        {
+          "deductionCode": "DEN",
+          "description": "Dental premium",
+          "amount": 22.00,
+          "pretax": true
+        }
+      ],
+      "taxes": [
+        {
+          "jurisdiction": "FED",
+          "taxType": "INCOME",
+          "taxableWages": 3898.00,
+          "withheldAmount": 626.43
+        }
+      ],
+      "contributions": [
+        {
+          "contributionCode": "EMPLOYER_MEDICAL",
+          "source": "EMPLOYER",
+          "amount": 310.00
+        }
+      ]
+    }
+  ]
+}

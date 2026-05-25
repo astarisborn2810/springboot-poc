@@ -1,0 +1,27 @@
+name: package-lambda-placeholder
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package-lambda:
+    name: Package Lambda Artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java 24
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "24"
+          cache: maven
+
+      - name: Package lambdas
+        run: mvn -pl services/datatype-router-lambda,services/sqs-trigger-lambda -am package
+
+      - name: Publish artifacts
+        run: echo "Upload shaded jars or container images to the enterprise artifact repository."

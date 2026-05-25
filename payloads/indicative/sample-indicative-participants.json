@@ -1,0 +1,62 @@
+{
+  "batchId": "IND-2026-05-24-001",
+  "tenantId": "pearl",
+  "sourceSystem": "hris-core",
+  "payloadType": "indicative",
+  "receivedAt": "2026-05-24T09:15:00Z",
+  "employees": [
+    {
+      "employeeId": "E10001",
+      "firstName": "Avery",
+      "lastName": "Shah",
+      "dateOfBirth": "1988-04-18",
+      "homeState": "CA",
+      "participant": {
+        "participantId": "P90001",
+        "employeeId": "E10001",
+        "employmentStatus": "ACTIVE",
+        "hireDate": "2021-08-02",
+        "terminationDate": null
+      },
+      "benefits": [
+        {
+          "benefitCode": "MED-PPO",
+          "planName": "PEARL PPO Medical",
+          "coverageTier": "EMPLOYEE_PLUS_FAMILY",
+          "effectiveDate": "2026-01-01",
+          "endDate": null
+        },
+        {
+          "benefitCode": "DENTAL",
+          "planName": "PEARL Dental",
+          "coverageTier": "EMPLOYEE_PLUS_FAMILY",
+          "effectiveDate": "2026-01-01",
+          "endDate": null
+        }
+      ]
+    },
+    {
+      "employeeId": "E10002",
+      "firstName": "Jordan",
+      "lastName": "Lee",
+      "dateOfBirth": "1992-11-03",
+      "homeState": "TX",
+      "participant": {
+        "participantId": "P90002",
+        "employeeId": "E10002",
+        "employmentStatus": "ACTIVE",
+        "hireDate": "2024-02-12",
+        "terminationDate": null
+      },
+      "benefits": [
+        {
+          "benefitCode": "MED-HDHP",
+          "planName": "PEARL HDHP Medical",
+          "coverageTier": "EMPLOYEE_ONLY",
+          "effectiveDate": "2026-01-01",
+          "endDate": null
+        }
+      ]
+    }
+  ]
+}

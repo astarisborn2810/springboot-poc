@@ -1,0 +1,3384 @@
+{
+  "correlationId" : "2a65c5bc-4c0a-3dcb-a2bb-49800a7416b7",
+  "batchId" : "batch-prismhr-fin-20260522",
+  "vendorKey" : "PRISMHR",
+  "planId" : "PEARL-401K-PLAN-001",
+  "payrollDate" : "2026-05-22",
+  "payPeriodStart" : "2026-05-09",
+  "payPeriodEnd" : "2026-05-22",
+  "processingTimestamp" : "2026-05-22T23:45:30Z",
+  "totalPages" : 2,
+  "totalMembers" : 50,
+  "loadTestMetadata" : {
+    "dataset" : "PrismHR-style 401k retirement contribution payroll extract",
+    "membersPerPage" : 25,
+    "expectedMemberCount" : 50,
+    "recommendedEcsTasks" : 2,
+    "recommendedSqsMessages" : 2,
+    "sqsMessageMode" : "S3_POINTER_PER_PAGE",
+    "chunkingRecommendation" : "Process one page per ECS task; split subPages only when a page exceeds 8 MB uncompressed."
+  },
+  "pages" : [ {
+    "pageId" : "financial-page-001",
+    "pageNumber" : 1,
+    "recordCount" : 25,
+    "parentPageReference" : "financial-payload-large",
+    "previousPageReference" : null,
+    "nextPageReference" : "financial-page-002",
+    "pageCreatedTimestamp" : "2026-05-22T23:45:33Z",
+    "pageChecksum" : "sha256-simulated-fin-93e7b08265203e29a668b66027966b0c",
+    "paginationMetadata" : {
+      "pageSize" : 25,
+      "memberOrdinalStart" : 1,
+      "memberOrdinalEnd" : 25,
+      "firstPage" : true,
+      "lastPage" : false
+    },
+    "subPageCount" : 1,
+    "subPages" : [ {
+      "subPageId" : "financial-page-001-sub-01",
+      "parentPageId" : "financial-page-001",
+      "subPageNumber" : 1,
+      "memberOrdinalStart" : 1,
+      "memberOrdinalEnd" : 25,
+      "recordCount" : 25,
+      "recommendedS3Key" : "payloads/financial/pages/financial-page-001/sub-01.json"
+    } ],
+    "members" : [ {
+      "identity" : {
+        "employeeId" : "E00700001",
+        "participantId" : "P0990000001",
+        "ssnMasked" : "***-**-7219",
+        "firstName" : "Terisa",
+        "lastName" : "Schaefer",
+        "middleInitial" : "R",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2012-12-19",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 2706.68,
+        "netPay" : 1579.13,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 154.76,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 69.64,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 280.40,
+        "stateTax" : 100.50,
+        "medicareTax" : 39.25,
+        "socialSecurityTax" : 167.81
+      },
+      "deductions" : {
+        "medicalDeduction" : 269.43,
+        "dentalDeduction" : 29.20,
+        "visionDeduction" : 19.87,
+        "garnishments" : 0.00,
+        "hsaContribution" : 66.33,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Human Resources",
+        "division" : "Benefits Center",
+        "location" : "OH-COLUMBUS",
+        "payrollGroup" : "BIWEEKLY-B",
+        "businessUnit" : "CORPORATE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:30.137Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700002",
+        "participantId" : "P0990000002",
+        "ssnMasked" : "***-**-5400",
+        "firstName" : "Roselle",
+        "lastName" : "Williamson",
+        "middleInitial" : "M",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2007-12-07",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 4238.66,
+        "netPay" : 4718.92,
+        "overtimePay" : 728.66,
+        "bonusPay" : 0.00,
+        "commissionPay" : 3024.29,
+        "holidayPay" : 128.25,
+        "payFrequency" : "WEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 354.00,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 122.25,
+        "employerMatch" : 159.30,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 1366.50,
+        "stateTax" : 328.02,
+        "medicareTax" : 117.74,
+        "socialSecurityTax" : 503.43
+      },
+      "deductions" : {
+        "medicalDeduction" : 341.08,
+        "dentalDeduction" : 15.68,
+        "visionDeduction" : 0.00,
+        "garnishments" : 0.00,
+        "hsaContribution" : 130.48,
+        "fsaContribution" : 121.76
+      },
+      "employmentData" : {
+        "department" : "Finance",
+        "division" : "North America",
+        "location" : "CA-IRVINE",
+        "payrollGroup" : "WEEKLY-OPS",
+        "businessUnit" : "PAYROLL-HCM"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:30.274Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700003",
+        "participantId" : "P0990000003",
+        "ssnMasked" : "***-**-7275",
+        "firstName" : "Kaleigh",
+        "lastName" : "Hilpert",
+        "middleInitial" : "K",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2018-05-17",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 5762.91,
+        "netPay" : 3385.62,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 325.24,
+        "roth401k" : 80.71,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 182.68,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 172.89,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 946.76,
+        "stateTax" : 206.00,
+        "medicareTax" : 83.56,
+        "socialSecurityTax" : 357.30
+      },
+      "deductions" : {
+        "medicalDeduction" : 186.49,
+        "dentalDeduction" : 0.00,
+        "visionDeduction" : 8.78,
+        "garnishments" : 0.00,
+        "hsaContribution" : 182.45,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Manufacturing",
+        "division" : "East Region",
+        "location" : "NJ-JERSEY-CITY",
+        "payrollGroup" : "BIWEEKLY-B",
+        "businessUnit" : "CORPORATE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:30.411Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700004",
+        "participantId" : "P0990000004",
+        "ssnMasked" : "***-**-7709",
+        "firstName" : "Cesar",
+        "lastName" : "Schimmel",
+        "middleInitial" : "T",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2002-08-23",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 5468.04,
+        "netPay" : 3376.19,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 60.70,
+        "roth401k" : 60.52,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 54.55,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 1068.47,
+        "stateTax" : 138.35,
+        "medicareTax" : 79.29,
+        "socialSecurityTax" : 339.02
+      },
+      "deductions" : {
+        "medicalDeduction" : 294.19,
+        "dentalDeduction" : 31.60,
+        "visionDeduction" : 19.71,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Engineering",
+        "division" : "Shared Services",
+        "location" : "NJ-JERSEY-CITY",
+        "payrollGroup" : "BIWEEKLY-B",
+        "businessUnit" : "CLIENT-OPS"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:30.548Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700005",
+        "participantId" : "P0990000005",
+        "ssnMasked" : "***-**-4397",
+        "firstName" : "Shanita",
+        "lastName" : "Bailey",
+        "middleInitial" : "E",
+        "employmentStatus" : "TERMINATED",
+        "hireDate" : "2017-10-06",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 8780.13,
+        "netPay" : 4876.74,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 671.74,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 302.28,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 228.04
+      },
+      "taxes" : {
+        "federalTax" : 1458.78,
+        "stateTax" : 674.77,
+        "medicareTax" : 127.31,
+        "socialSecurityTax" : 544.37
+      },
+      "deductions" : {
+        "medicalDeduction" : 86.28,
+        "dentalDeduction" : 0.00,
+        "visionDeduction" : 13.27,
+        "garnishments" : 0.00,
+        "hsaContribution" : 86.18,
+        "fsaContribution" : 12.65
+      },
+      "employmentData" : {
+        "department" : "Finance",
+        "division" : "Shared Services",
+        "location" : "AZ-PHOENIX",
+        "payrollGroup" : "BIWEEKLY-B",
+        "businessUnit" : "PEO-ENTERPRISE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:30.685Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700006",
+        "participantId" : "P0990000006",
+        "ssnMasked" : "***-**-4225",
+        "firstName" : "Jacinto",
+        "lastName" : "Frami",
+        "middleInitial" : "A",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2020-10-11",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 2852.73,
+        "netPay" : 1375.41,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 81.17,
+        "roth401k" : 96.06,
+        "afterTaxContribution" : 131.64,
+        "employerMatch" : 79.75,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 570.89,
+        "stateTax" : 135.36,
+        "medicareTax" : 41.36,
+        "socialSecurityTax" : 176.87
+      },
+      "deductions" : {
+        "medicalDeduction" : 192.26,
+        "dentalDeduction" : 40.85,
+        "visionDeduction" : 10.86,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Manufacturing",
+        "division" : "West Region",
+        "location" : "MA-BOSTON",
+        "payrollGroup" : "WEEKLY-OPS",
+        "businessUnit" : "RETIREMENT-PLAN"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:30.822Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700007",
+        "participantId" : "P0990000007",
+        "ssnMasked" : "***-**-5260",
+        "firstName" : "Joan",
+        "lastName" : "McClure",
+        "middleInitial" : "K",
+        "employmentStatus" : "TERMINATED",
+        "hireDate" : "2025-11-24",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 3724.31,
+        "netPay" : 2337.60,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 18.09,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 8.14,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 549.24,
+        "stateTax" : 214.18,
+        "medicareTax" : 54.00,
+        "socialSecurityTax" : 230.91
+      },
+      "deductions" : {
+        "medicalDeduction" : 306.87,
+        "dentalDeduction" : 13.42,
+        "visionDeduction" : 0.00,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Engineering",
+        "division" : "East Region",
+        "location" : "GA-ATLANTA",
+        "payrollGroup" : "BIWEEKLY-A",
+        "businessUnit" : "CLIENT-OPS"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:30.959Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700008",
+        "participantId" : "P0990000008",
+        "ssnMasked" : "***-**-3419",
+        "firstName" : "Carmen",
+        "lastName" : "Hill",
+        "middleInitial" : "N",
+        "employmentStatus" : "LEAVE",
+        "hireDate" : "2015-07-29",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 2537.62,
+        "netPay" : 1605.41,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 137.30,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 61.79,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 377.73,
+        "stateTax" : 68.32,
+        "medicareTax" : 36.80,
+        "socialSecurityTax" : 157.33
+      },
+      "deductions" : {
+        "medicalDeduction" : 108.99,
+        "dentalDeduction" : 20.19,
+        "visionDeduction" : 12.22,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 13.33
+      },
+      "employmentData" : {
+        "department" : "Human Resources",
+        "division" : "East Region",
+        "location" : "MA-BOSTON",
+        "payrollGroup" : "BIWEEKLY-B",
+        "businessUnit" : "PEO-ENTERPRISE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:31.096Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700009",
+        "participantId" : "P0990000009",
+        "ssnMasked" : "***-**-8748",
+        "firstName" : "Imogene",
+        "lastName" : "Marquardt",
+        "middleInitial" : "G",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2011-04-22",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 6423.40,
+        "netPay" : 3545.66,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "WEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 388.08,
+        "roth401k" : 239.67,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 282.49,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 1020.48,
+        "stateTax" : 248.61,
+        "medicareTax" : 93.14,
+        "socialSecurityTax" : 398.25
+      },
+      "deductions" : {
+        "medicalDeduction" : 275.92,
+        "dentalDeduction" : 42.71,
+        "visionDeduction" : 16.36,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 154.52
+      },
+      "employmentData" : {
+        "department" : "Retail Operations",
+        "division" : "Central Operations",
+        "location" : "OH-COLUMBUS",
+        "payrollGroup" : "BIWEEKLY-B",
+        "businessUnit" : "RETIREMENT-PLAN"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:31.233Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700010",
+        "participantId" : "P0990000010",
+        "ssnMasked" : "***-**-2803",
+        "firstName" : "Shanika",
+        "lastName" : "Weimann",
+        "middleInitial" : "J",
+        "employmentStatus" : "TERMINATED",
+        "hireDate" : "2014-06-26",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 3573.89,
+        "netPay" : 1976.03,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 193.99,
+        "roth401k" : 100.57,
+        "afterTaxContribution" : 38.50,
+        "employerMatch" : 132.55,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 506.22,
+        "stateTax" : 168.50,
+        "medicareTax" : 51.82,
+        "socialSecurityTax" : 221.58
+      },
+      "deductions" : {
+        "medicalDeduction" : 130.06,
+        "dentalDeduction" : 0.00,
+        "visionDeduction" : 19.34,
+        "garnishments" : 0.00,
+        "hsaContribution" : 167.28,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Distribution",
+        "division" : "North America",
+        "location" : "MA-BOSTON",
+        "payrollGroup" : "EXEC",
+        "businessUnit" : "PEO-ENTERPRISE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:31.370Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700011",
+        "participantId" : "P0990000011",
+        "ssnMasked" : "***-**-5351",
+        "firstName" : "Anamaria",
+        "lastName" : "Vandervort",
+        "middleInitial" : "C",
+        "employmentStatus" : "TERMINATED",
+        "hireDate" : "2011-03-22",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 3881.83,
+        "netPay" : 2676.63,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 724.97,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 334.25,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 150.41,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 692.30,
+        "stateTax" : 199.66,
+        "medicareTax" : 66.80,
+        "socialSecurityTax" : 285.62
+      },
+      "deductions" : {
+        "medicalDeduction" : 263.36,
+        "dentalDeduction" : 47.40,
+        "visionDeduction" : 0.00,
+        "garnishments" : 0.00,
+        "hsaContribution" : 40.78,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Manufacturing",
+        "division" : "Benefits Center",
+        "location" : "REMOTE-US",
+        "payrollGroup" : "BIWEEKLY-A",
+        "businessUnit" : "RETIREMENT-PLAN"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:31.507Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700012",
+        "participantId" : "P0990000012",
+        "ssnMasked" : "***-**-9570",
+        "firstName" : "Page",
+        "lastName" : "Kihn",
+        "middleInitial" : "P",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2025-06-22",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 6878.24,
+        "netPay" : 3805.91,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 596.00,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 268.20,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 163.69
+      },
+      "taxes" : {
+        "federalTax" : 985.22,
+        "stateTax" : 563.93,
+        "medicareTax" : 99.73,
+        "socialSecurityTax" : 426.45
+      },
+      "deductions" : {
+        "medicalDeduction" : 224.11,
+        "dentalDeduction" : 0.00,
+        "visionDeduction" : 13.20,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Manufacturing",
+        "division" : "Benefits Center",
+        "location" : "TX-DALLAS",
+        "payrollGroup" : "BIWEEKLY-B",
+        "businessUnit" : "PAYROLL-HCM"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:31.644Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700013",
+        "participantId" : "P0990000013",
+        "ssnMasked" : "***-**-6306",
+        "firstName" : "Oliver",
+        "lastName" : "Murazik",
+        "middleInitial" : "R",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2022-03-02",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 2949.28,
+        "netPay" : 2729.73,
+        "overtimePay" : 1411.95,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 499.54,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 164.64,
+        "roth401k" : 131.09,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 133.08,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 88.48,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 995.63,
+        "stateTax" : 136.38,
+        "medicareTax" : 70.48,
+        "socialSecurityTax" : 301.37
+      },
+      "deductions" : {
+        "medicalDeduction" : 282.87,
+        "dentalDeduction" : 44.41,
+        "visionDeduction" : 4.17,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Benefits Administration",
+        "division" : "Retirement Services",
+        "location" : "IL-CHICAGO",
+        "payrollGroup" : "BIWEEKLY-A",
+        "businessUnit" : "CORPORATE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:31.781Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700014",
+        "participantId" : "P0990000014",
+        "ssnMasked" : "***-**-2161",
+        "firstName" : "Kerry",
+        "lastName" : "Zieme",
+        "middleInitial" : "W",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2022-04-02",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 8755.52,
+        "netPay" : 6409.38,
+        "overtimePay" : 957.30,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "WEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 604.62,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 272.08,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 1050.51,
+        "stateTax" : 464.34,
+        "medicareTax" : 140.84,
+        "socialSecurityTax" : 602.19
+      },
+      "deductions" : {
+        "medicalDeduction" : 244.07,
+        "dentalDeduction" : 47.37,
+        "visionDeduction" : 0.00,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 149.50
+      },
+      "employmentData" : {
+        "department" : "Distribution",
+        "division" : "North America",
+        "location" : "MA-BOSTON",
+        "payrollGroup" : "WEEKLY-OPS",
+        "businessUnit" : "RETIREMENT-PLAN"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:31.918Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700015",
+        "participantId" : "P0990000015",
+        "ssnMasked" : "***-**-9789",
+        "firstName" : "Daren",
+        "lastName" : "Erdman",
+        "middleInitial" : "P",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2023-02-09",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 8681.91,
+        "netPay" : 5536.99,
+        "overtimePay" : 597.45,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 288.48,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 129.82,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 260.46,
+        "loanRepayment" : 204.81
+      },
+      "taxes" : {
+        "federalTax" : 1774.58,
+        "stateTax" : 457.73,
+        "medicareTax" : 134.55,
+        "socialSecurityTax" : 575.32
+      },
+      "deductions" : {
+        "medicalDeduction" : 178.87,
+        "dentalDeduction" : 0.00,
+        "visionDeduction" : 0.00,
+        "garnishments" : 0.00,
+        "hsaContribution" : 128.03,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Client Success",
+        "division" : "Central Operations",
+        "location" : "FL-TAMPA",
+        "payrollGroup" : "WEEKLY-OPS",
+        "businessUnit" : "RETIREMENT-PLAN"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:32.055Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700016",
+        "participantId" : "P0990000016",
+        "ssnMasked" : "***-**-5984",
+        "firstName" : "Albert",
+        "lastName" : "Nolan",
+        "middleInitial" : "R",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2008-01-02",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 7497.61,
+        "netPay" : 4264.39,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 85.83,
+        "roth401k" : 170.58,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 115.38,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 1498.93,
+        "stateTax" : 571.36,
+        "medicareTax" : 108.72,
+        "socialSecurityTax" : 464.85
+      },
+      "deductions" : {
+        "medicalDeduction" : 299.29,
+        "dentalDeduction" : 15.26,
+        "visionDeduction" : 18.40,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Human Resources",
+        "division" : "West Region",
+        "location" : "CA-IRVINE",
+        "payrollGroup" : "BIWEEKLY-A",
+        "businessUnit" : "CORPORATE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:32.192Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700017",
+        "participantId" : "P0990000017",
+        "ssnMasked" : "***-**-4878",
+        "firstName" : "Melodie",
+        "lastName" : "Blick",
+        "middleInitial" : "Z",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2021-07-04",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 5306.37,
+        "netPay" : 3351.21,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 62.37,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 28.07,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 351.34
+      },
+      "taxes" : {
+        "federalTax" : 687.27,
+        "stateTax" : 256.44,
+        "medicareTax" : 76.94,
+        "socialSecurityTax" : 328.99
+      },
+      "deductions" : {
+        "medicalDeduction" : 181.52,
+        "dentalDeduction" : 0.00,
+        "visionDeduction" : 10.29,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Finance",
+        "division" : "East Region",
+        "location" : "NJ-JERSEY-CITY",
+        "payrollGroup" : "BIWEEKLY-B",
+        "businessUnit" : "PAYROLL-HCM"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:32.329Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700018",
+        "participantId" : "P0990000018",
+        "ssnMasked" : "***-**-1634",
+        "firstName" : "Cassy",
+        "lastName" : "Metz",
+        "middleInitial" : "H",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2021-05-27",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 4817.82,
+        "netPay" : 2571.72,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 345.35,
+        "roth401k" : 243.78,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 265.11,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 639.49,
+        "stateTax" : 369.83,
+        "medicareTax" : 69.86,
+        "socialSecurityTax" : 298.70
+      },
+      "deductions" : {
+        "medicalDeduction" : 235.54,
+        "dentalDeduction" : 43.55,
+        "visionDeduction" : 0.00,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Client Success",
+        "division" : "Benefits Center",
+        "location" : "FL-TAMPA",
+        "payrollGroup" : "WEEKLY-OPS",
+        "businessUnit" : "CLIENT-OPS"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:32.466Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700019",
+        "participantId" : "P0990000019",
+        "ssnMasked" : "***-**-7269",
+        "firstName" : "Chadwick",
+        "lastName" : "Hettinger",
+        "middleInitial" : "Y",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2022-09-20",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 3775.72,
+        "netPay" : 1963.26,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 48.92,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 22.01,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 810.17,
+        "stateTax" : 258.78,
+        "medicareTax" : 54.75,
+        "socialSecurityTax" : 234.09
+      },
+      "deductions" : {
+        "medicalDeduction" : 164.31,
+        "dentalDeduction" : 46.67,
+        "visionDeduction" : 0.00,
+        "garnishments" : 0.00,
+        "hsaContribution" : 194.77,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Benefits Administration",
+        "division" : "North America",
+        "location" : "TX-DALLAS",
+        "payrollGroup" : "BIWEEKLY-A",
+        "businessUnit" : "RETIREMENT-PLAN"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:32.603Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700020",
+        "participantId" : "P0990000020",
+        "ssnMasked" : "***-**-7930",
+        "firstName" : "Alfred",
+        "lastName" : "O'Reilly",
+        "middleInitial" : "A",
+        "employmentStatus" : "TERMINATED",
+        "hireDate" : "2025-02-07",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 13227.35,
+        "netPay" : 10029.99,
+        "overtimePay" : 1126.34,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 330.84,
+        "roth401k" : 367.71,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 314.35,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 1748.38,
+        "stateTax" : 652.60,
+        "medicareTax" : 208.13,
+        "socialSecurityTax" : 889.93
+      },
+      "deductions" : {
+        "medicalDeduction" : 81.85,
+        "dentalDeduction" : 44.26,
+        "visionDeduction" : 0.00,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Finance",
+        "division" : "East Region",
+        "location" : "OH-COLUMBUS",
+        "payrollGroup" : "SEMI-MONTHLY",
+        "businessUnit" : "CORPORATE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:32.740Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700021",
+        "participantId" : "P0990000021",
+        "ssnMasked" : "***-**-0831",
+        "firstName" : "Tova",
+        "lastName" : "Rempel",
+        "middleInitial" : "O",
+        "employmentStatus" : "TERMINATED",
+        "hireDate" : "2013-08-31",
+        "terminationDate" : "2024-02-09"
+      },
+      "payrollDetails" : {
+        "grossPay" : 4913.31,
+        "netPay" : 2647.96,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 166.96,
+        "roth401k" : 183.63,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 157.77,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 895.35,
+        "stateTax" : 413.10,
+        "medicareTax" : 71.24,
+        "socialSecurityTax" : 304.63
+      },
+      "deductions" : {
+        "medicalDeduction" : 213.14,
+        "dentalDeduction" : 0.00,
+        "visionDeduction" : 17.30,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Distribution",
+        "division" : "East Region",
+        "location" : "TX-DALLAS",
+        "payrollGroup" : "SEMI-MONTHLY",
+        "businessUnit" : "CORPORATE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:32.877Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700022",
+        "participantId" : "P0990000022",
+        "ssnMasked" : "***-**-4663",
+        "firstName" : "Ellis",
+        "lastName" : "Denesik",
+        "middleInitial" : "N",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2005-04-14",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 5639.96,
+        "netPay" : 4217.54,
+        "overtimePay" : 246.10,
+        "bonusPay" : 0.00,
+        "commissionPay" : 989.56,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 45.00,
+        "roth401k" : 325.02,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 166.51,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 358.19
+      },
+      "taxes" : {
+        "federalTax" : 1016.68,
+        "stateTax" : 387.20,
+        "medicareTax" : 99.70,
+        "socialSecurityTax" : 426.29
+      },
+      "deductions" : {
+        "medicalDeduction" : 0.00,
+        "dentalDeduction" : 0.00,
+        "visionDeduction" : 0.00,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Finance",
+        "division" : "Shared Services",
+        "location" : "REMOTE-US",
+        "payrollGroup" : "BIWEEKLY-B",
+        "businessUnit" : "CORPORATE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:33.014Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700023",
+        "participantId" : "P0990000023",
+        "ssnMasked" : "***-**-5540",
+        "firstName" : "Ashley",
+        "lastName" : "Lockman",
+        "middleInitial" : "K",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2014-05-01",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 8168.87,
+        "netPay" : 3902.95,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 694.17,
+        "roth401k" : 176.57,
+        "afterTaxContribution" : 151.49,
+        "employerMatch" : 391.83,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 1717.46,
+        "stateTax" : 570.85,
+        "medicareTax" : 118.45,
+        "socialSecurityTax" : 506.47
+      },
+      "deductions" : {
+        "medicalDeduction" : 110.80,
+        "dentalDeduction" : 21.24,
+        "visionDeduction" : 0.00,
+        "garnishments" : 0.00,
+        "hsaContribution" : 198.42,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Payroll Operations",
+        "division" : "Shared Services",
+        "location" : "AZ-PHOENIX",
+        "payrollGroup" : "BIWEEKLY-A",
+        "businessUnit" : "CORPORATE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:33.151Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700024",
+        "participantId" : "P0990000024",
+        "ssnMasked" : "***-**-5792",
+        "firstName" : "Desirae",
+        "lastName" : "Zieme",
+        "middleInitial" : "J",
+        "employmentStatus" : "TERMINATED",
+        "hireDate" : "2011-07-20",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 2159.25,
+        "netPay" : 942.04,
+        "overtimePay" : 157.46,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 166.61,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 187.22,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 84.25,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 453.55
+      },
+      "taxes" : {
+        "federalTax" : 301.99,
+        "stateTax" : 145.57,
+        "medicareTax" : 36.01,
+        "socialSecurityTax" : 153.97
+      },
+      "deductions" : {
+        "medicalDeduction" : 243.11,
+        "dentalDeduction" : 0.00,
+        "visionDeduction" : 19.86,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Retail Operations",
+        "division" : "Benefits Center",
+        "location" : "CA-IRVINE",
+        "payrollGroup" : "SEMI-MONTHLY",
+        "businessUnit" : "CLIENT-OPS"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:33.288Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700025",
+        "participantId" : "P0990000025",
+        "ssnMasked" : "***-**-8845",
+        "firstName" : "Kamilah",
+        "lastName" : "Hilpert",
+        "middleInitial" : "M",
+        "employmentStatus" : "LEAVE",
+        "hireDate" : "2005-10-17",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 5526.21,
+        "netPay" : 3330.50,
+        "overtimePay" : 196.78,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "WEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 280.51,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 87.58,
+        "employerMatch" : 126.23,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 1183.85,
+        "stateTax" : 252.06,
+        "medicareTax" : 82.98,
+        "socialSecurityTax" : 354.83
+      },
+      "deductions" : {
+        "medicalDeduction" : 0.00,
+        "dentalDeduction" : 0.00,
+        "visionDeduction" : 0.00,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 150.68
+      },
+      "employmentData" : {
+        "department" : "Manufacturing",
+        "division" : "Central Operations",
+        "location" : "AZ-PHOENIX",
+        "payrollGroup" : "WEEKLY-OPS",
+        "businessUnit" : "PEO-ENTERPRISE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:33.425Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_001.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    } ]
+  }, {
+    "pageId" : "financial-page-002",
+    "pageNumber" : 2,
+    "recordCount" : 25,
+    "parentPageReference" : "financial-payload-large",
+    "previousPageReference" : "financial-page-001",
+    "nextPageReference" : null,
+    "pageCreatedTimestamp" : "2026-05-22T23:45:36Z",
+    "pageChecksum" : "sha256-simulated-fin-3979e1b60bc53d88b0544f0651fdc37c",
+    "paginationMetadata" : {
+      "pageSize" : 25,
+      "memberOrdinalStart" : 26,
+      "memberOrdinalEnd" : 50,
+      "firstPage" : false,
+      "lastPage" : true
+    },
+    "subPageCount" : 1,
+    "subPages" : [ {
+      "subPageId" : "financial-page-002-sub-01",
+      "parentPageId" : "financial-page-002",
+      "subPageNumber" : 1,
+      "memberOrdinalStart" : 26,
+      "memberOrdinalEnd" : 50,
+      "recordCount" : 25,
+      "recommendedS3Key" : "payloads/financial/pages/financial-page-002/sub-01.json"
+    } ],
+    "members" : [ {
+      "identity" : {
+        "employeeId" : "E00700026",
+        "participantId" : "P0990000026",
+        "ssnMasked" : "***-**-3757",
+        "firstName" : "Willy",
+        "lastName" : "Carter",
+        "middleInitial" : "P",
+        "employmentStatus" : "TERMINATED",
+        "hireDate" : "2018-08-14",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 7125.32,
+        "netPay" : 5543.51,
+        "overtimePay" : 1324.38,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 174.49,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 78.52,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 1450.40,
+        "stateTax" : 319.73,
+        "medicareTax" : 122.52,
+        "socialSecurityTax" : 523.88
+      },
+      "deductions" : {
+        "medicalDeduction" : 258.22,
+        "dentalDeduction" : 43.71,
+        "visionDeduction" : 13.24,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Payroll Operations",
+        "division" : "Retirement Services",
+        "location" : "FL-TAMPA",
+        "payrollGroup" : "SEMI-MONTHLY",
+        "businessUnit" : "PEO-ENTERPRISE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:33.562Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700027",
+        "participantId" : "P0990000027",
+        "ssnMasked" : "***-**-7165",
+        "firstName" : "Isidro",
+        "lastName" : "Frami",
+        "middleInitial" : "J",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2001-01-02",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 7470.32,
+        "netPay" : 5010.78,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 301.69,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 135.76,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 921.66,
+        "stateTax" : 319.00,
+        "medicareTax" : 108.32,
+        "socialSecurityTax" : 463.16
+      },
+      "deductions" : {
+        "medicalDeduction" : 338.36,
+        "dentalDeduction" : 0.00,
+        "visionDeduction" : 7.35,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Client Success",
+        "division" : "West Region",
+        "location" : "FL-TAMPA",
+        "payrollGroup" : "BIWEEKLY-B",
+        "businessUnit" : "PAYROLL-HCM"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:33.699Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700028",
+        "participantId" : "P0990000028",
+        "ssnMasked" : "***-**-8718",
+        "firstName" : "Agustin",
+        "lastName" : "Daugherty",
+        "middleInitial" : "E",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2019-09-07",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 7318.08,
+        "netPay" : 4159.56,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 487.87,
+        "roth401k" : 393.40,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 396.57,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 219.54,
+        "loanRepayment" : 495.56
+      },
+      "taxes" : {
+        "federalTax" : 740.01,
+        "stateTax" : 328.98,
+        "medicareTax" : 106.11,
+        "socialSecurityTax" : 453.72
+      },
+      "deductions" : {
+        "medicalDeduction" : 123.85,
+        "dentalDeduction" : 29.02,
+        "visionDeduction" : 0.00,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Finance",
+        "division" : "North America",
+        "location" : "OH-COLUMBUS",
+        "payrollGroup" : "EXEC",
+        "businessUnit" : "RETIREMENT-PLAN"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:33.836Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700029",
+        "participantId" : "P0990000029",
+        "ssnMasked" : "***-**-8424",
+        "firstName" : "Alleen",
+        "lastName" : "Morissette",
+        "middleInitial" : "V",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2013-02-01",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 5502.86,
+        "netPay" : 3483.34,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 26.56,
+        "roth401k" : 247.60,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 123.37,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 636.12,
+        "stateTax" : 314.79,
+        "medicareTax" : 79.79,
+        "socialSecurityTax" : 341.18
+      },
+      "deductions" : {
+        "medicalDeduction" : 336.80,
+        "dentalDeduction" : 30.05,
+        "visionDeduction" : 6.63,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Manufacturing",
+        "division" : "West Region",
+        "location" : "NJ-JERSEY-CITY",
+        "payrollGroup" : "SEMI-MONTHLY",
+        "businessUnit" : "CLIENT-OPS"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:33.973Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700030",
+        "participantId" : "P0990000030",
+        "ssnMasked" : "***-**-1914",
+        "firstName" : "Claudette",
+        "lastName" : "Cassin",
+        "middleInitial" : "S",
+        "employmentStatus" : "TERMINATED",
+        "hireDate" : "2020-01-29",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 6185.63,
+        "netPay" : 5392.13,
+        "overtimePay" : 0.00,
+        "bonusPay" : 2422.15,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 235.96,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 106.18,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 185.57,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 1402.94,
+        "stateTax" : 650.13,
+        "medicareTax" : 124.81,
+        "socialSecurityTax" : 533.68
+      },
+      "deductions" : {
+        "medicalDeduction" : 75.65,
+        "dentalDeduction" : 0.00,
+        "visionDeduction" : 3.69,
+        "garnishments" : 0.00,
+        "hsaContribution" : 188.79,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Client Success",
+        "division" : "Central Operations",
+        "location" : "REMOTE-US",
+        "payrollGroup" : "SEMI-MONTHLY",
+        "businessUnit" : "CORPORATE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:34.110Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700031",
+        "participantId" : "P0990000031",
+        "ssnMasked" : "***-**-1193",
+        "firstName" : "Antony",
+        "lastName" : "Nienow",
+        "middleInitial" : "E",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2016-01-30",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 8284.80,
+        "netPay" : 6952.37,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 2890.99,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 129.65,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 58.34,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 2352.71,
+        "stateTax" : 416.92,
+        "medicareTax" : 162.05,
+        "socialSecurityTax" : 692.90
+      },
+      "deductions" : {
+        "medicalDeduction" : 274.15,
+        "dentalDeduction" : 0.00,
+        "visionDeduction" : 13.62,
+        "garnishments" : 0.00,
+        "hsaContribution" : 181.42,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Manufacturing",
+        "division" : "Enterprise Accounts",
+        "location" : "CA-IRVINE",
+        "payrollGroup" : "WEEKLY-OPS",
+        "businessUnit" : "CLIENT-OPS"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:34.247Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700032",
+        "participantId" : "P0990000032",
+        "ssnMasked" : "***-**-5776",
+        "firstName" : "Claude",
+        "lastName" : "Conn",
+        "middleInitial" : "F",
+        "employmentStatus" : "LEAVE",
+        "hireDate" : "2010-03-01",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 6529.02,
+        "netPay" : 4083.09,
+        "overtimePay" : 930.93,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 579.76,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 260.89,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 1562.57,
+        "stateTax" : 328.36,
+        "medicareTax" : 108.17,
+        "socialSecurityTax" : 462.52
+      },
+      "deductions" : {
+        "medicalDeduction" : 280.43,
+        "dentalDeduction" : 37.25,
+        "visionDeduction" : 17.80,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Finance",
+        "division" : "Central Operations",
+        "location" : "GA-ATLANTA",
+        "payrollGroup" : "EXEC",
+        "businessUnit" : "CORPORATE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:34.384Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700033",
+        "participantId" : "P0990000033",
+        "ssnMasked" : "***-**-9555",
+        "firstName" : "Marcos",
+        "lastName" : "Rolfson",
+        "middleInitial" : "G",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2023-07-09",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 7438.10,
+        "netPay" : 6478.16,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 2622.15,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 363.34,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 163.50,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 223.14,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 1491.57,
+        "stateTax" : 571.42,
+        "medicareTax" : 145.87,
+        "socialSecurityTax" : 623.74
+      },
+      "deductions" : {
+        "medicalDeduction" : 342.72,
+        "dentalDeduction" : 12.76,
+        "visionDeduction" : 0.00,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 30.67
+      },
+      "employmentData" : {
+        "department" : "Benefits Administration",
+        "division" : "West Region",
+        "location" : "CA-IRVINE",
+        "payrollGroup" : "WEEKLY-OPS",
+        "businessUnit" : "PAYROLL-HCM"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:34.521Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700034",
+        "participantId" : "P0990000034",
+        "ssnMasked" : "***-**-0139",
+        "firstName" : "Willie",
+        "lastName" : "Brown",
+        "middleInitial" : "D",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2025-03-14",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 4136.02,
+        "netPay" : 2688.01,
+        "overtimePay" : 0.00,
+        "bonusPay" : 766.71,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 129.49,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 58.27,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 175.33
+      },
+      "taxes" : {
+        "federalTax" : 793.75,
+        "stateTax" : 393.27,
+        "medicareTax" : 71.09,
+        "socialSecurityTax" : 303.97
+      },
+      "deductions" : {
+        "medicalDeduction" : 306.90,
+        "dentalDeduction" : 22.52,
+        "visionDeduction" : 18.40,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Benefits Administration",
+        "division" : "Central Operations",
+        "location" : "CA-IRVINE",
+        "payrollGroup" : "EXEC",
+        "businessUnit" : "PEO-ENTERPRISE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:34.658Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700035",
+        "participantId" : "P0990000035",
+        "ssnMasked" : "***-**-8086",
+        "firstName" : "Hayley",
+        "lastName" : "Heaney",
+        "middleInitial" : "U",
+        "employmentStatus" : "LEAVE",
+        "hireDate" : "2011-08-20",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 6982.87,
+        "netPay" : 3776.99,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "WEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 455.01,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 204.75,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 417.01
+      },
+      "taxes" : {
+        "federalTax" : 1114.28,
+        "stateTax" : 319.44,
+        "medicareTax" : 101.25,
+        "socialSecurityTax" : 432.94
+      },
+      "deductions" : {
+        "medicalDeduction" : 343.09,
+        "dentalDeduction" : 12.54,
+        "visionDeduction" : 10.32,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Payroll Operations",
+        "division" : "West Region",
+        "location" : "FL-TAMPA",
+        "payrollGroup" : "BIWEEKLY-A",
+        "businessUnit" : "CORPORATE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:34.795Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700036",
+        "participantId" : "P0990000036",
+        "ssnMasked" : "***-**-5881",
+        "firstName" : "Jayme",
+        "lastName" : "Hegmann",
+        "middleInitial" : "Q",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2017-06-26",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 8609.25,
+        "netPay" : 5561.04,
+        "overtimePay" : 375.92,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "WEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 356.48,
+        "roth401k" : 439.63,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 358.25,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 258.28,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 1481.39,
+        "stateTax" : 191.27,
+        "medicareTax" : 130.28,
+        "socialSecurityTax" : 557.08
+      },
+      "deductions" : {
+        "medicalDeduction" : 225.16,
+        "dentalDeduction" : 0.00,
+        "visionDeduction" : 8.90,
+        "garnishments" : 0.00,
+        "hsaContribution" : 33.94,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Manufacturing",
+        "division" : "Enterprise Accounts",
+        "location" : "CA-IRVINE",
+        "payrollGroup" : "BIWEEKLY-B",
+        "businessUnit" : "PAYROLL-HCM"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:34.932Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700037",
+        "participantId" : "P0990000037",
+        "ssnMasked" : "***-**-0551",
+        "firstName" : "Lise",
+        "lastName" : "Bergnaum",
+        "middleInitial" : "M",
+        "employmentStatus" : "TERMINATED",
+        "hireDate" : "2006-10-01",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 6771.25,
+        "netPay" : 2873.10,
+        "overtimePay" : 293.06,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 481.86,
+        "roth401k" : 267.24,
+        "afterTaxContribution" : 142.47,
+        "employerMatch" : 337.10,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 203.14,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 1409.87,
+        "stateTax" : 610.60,
+        "medicareTax" : 102.43,
+        "socialSecurityTax" : 437.99
+      },
+      "deductions" : {
+        "medicalDeduction" : 148.20,
+        "dentalDeduction" : 30.23,
+        "visionDeduction" : 9.94,
+        "garnishments" : 550.38,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Human Resources",
+        "division" : "North America",
+        "location" : "TX-DALLAS",
+        "payrollGroup" : "SEMI-MONTHLY",
+        "businessUnit" : "CLIENT-OPS"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:35.069Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700038",
+        "participantId" : "P0990000038",
+        "ssnMasked" : "***-**-4410",
+        "firstName" : "Fritz",
+        "lastName" : "Witting",
+        "middleInitial" : "E",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2007-11-08",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 6133.31,
+        "netPay" : 7651.84,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 4758.86,
+        "holidayPay" : 0.00,
+        "payFrequency" : "WEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 46.00,
+        "roth401k" : 91.26,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 61.77,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 1944.41,
+        "stateTax" : 293.75,
+        "medicareTax" : 157.94,
+        "socialSecurityTax" : 675.31
+      },
+      "deductions" : {
+        "medicalDeduction" : 0.00,
+        "dentalDeduction" : 11.68,
+        "visionDeduction" : 19.98,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Distribution",
+        "division" : "East Region",
+        "location" : "NJ-JERSEY-CITY",
+        "payrollGroup" : "BIWEEKLY-B",
+        "businessUnit" : "CLIENT-OPS"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:35.206Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700039",
+        "participantId" : "P0990000039",
+        "ssnMasked" : "***-**-7189",
+        "firstName" : "Eldridge",
+        "lastName" : "Hermann",
+        "middleInitial" : "H",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2015-11-18",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 5452.95,
+        "netPay" : 3603.11,
+        "overtimePay" : 142.03,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "WEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 110.01,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 49.50,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 163.59,
+        "loanRepayment" : 115.27
+      },
+      "taxes" : {
+        "federalTax" : 628.13,
+        "stateTax" : 453.86,
+        "medicareTax" : 81.13,
+        "socialSecurityTax" : 346.89
+      },
+      "deductions" : {
+        "medicalDeduction" : 233.56,
+        "dentalDeduction" : 15.71,
+        "visionDeduction" : 7.31,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Benefits Administration",
+        "division" : "Shared Services",
+        "location" : "FL-TAMPA",
+        "payrollGroup" : "WEEKLY-OPS",
+        "businessUnit" : "PAYROLL-HCM"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:35.343Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700040",
+        "participantId" : "P0990000040",
+        "ssnMasked" : "***-**-6146",
+        "firstName" : "Eugenio",
+        "lastName" : "Rogahn",
+        "middleInitial" : "G",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2018-10-04",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 6029.17,
+        "netPay" : 4011.85,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 280.29,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 125.31,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 56.39,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 180.88,
+        "loanRepayment" : 155.17
+      },
+      "taxes" : {
+        "federalTax" : 783.77,
+        "stateTax" : 329.02,
+        "medicareTax" : 91.49,
+        "socialSecurityTax" : 391.19
+      },
+      "deductions" : {
+        "medicalDeduction" : 227.23,
+        "dentalDeduction" : 32.56,
+        "visionDeduction" : 15.08,
+        "garnishments" : 0.00,
+        "hsaContribution" : 146.79,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Finance",
+        "division" : "Enterprise Accounts",
+        "location" : "AZ-PHOENIX",
+        "payrollGroup" : "WEEKLY-OPS",
+        "businessUnit" : "RETIREMENT-PLAN"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:35.480Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700041",
+        "participantId" : "P0990000041",
+        "ssnMasked" : "***-**-5487",
+        "firstName" : "Darrell",
+        "lastName" : "West",
+        "middleInitial" : "G",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2020-09-15",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 4143.61,
+        "netPay" : 2572.33,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 89.38,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 40.22,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 744.87,
+        "stateTax" : 91.88,
+        "medicareTax" : 60.08,
+        "socialSecurityTax" : 256.90
+      },
+      "deductions" : {
+        "medicalDeduction" : 288.59,
+        "dentalDeduction" : 39.58,
+        "visionDeduction" : 0.00,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Retail Operations",
+        "division" : "North America",
+        "location" : "TX-DALLAS",
+        "payrollGroup" : "SEMI-MONTHLY",
+        "businessUnit" : "RETIREMENT-PLAN"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:35.617Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700042",
+        "participantId" : "P0990000042",
+        "ssnMasked" : "***-**-5513",
+        "firstName" : "Bernardo",
+        "lastName" : "Hahn",
+        "middleInitial" : "P",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2015-02-28",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 6851.04,
+        "netPay" : 4651.09,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 19.29,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 8.68,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 205.53,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 980.61,
+        "stateTax" : 435.98,
+        "medicareTax" : 99.34,
+        "socialSecurityTax" : 424.76
+      },
+      "deductions" : {
+        "medicalDeduction" : 127.45,
+        "dentalDeduction" : 18.95,
+        "visionDeduction" : 13.02,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 80.55
+      },
+      "employmentData" : {
+        "department" : "Manufacturing",
+        "division" : "Shared Services",
+        "location" : "AZ-PHOENIX",
+        "payrollGroup" : "WEEKLY-OPS",
+        "businessUnit" : "CLIENT-OPS"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:35.754Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700043",
+        "participantId" : "P0990000043",
+        "ssnMasked" : "***-**-3110",
+        "firstName" : "Albert",
+        "lastName" : "Strosin",
+        "middleInitial" : "J",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2022-08-04",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 2784.90,
+        "netPay" : 1698.85,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 478.57,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 219.83,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 106.46,
+        "employerMatch" : 98.92,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 626.21,
+        "stateTax" : 248.24,
+        "medicareTax" : 47.32,
+        "socialSecurityTax" : 202.34
+      },
+      "deductions" : {
+        "medicalDeduction" : 87.47,
+        "dentalDeduction" : 26.75,
+        "visionDeduction" : 0.00,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Client Success",
+        "division" : "West Region",
+        "location" : "AZ-PHOENIX",
+        "payrollGroup" : "WEEKLY-OPS",
+        "businessUnit" : "PEO-ENTERPRISE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:35.891Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700044",
+        "participantId" : "P0990000044",
+        "ssnMasked" : "***-**-9409",
+        "firstName" : "Dena",
+        "lastName" : "Trantow",
+        "middleInitial" : "E",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2002-04-18",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 19929.61,
+        "netPay" : 11562.00,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 548.24,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 246.71,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 5261.13,
+        "stateTax" : 763.53,
+        "medicareTax" : 288.98,
+        "socialSecurityTax" : 1235.64
+      },
+      "deductions" : {
+        "medicalDeduction" : 255.71,
+        "dentalDeduction" : 0.00,
+        "visionDeduction" : 14.38,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Distribution",
+        "division" : "Shared Services",
+        "location" : "TX-DALLAS",
+        "payrollGroup" : "SEMI-MONTHLY",
+        "businessUnit" : "PEO-ENTERPRISE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:36.028Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700045",
+        "participantId" : "P0990000045",
+        "ssnMasked" : "***-**-2765",
+        "firstName" : "Julio",
+        "lastName" : "Reynolds",
+        "middleInitial" : "H",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2003-02-20",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 3924.97,
+        "netPay" : 1535.05,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 343.13,
+        "roth401k" : 210.47,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 249.12,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 625.57,
+        "stateTax" : 298.16,
+        "medicareTax" : 56.91,
+        "socialSecurityTax" : 243.35
+      },
+      "deductions" : {
+        "medicalDeduction" : 339.27,
+        "dentalDeduction" : 45.61,
+        "visionDeduction" : 16.13,
+        "garnishments" : 0.00,
+        "hsaContribution" : 47.27,
+        "fsaContribution" : 164.05
+      },
+      "employmentData" : {
+        "department" : "Client Success",
+        "division" : "Benefits Center",
+        "location" : "AZ-PHOENIX",
+        "payrollGroup" : "EXEC",
+        "businessUnit" : "PEO-ENTERPRISE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:36.165Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700046",
+        "participantId" : "P0990000046",
+        "ssnMasked" : "***-**-2841",
+        "firstName" : "Kathlyn",
+        "lastName" : "Moen",
+        "middleInitial" : "G",
+        "employmentStatus" : "LEAVE",
+        "hireDate" : "2004-05-19",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 5234.48,
+        "netPay" : 3435.50,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 372.30,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 167.54,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 583.63,
+        "stateTax" : 194.37,
+        "medicareTax" : 75.90,
+        "socialSecurityTax" : 324.54
+      },
+      "deductions" : {
+        "medicalDeduction" : 219.37,
+        "dentalDeduction" : 0.00,
+        "visionDeduction" : 9.03,
+        "garnishments" : 0.00,
+        "hsaContribution" : 19.84,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Engineering",
+        "division" : "Retirement Services",
+        "location" : "CA-IRVINE",
+        "payrollGroup" : "EXEC",
+        "businessUnit" : "PAYROLL-HCM"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:36.302Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700047",
+        "participantId" : "P0990000047",
+        "ssnMasked" : "***-**-6910",
+        "firstName" : "Kareem",
+        "lastName" : "Howell",
+        "middleInitial" : "E",
+        "employmentStatus" : "ACTIVE",
+        "hireDate" : "2005-10-06",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 5752.41,
+        "netPay" : 3201.71,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 221.97,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 125.04,
+        "employerMatch" : 99.89,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 1224.81,
+        "stateTax" : 220.96,
+        "medicareTax" : 83.41,
+        "socialSecurityTax" : 356.65
+      },
+      "deductions" : {
+        "medicalDeduction" : 291.02,
+        "dentalDeduction" : 15.66,
+        "visionDeduction" : 11.18,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Benefits Administration",
+        "division" : "West Region",
+        "location" : "CA-IRVINE",
+        "payrollGroup" : "EXEC",
+        "businessUnit" : "RETIREMENT-PLAN"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:36.439Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700048",
+        "participantId" : "P0990000048",
+        "ssnMasked" : "***-**-1129",
+        "firstName" : "Lon",
+        "lastName" : "Lockman",
+        "middleInitial" : "H",
+        "employmentStatus" : "TERMINATED",
+        "hireDate" : "2014-03-18",
+        "terminationDate" : "2024-04-27"
+      },
+      "payrollDetails" : {
+        "grossPay" : 7145.13,
+        "netPay" : 4040.75,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 71.44,
+        "roth401k" : 84.49,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 70.17,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 0.00,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 1358.22,
+        "stateTax" : 574.02,
+        "medicareTax" : 103.60,
+        "socialSecurityTax" : 443.00
+      },
+      "deductions" : {
+        "medicalDeduction" : 303.89,
+        "dentalDeduction" : 20.83,
+        "visionDeduction" : 0.00,
+        "garnishments" : 0.00,
+        "hsaContribution" : 144.89,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Human Resources",
+        "division" : "North America",
+        "location" : "OH-COLUMBUS",
+        "payrollGroup" : "BIWEEKLY-B",
+        "businessUnit" : "RETIREMENT-PLAN"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:36.576Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700049",
+        "participantId" : "P0990000049",
+        "ssnMasked" : "***-**-9972",
+        "firstName" : "Devin",
+        "lastName" : "Swift",
+        "middleInitial" : "X",
+        "employmentStatus" : "LEAVE",
+        "hireDate" : "2018-12-15",
+        "terminationDate" : null
+      },
+      "payrollDetails" : {
+        "grossPay" : 4560.79,
+        "netPay" : 3231.01,
+        "overtimePay" : 413.46,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 313.84,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 284.08,
+        "roth401k" : 0.00,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 127.84,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 136.82,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 718.82,
+        "stateTax" : 469.41,
+        "medicareTax" : 76.68,
+        "socialSecurityTax" : 327.86
+      },
+      "deductions" : {
+        "medicalDeduction" : 165.20,
+        "dentalDeduction" : 0.00,
+        "visionDeduction" : 15.03,
+        "garnishments" : 0.00,
+        "hsaContribution" : 0.00,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Engineering",
+        "division" : "North America",
+        "location" : "FL-TAMPA",
+        "payrollGroup" : "BIWEEKLY-A",
+        "businessUnit" : "PEO-ENTERPRISE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:36.713Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    }, {
+      "identity" : {
+        "employeeId" : "E00700050",
+        "participantId" : "P0990000050",
+        "ssnMasked" : "***-**-5611",
+        "firstName" : "Colene",
+        "lastName" : "Feil",
+        "middleInitial" : "G",
+        "employmentStatus" : "TERMINATED",
+        "hireDate" : "2003-06-25",
+        "terminationDate" : "2025-06-29"
+      },
+      "payrollDetails" : {
+        "grossPay" : 7514.72,
+        "netPay" : 5065.18,
+        "overtimePay" : 0.00,
+        "bonusPay" : 0.00,
+        "commissionPay" : 0.00,
+        "holidayPay" : 0.00,
+        "payFrequency" : "BIWEEKLY"
+      },
+      "financialContributions" : {
+        "preTax401k" : 81.05,
+        "roth401k" : 396.73,
+        "afterTaxContribution" : 0.00,
+        "employerMatch" : 215.00,
+        "profitSharing" : 0.00,
+        "safeHarborContribution" : 225.44,
+        "loanRepayment" : 0.00
+      },
+      "taxes" : {
+        "federalTax" : 833.27,
+        "stateTax" : 277.52,
+        "medicareTax" : 108.96,
+        "socialSecurityTax" : 465.91
+      },
+      "deductions" : {
+        "medicalDeduction" : 102.06,
+        "dentalDeduction" : 40.68,
+        "visionDeduction" : 8.16,
+        "garnishments" : 0.00,
+        "hsaContribution" : 135.20,
+        "fsaContribution" : 0.00
+      },
+      "employmentData" : {
+        "department" : "Client Success",
+        "division" : "Benefits Center",
+        "location" : "MA-BOSTON",
+        "payrollGroup" : "BIWEEKLY-B",
+        "businessUnit" : "CORPORATE"
+      },
+      "audit" : {
+        "recordCreatedTimestamp" : "2026-05-22T23:45:36.850Z",
+        "sourceSystem" : "PRISMHR",
+        "sourceFileName" : "PRISMHR_FIN_2026-05-22_PAGE_002.json",
+        "version" : "2026.05.24-financial-v1"
+      },
+      "scenarioFlags" : {
+        "malformedRecord" : false,
+        "partialRecord" : false,
+        "retryScenario" : false,
+        "highEarner" : false,
+        "loanRepaymentScenario" : false,
+        "edgeCaseTypes" : [ ]
+      },
+      "retrySimulation" : null
+    } ]
+  } ],
+  "scenarioSummary" : {
+    "malformedRecords" : 0,
+    "partialRecords" : 0,
+    "retryScenarios" : 0,
+    "highEarners" : 0,
+    "loanRepaymentRecords" : 0,
+    "terminatedEmployeeRecords" : 0
+  }
+}

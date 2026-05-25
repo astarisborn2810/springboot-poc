@@ -1,0 +1,40 @@
+pipeline {
+  agent any
+
+  options {
+    ansiColor('xterm')
+    buildDiscarder(logRotator(numToKeepStr: '30'))
+    timestamps()
+  }
+
+  environment {
+    APP_NAME = 'pearl-payroll-platform'
+    JAVA_VERSION = '24'
+  }
+
+  stages {
+    stage('Checkout') {
+      steps {
+        checkout scm
+      }
+    }
+
+    stage('Build') {
+      steps {
+        bat 'mvn clean verify'
+      }
+    }
+
+    stage('Package') {
+      steps {
+        bat 'mvn -DskipTests package'
+      }
+    }
+
+    stage('Image Scan Placeholder') {
+      steps {
+        echo 'Add enterprise image, SCA, SAST, and secret scanning gates.'
+      }
+    }
+  }
+}

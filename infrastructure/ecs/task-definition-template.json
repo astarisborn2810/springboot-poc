@@ -1,0 +1,40 @@
+{
+  "family": "pearl-payroll-${environment}-${serviceName}",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["EC2"],
+  "cpu": "512",
+  "memory": "1024",
+  "executionRoleArn": "${ecsTaskExecutionRoleArn}",
+  "taskRoleArn": "${ecsTaskRoleArn}",
+  "containerDefinitions": [
+    {
+      "name": "${serviceName}",
+      "image": "${accountId}.dkr.ecr.${region}.amazonaws.com/pearl/${serviceName}:${imageTag}",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        {
+          "name": "SPRING_PROFILES_ACTIVE",
+          "value": "${environment}"
+        },
+        {
+          "name": "AWS_REGION",
+          "value": "${region}"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/pearl-payroll/${environment}/${serviceName}",
+          "awslogs-region": "${region}",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}

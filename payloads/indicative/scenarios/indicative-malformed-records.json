@@ -1,0 +1,6075 @@
+{
+  "correlationId" : "6c0abfba-28d0-3ba9-8b43-ebb77024c0e8",
+  "batchId" : "batch-prismhr-ind-20260522",
+  "vendorKey" : "PRISMHR",
+  "planId" : "PEARL-401K-PLAN-001",
+  "processingTimestamp" : "2026-05-22T23:52:15Z",
+  "entityCount" : 50,
+  "loadTestMetadata" : {
+    "dataset" : "PrismHR-style participant demographic and benefits extract",
+    "expectedEntityCount" : 50,
+    "recommendedEntityChunkSize" : 500,
+    "recommendedStepFunctionMapConcurrency" : 10,
+    "sqsMessageMode" : "S3_POINTER_PER_500_ENTITIES",
+    "chunkingRecommendation" : "Chunk at 500 entities for local tests; reduce to 250 for high-beneficiary populations."
+  },
+  "entities" : [ {
+    "identity" : {
+      "participantId" : "P0990000001",
+      "employeeId" : "E00700001",
+      "ssnMasked" : "***-**-4516",
+      "firstName" : "Alexander",
+      "middleName" : "Daniel",
+      "lastName" : "O'Conner",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "NON_BINARY",
+      "maritalStatus" : "DOMESTIC_PARTNER",
+      "dateOfBirth" : "2005-10-08",
+      "preferredLanguage" : "es-US",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "junita.cormier@yahoo.com",
+      "workEmail" : "e00700001@client101.example.com",
+      "mobilePhone" : "+1-437-228-7469",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "6429 Maggio Ford",
+        "line2" : "Apt 242",
+        "city" : "Bahringerberg",
+        "state" : "AL",
+        "zipCode" : "39799",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Donnellybury County"
+      },
+      "mailingAddress" : {
+        "line1" : "81478 Martina Plaza",
+        "line2" : null,
+        "city" : "Port Gabriellaside",
+        "state" : "MI",
+        "zipCode" : "79322",
+        "country" : "US",
+        "addressValidated" : false,
+        "county" : "Twanabury County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2005-03-28",
+      "terminationDate" : null,
+      "employmentStatus" : "LEAVE",
+      "employmentType" : "CONTRACT",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "SALARIED",
+      "annualizedCompensation" : 159430.38,
+      "departmentCode" : "D0101",
+      "locationCode" : "LOC-AL-002"
+    },
+    "benefits" : {
+      "medicalPlan" : "PPO-1500",
+      "dentalPlan" : "DENTAL-BASIC",
+      "visionPlan" : "VISION-STANDARD",
+      "disabilityPlan" : "STD-EMPLOYER-PAID",
+      "lifeInsurance" : "WAIVED",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-45414639",
+        "firstName" : "Maryann",
+        "lastName" : "O'Conner",
+        "relationship" : "DOMESTIC_PARTNER",
+        "dateOfBirth" : "2010-10-08",
+        "medicalCovered" : true,
+        "dentalCovered" : true
+      },
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-786d1590-c",
+        "firstName" : "Josue",
+        "lastName" : "Johnston",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 37.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-a954495c-1",
+        "firstName" : "Branden",
+        "lastName" : "Rice",
+        "relationship" : "SIBLING",
+        "allocationPercentage" : 63.00,
+        "beneficiaryType" : "CONTINGENT"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2005-05-16",
+      "enrollmentDate" : "2005-05-20",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "OPTED_OUT",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:52:13Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:15.097Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000002",
+      "employeeId" : "E00700002",
+      "ssnMasked" : "999999999",
+      "firstName" : "Jc",
+      "middleName" : null,
+      "lastName" : "Howell",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "NON_BINARY",
+      "maritalStatus" : "SINGLE",
+      "dateOfBirth" : "1985-01-27",
+      "preferredLanguage" : "hi-IN",
+      "citizenshipStatus" : "WORK_AUTHORIZED"
+    },
+    "contactDetails" : {
+      "personalEmail" : "marylouise.kertzmann@hotmail.com",
+      "workEmail" : "e00700002@client102.example.com",
+      "mobilePhone" : "+1-303-784-2929",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "9744 Elwood Lock",
+        "line2" : null,
+        "city" : "Roobview",
+        "state" : "TN",
+        "zipCode" : "73951",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "West Lynda County"
+      },
+      "mailingAddress" : {
+        "line1" : "28850 Donald Highway",
+        "line2" : "Apt 919",
+        "city" : "Beerchester",
+        "state" : "TN",
+        "zipCode" : "67846",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Elsyhaven County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2017-10-18",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "CONTRACT",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 139539.93,
+      "departmentCode" : "D0102",
+      "locationCode" : "LOC-TN-003"
+    },
+    "benefits" : {
+      "medicalPlan" : "EPO-500",
+      "dentalPlan" : "DENTAL-BASIC",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "BASIC-LIFE-1X",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-c401083c-9",
+        "firstName" : "Millard",
+        "lastName" : "Howell",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 59.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-a2a8d7f2-6",
+        "firstName" : "Donn",
+        "lastName" : "Howell",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 41.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-6d5f5a54-e",
+        "firstName" : "Valery",
+        "lastName" : "O'Hara",
+        "relationship" : "SPOUSE",
+        "allocationPercentage" : 0.00,
+        "beneficiaryType" : "CONTINGENT"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2018-01-05",
+      "enrollmentDate" : "2018-01-26",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "OPTED_OUT",
+      "catchUpEligible" : true
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:52:11Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:15.194Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000003",
+      "employeeId" : null,
+      "ssnMasked" : "***-**-6423",
+      "firstName" : "Eugenia",
+      "middleName" : "David",
+      "lastName" : "Hegmann",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "UNDISCLOSED",
+      "maritalStatus" : "SINGLE",
+      "dateOfBirth" : "1977-12-07",
+      "preferredLanguage" : "hi-IN",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "bad-email-at-domain",
+      "workEmail" : "e00700003@client103.example.com",
+      "mobilePhone" : "+1-350-881-8101",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "983 Seymour Harbor",
+        "line2" : null,
+        "city" : "East Kendra",
+        "state" : "GA",
+        "zipCode" : "41616",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Jesseport County"
+      },
+      "mailingAddress" : {
+        "line1" : "63291 Collier Parks",
+        "line2" : "Apt 571",
+        "city" : "Ziemannbury",
+        "state" : "GA",
+        "zipCode" : "92285",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Lake Ulysses County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2005-01-21",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "SEASONAL",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 91388.70,
+      "departmentCode" : "D0103",
+      "locationCode" : "LOC-GA-004"
+    },
+    "benefits" : {
+      "medicalPlan" : "HDHP-HSA",
+      "dentalPlan" : "DENTAL-BASIC",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "STD-EMPLOYER-PAID",
+      "lifeInsurance" : "BASIC-LIFE-1X",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ {
+        "dependentId" : "DEP-C-9f9c5166",
+        "firstName" : "Stephani",
+        "lastName" : "Hegmann",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2020-07-14",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      }, {
+        "dependentId" : "DEP-C-43df6a65",
+        "firstName" : "Tyson",
+        "lastName" : "Hegmann",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2017-04-06",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-f15c1fe7-6",
+        "firstName" : "Stormy",
+        "lastName" : "Schowalter",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 37.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-aa345996-5",
+        "firstName" : "Leilani",
+        "lastName" : "Rice",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 63.00,
+        "beneficiaryType" : "CONTINGENT"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2005-04-27",
+      "enrollmentDate" : "2005-04-27",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:52:09Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:15.291Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : true,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD", "PARTIAL_INDICATIVE_RECORD" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000004",
+      "employeeId" : "E00700004",
+      "ssnMasked" : "999999999",
+      "firstName" : "Michiko",
+      "middleName" : "Danna",
+      "lastName" : "Abernathy",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "FEMALE",
+      "maritalStatus" : "DOMESTIC_PARTNER",
+      "dateOfBirth" : "1993-08-02",
+      "preferredLanguage" : "en-US",
+      "citizenshipStatus" : "UNKNOWN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "rory.johnston@hotmail.com",
+      "workEmail" : "e00700004@client104.example.com",
+      "mobilePhone" : "+1-247-339-5231",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "70767 Hickle Branch",
+        "line2" : "Apt 110",
+        "city" : "Harriettefort",
+        "state" : "IL",
+        "zipCode" : "85625",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Lake Berry County"
+      },
+      "mailingAddress" : {
+        "line1" : "37425 Jamel Avenue",
+        "line2" : null,
+        "city" : "South Laurinda",
+        "state" : "FL",
+        "zipCode" : "35919",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Deneseborough County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2017-09-17",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "COMMISSION",
+      "annualizedCompensation" : 153437.61,
+      "departmentCode" : "D0104",
+      "locationCode" : "LOC-IL-005"
+    },
+    "benefits" : {
+      "medicalPlan" : "WAIVED",
+      "dentalPlan" : "DENTAL-BASIC",
+      "visionPlan" : "WAIVED",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "WAIVED",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-6aeb3df9",
+        "firstName" : "Rachael",
+        "lastName" : "Abernathy",
+        "relationship" : "DOMESTIC_PARTNER",
+        "dateOfBirth" : "2001-08-02",
+        "medicalCovered" : true,
+        "dentalCovered" : true
+      },
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-c6b79fbc-2",
+        "firstName" : "Nicky",
+        "lastName" : "Hessel",
+        "relationship" : "SIBLING",
+        "allocationPercentage" : 58.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-fe258d1a-4",
+        "firstName" : "Stanford",
+        "lastName" : "Abernathy",
+        "relationship" : "SPOUSE",
+        "allocationPercentage" : 42.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-0e4f9358-0",
+        "firstName" : "Elmer",
+        "lastName" : "Strosin",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 0.00,
+        "beneficiaryType" : "CONTINGENT"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2017-10-24",
+      "enrollmentDate" : "2017-12-03",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:52:07Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:15.388Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000004",
+      "employeeId" : "E00700005",
+      "ssnMasked" : "***-**-0847",
+      "firstName" : "Caroline",
+      "middleName" : null,
+      "lastName" : "Boyer",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "MALE",
+      "maritalStatus" : "WIDOWED",
+      "dateOfBirth" : "1959-10-06",
+      "preferredLanguage" : "fr-CA",
+      "citizenshipStatus" : "PERMANENT_RESIDENT"
+    },
+    "contactDetails" : {
+      "personalEmail" : "bad-email-at-domain",
+      "workEmail" : "e00700005@client105.example.com",
+      "mobilePhone" : "+1-475-823-8703",
+      "homePhone" : "+1-552-634-7552"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "1286 Janise Skyway",
+        "line2" : null,
+        "city" : "Lake Jin",
+        "state" : "MA",
+        "zipCode" : "11318",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "East Oswaldo County"
+      },
+      "mailingAddress" : {
+        "line1" : "1739 Purdy Dam",
+        "line2" : null,
+        "city" : "Beulahland",
+        "state" : "WA",
+        "zipCode" : "24342",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Klingborough County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2013-09-21",
+      "terminationDate" : null,
+      "employmentStatus" : "LEAVE",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 67469.16,
+      "departmentCode" : "D0105",
+      "locationCode" : "LOC-MA-006"
+    },
+    "benefits" : {
+      "medicalPlan" : "WAIVED",
+      "dentalPlan" : "WAIVED",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "LTD-BUYUP",
+      "lifeInsurance" : "EXEC-LIFE",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-ce56f8f6-6",
+        "firstName" : "Devon",
+        "lastName" : "Boyer",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 26.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-365e5efd-a",
+        "firstName" : "Lovella",
+        "lastName" : "Boyer",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 74.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2013-12-30",
+      "enrollmentDate" : "2014-01-18",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : true
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:52:05Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:15.485Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : true,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD", "DUPLICATE_PARTICIPANT_ID" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000006",
+      "employeeId" : "E00700006",
+      "ssnMasked" : "***-**-9868",
+      "firstName" : "Micaela",
+      "middleName" : "Jeni",
+      "lastName" : "Murazik",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "FEMALE",
+      "maritalStatus" : "MARRIED",
+      "dateOfBirth" : "1963-06-11",
+      "preferredLanguage" : "hi-IN",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "andreas.heidenreich@hotmail.com",
+      "workEmail" : "e00700006@client106.example.com",
+      "mobilePhone" : "+1-556-413-1929",
+      "homePhone" : "+1-390-558-9122"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "58201 Edda Trail",
+        "line2" : null,
+        "city" : "Lake Jacques",
+        "state" : "CA",
+        "zipCode" : "37112",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "North Eliseo County"
+      },
+      "mailingAddress" : {
+        "line1" : "1101 Micki Mountains",
+        "line2" : null,
+        "city" : "North Mitchell",
+        "state" : "CA",
+        "zipCode" : "65747",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Shaniquafurt County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2019-04-18",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "CONTRACT",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 119900.59,
+      "departmentCode" : "D0106",
+      "locationCode" : "LOC-CA-007"
+    },
+    "benefits" : {
+      "medicalPlan" : "HMO-CLASSIC",
+      "dentalPlan" : "DENTAL-BASIC",
+      "visionPlan" : "WAIVED",
+      "disabilityPlan" : "STD-EMPLOYER-PAID",
+      "lifeInsurance" : "BASIC-LIFE-1X",
+      "hsaEligible" : false,
+      "benefitsWaived" : true
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-562f9e4c",
+        "firstName" : "Gigi",
+        "lastName" : "Murazik",
+        "relationship" : "SPOUSE",
+        "dateOfBirth" : "1967-06-11",
+        "medicalCovered" : true,
+        "dentalCovered" : true
+      },
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-c8863aeb-2",
+        "firstName" : "Cortney",
+        "lastName" : "Treutel",
+        "relationship" : "SPOUSE",
+        "allocationPercentage" : 100,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "NOT_FULLY_VESTED",
+      "eligibilityDate" : "2019-06-16",
+      "enrollmentDate" : "2019-07-18",
+      "autoEnrollmentFlag" : false,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:52:03Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:15.582Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000007",
+      "employeeId" : "E00700007",
+      "ssnMasked" : "***-**-1780",
+      "firstName" : "Brook",
+      "middleName" : "Tasha",
+      "lastName" : "Bergnaum",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "NON_BINARY",
+      "maritalStatus" : "SINGLE",
+      "dateOfBirth" : "1982-01-06",
+      "preferredLanguage" : "fr-CA",
+      "citizenshipStatus" : "UNKNOWN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "jessia.koepp@yahoo.com",
+      "workEmail" : "e00700007@client107.example.com",
+      "mobilePhone" : "+1-327-862-5555",
+      "homePhone" : "+1-538-517-4516"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "95485 Elodia Vista",
+        "line2" : null,
+        "city" : "Schmidtfurt",
+        "state" : "OH",
+        "zipCode" : "95041",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "East Delisa County"
+      },
+      "mailingAddress" : {
+        "line1" : "817 Clement Springs",
+        "line2" : null,
+        "city" : "North Linette",
+        "state" : "OH",
+        "zipCode" : "62112",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "West Suzannton County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2008-03-10",
+      "terminationDate" : null,
+      "employmentStatus" : "RETIRED",
+      "employmentType" : "SEASONAL",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "SALARIED",
+      "annualizedCompensation" : 0.00,
+      "departmentCode" : "D0107",
+      "locationCode" : "LOC-OH-008"
+    },
+    "benefits" : {
+      "medicalPlan" : "PPO-1500",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "STD-EMPLOYER-PAID",
+      "lifeInsurance" : "SUPPLEMENTAL-LIFE",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-7101e5e1-9",
+        "firstName" : "Vada",
+        "lastName" : "Jacobs",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 49.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-41f932ef-a",
+        "firstName" : "Winter",
+        "lastName" : "Bergnaum",
+        "relationship" : "SIBLING",
+        "allocationPercentage" : 12.00,
+        "beneficiaryType" : "CONTINGENT"
+      }, {
+        "beneficiaryId" : "BEN-7a5a5ed5-6",
+        "firstName" : "Eldon",
+        "lastName" : "Sipes",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 39.00,
+        "beneficiaryType" : "CONTINGENT"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2008-06-03",
+      "enrollmentDate" : "2008-06-15",
+      "autoEnrollmentFlag" : false,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:52:01Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:15.679Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000008",
+      "employeeId" : "E00700008",
+      "ssnMasked" : "***-**-2674",
+      "firstName" : "Wes",
+      "middleName" : "Young",
+      "lastName" : "Torphy",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "FEMALE",
+      "maritalStatus" : "MARRIED",
+      "dateOfBirth" : "2004-02-05",
+      "preferredLanguage" : "fr-CA",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "lance.graham@gmail.com",
+      "workEmail" : "e00700008@client108.example.com",
+      "mobilePhone" : "+1-838-774-4253",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "63360 Ned Street",
+        "line2" : null,
+        "city" : "Port Adam",
+        "state" : "MI",
+        "zipCode" : "48421",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Wymanport County"
+      },
+      "mailingAddress" : {
+        "line1" : "96491 Kuhic Knoll",
+        "line2" : null,
+        "city" : "Krisstad",
+        "state" : "IL",
+        "zipCode" : "29379",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "East Vernfort County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2020-12-02",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 100610.48,
+      "departmentCode" : "D0108",
+      "locationCode" : "LOC-MI-009"
+    },
+    "benefits" : {
+      "medicalPlan" : "WAIVED",
+      "dentalPlan" : "WAIVED",
+      "visionPlan" : "WAIVED",
+      "disabilityPlan" : "LTD-BUYUP",
+      "lifeInsurance" : "BASIC-LIFE-1X",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-25639868",
+        "firstName" : "Ardell",
+        "lastName" : "Torphy",
+        "relationship" : "SPOUSE",
+        "dateOfBirth" : "2008-02-05",
+        "medicalCovered" : true,
+        "dentalCovered" : true
+      },
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-2bffa05d-a",
+        "firstName" : "Edgar",
+        "lastName" : "Torphy",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 38.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-6a74535d-0",
+        "firstName" : "Julian",
+        "lastName" : "Emmerich",
+        "relationship" : "CHILD",
+        "allocationPercentage" : 36.00,
+        "beneficiaryType" : "CONTINGENT"
+      }, {
+        "beneficiaryId" : "BEN-c7d2ab09-0",
+        "firstName" : "Gigi",
+        "lastName" : "Thiel",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 26.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2021-01-28",
+      "enrollmentDate" : "2021-02-13",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:59Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:15.776Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000009",
+      "employeeId" : "E00700009",
+      "ssnMasked" : "***-**-3059",
+      "firstName" : "Jacki",
+      "middleName" : null,
+      "lastName" : "Balistreri",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "UNDISCLOSED",
+      "maritalStatus" : "DIVORCED",
+      "dateOfBirth" : "2003-08-19",
+      "preferredLanguage" : "en-US",
+      "citizenshipStatus" : "PERMANENT_RESIDENT"
+    },
+    "contactDetails" : {
+      "personalEmail" : "mikel.johnston@gmail.com",
+      "workEmail" : "e00700009@client109.example.com",
+      "mobilePhone" : "+1-432-612-0924",
+      "homePhone" : "+1-778-719-0452"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "6254 Rana Spurs",
+        "line2" : "Apt 165",
+        "city" : "Lake Samuel",
+        "state" : "OH",
+        "zipCode" : "38692",
+        "country" : "US",
+        "addressValidated" : false,
+        "county" : "South Allen County"
+      },
+      "mailingAddress" : {
+        "line1" : "30045 Farrah Meadows",
+        "line2" : null,
+        "city" : "Lake Hugomouth",
+        "state" : "OH",
+        "zipCode" : "17984",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Sanfordstad County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2023-12-19",
+      "terminationDate" : "2024-06-29",
+      "employmentStatus" : "TERMINATED",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "UNION",
+      "compensationType" : "SALARIED",
+      "annualizedCompensation" : 0.00,
+      "departmentCode" : "D0109",
+      "locationCode" : "LOC-OH-010"
+    },
+    "benefits" : {
+      "medicalPlan" : "HMO-CLASSIC",
+      "dentalPlan" : "DENTAL-BASIC",
+      "visionPlan" : "WAIVED",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "WAIVED",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-24430cbd-3",
+        "firstName" : "Basil",
+        "lastName" : "Harvey",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 20.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-6f3aa83f-5",
+        "firstName" : "Kaleigh",
+        "lastName" : "Bashirian",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 21.00,
+        "beneficiaryType" : "CONTINGENT"
+      }, {
+        "beneficiaryId" : "BEN-43f59a5d-a",
+        "firstName" : "Mathilda",
+        "lastName" : "Bogisich",
+        "relationship" : "CHILD",
+        "allocationPercentage" : 59.00,
+        "beneficiaryType" : "CONTINGENT"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2024-03-22",
+      "enrollmentDate" : "2024-03-28",
+      "autoEnrollmentFlag" : false,
+      "deferralStatus" : "STOPPED",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:57Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:15.873Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000010",
+      "employeeId" : "E00700010",
+      "ssnMasked" : "***-**-3671",
+      "firstName" : "Dallas",
+      "middleName" : "Erin",
+      "lastName" : "Tillman",
+      "suffix" : "II"
+    },
+    "personalDetails" : {
+      "gender" : "NON_BINARY",
+      "maritalStatus" : "DIVORCED",
+      "dateOfBirth" : "2001-03-21",
+      "preferredLanguage" : "hi-IN",
+      "citizenshipStatus" : "PERMANENT_RESIDENT"
+    },
+    "contactDetails" : {
+      "personalEmail" : "annemarie.collins@hotmail.com",
+      "workEmail" : "e00700010@client110.example.com",
+      "mobilePhone" : "+1-284-768-8853",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "5095 Dooley Walk",
+        "line2" : null,
+        "city" : "Frankburgh",
+        "state" : "CO",
+        "zipCode" : "10898",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Leopoldofort County"
+      },
+      "mailingAddress" : {
+        "line1" : "58616 Hugo Center",
+        "line2" : null,
+        "city" : "Gaylordmouth",
+        "state" : "CO",
+        "zipCode" : "12886",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Lake Lamonica County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2023-06-15",
+      "terminationDate" : "2024-11-10",
+      "employmentStatus" : "TERMINATED",
+      "employmentType" : "SEASONAL",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "SALARIED",
+      "annualizedCompensation" : 0.00,
+      "departmentCode" : "D0110",
+      "locationCode" : "LOC-CO-011"
+    },
+    "benefits" : {
+      "medicalPlan" : "PPO-1500",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "WAIVED",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "BASIC-LIFE-1X",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ {
+        "dependentId" : "DEP-C-d998f118",
+        "firstName" : "Althea",
+        "lastName" : "Tillman",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2020-06-20",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-17a5ebd1-6",
+        "firstName" : "Edward",
+        "lastName" : "Tillman",
+        "relationship" : "SPOUSE",
+        "allocationPercentage" : 54.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-da6113d0-e",
+        "firstName" : "Janae",
+        "lastName" : "Von",
+        "relationship" : "CHILD",
+        "allocationPercentage" : 16.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-354e96b9-2",
+        "firstName" : "Coleman",
+        "lastName" : "Tillman",
+        "relationship" : "SIBLING",
+        "allocationPercentage" : 30.00,
+        "beneficiaryType" : "CONTINGENT"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "NOT_FULLY_VESTED",
+      "eligibilityDate" : "2023-08-21",
+      "enrollmentDate" : "2023-09-12",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "STOPPED",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:55Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:15.970Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000011",
+      "employeeId" : "E00700011",
+      "ssnMasked" : "***-**-7033",
+      "firstName" : "Eddy",
+      "middleName" : "Theron",
+      "lastName" : "Rohan",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "FEMALE",
+      "maritalStatus" : "MARRIED",
+      "dateOfBirth" : "1983-01-27",
+      "preferredLanguage" : "zh-CN",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "paris.okon@hotmail.com",
+      "workEmail" : "e00700011@client111.example.com",
+      "mobilePhone" : "+1-758-371-6659",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "493 Stefania Ridge",
+        "line2" : null,
+        "city" : "North Newton",
+        "state" : "CO",
+        "zipCode" : "41256",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Jordontown County"
+      },
+      "mailingAddress" : {
+        "line1" : "69768 Leigh Gateway",
+        "line2" : null,
+        "city" : "North Leliafort",
+        "state" : "CO",
+        "zipCode" : "71529",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Darrylburgh County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2003-12-09",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "PART_TIME",
+      "unionStatus" : "UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 107821.68,
+      "departmentCode" : "D0111",
+      "locationCode" : "LOC-CO-012"
+    },
+    "benefits" : {
+      "medicalPlan" : "HMO-CLASSIC",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "WAIVED",
+      "disabilityPlan" : "STD-EMPLOYER-PAID",
+      "lifeInsurance" : "EXEC-LIFE",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-c579c711-a",
+        "firstName" : "Rocco",
+        "lastName" : "Rohan",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 100,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2004-02-12",
+      "enrollmentDate" : "2004-02-12",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "PENDING",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:53Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:16.067Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000012",
+      "employeeId" : "E00700012",
+      "ssnMasked" : "***-**-7350",
+      "firstName" : "Lanny",
+      "middleName" : "Oscar",
+      "lastName" : "Wisoky",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "FEMALE",
+      "maritalStatus" : "DOMESTIC_PARTNER",
+      "dateOfBirth" : "1980-05-19",
+      "preferredLanguage" : "fr-CA",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "nolan.mckenzie@yahoo.com",
+      "workEmail" : "e00700012@client112.example.com",
+      "mobilePhone" : "+1-218-261-6737",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "55362 Schroeder Fields",
+        "line2" : "Apt 554",
+        "city" : "Fideliaport",
+        "state" : "TN",
+        "zipCode" : "34703",
+        "country" : "US",
+        "addressValidated" : false,
+        "county" : "Hirtheberg County"
+      },
+      "mailingAddress" : {
+        "line1" : "6650 Florance Trail",
+        "line2" : null,
+        "city" : "South Isidro",
+        "state" : "TN",
+        "zipCode" : "42649",
+        "country" : "US",
+        "addressValidated" : false,
+        "county" : "East Heribertofort County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2010-11-05",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "PART_TIME",
+      "unionStatus" : "UNION",
+      "compensationType" : "COMMISSION",
+      "annualizedCompensation" : 63278.11,
+      "departmentCode" : "D0112",
+      "locationCode" : "LOC-TN-013"
+    },
+    "benefits" : {
+      "medicalPlan" : "EPO-500",
+      "dentalPlan" : "DENTAL-BASIC",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "WAIVED",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-b4012af1-3",
+        "firstName" : "Prince",
+        "lastName" : "Wisoky",
+        "relationship" : "SIBLING",
+        "allocationPercentage" : 100,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2010-12-22",
+      "enrollmentDate" : "2011-01-27",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:51Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:16.164Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000013",
+      "employeeId" : "E00700013",
+      "ssnMasked" : "***-**-1000",
+      "firstName" : "Roxana",
+      "middleName" : "Maxwell",
+      "lastName" : "Bergstrom",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "MALE",
+      "maritalStatus" : "DIVORCED",
+      "dateOfBirth" : "1951-04-27",
+      "preferredLanguage" : "hi-IN",
+      "citizenshipStatus" : "PERMANENT_RESIDENT"
+    },
+    "contactDetails" : {
+      "personalEmail" : "lekisha.marks@yahoo.com",
+      "workEmail" : "e00700013@client113.example.com",
+      "mobilePhone" : "+1-329-592-6462",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "23855 Kandace Manors",
+        "line2" : null,
+        "city" : "Trentville",
+        "state" : "VA",
+        "zipCode" : "87049",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Ricefurt County"
+      },
+      "mailingAddress" : {
+        "line1" : "492 Clarence Loaf",
+        "line2" : null,
+        "city" : "Corwintown",
+        "state" : "NJ",
+        "zipCode" : "64887",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "East Groverstad County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2021-02-02",
+      "terminationDate" : null,
+      "employmentStatus" : "LEAVE",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 151208.23,
+      "departmentCode" : "D0113",
+      "locationCode" : "LOC-VA-014"
+    },
+    "benefits" : {
+      "medicalPlan" : "HDHP-HSA",
+      "dentalPlan" : "WAIVED",
+      "visionPlan" : "WAIVED",
+      "disabilityPlan" : "LTD-BUYUP",
+      "lifeInsurance" : "EXEC-LIFE",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ {
+        "dependentId" : "DEP-C-d9a34b27",
+        "firstName" : "Dinah",
+        "lastName" : "Bergstrom",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2021-08-15",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      }, {
+        "dependentId" : "DEP-C-8a7075e9",
+        "firstName" : "Elvina",
+        "lastName" : "Bergstrom",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2015-06-07",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      }, {
+        "dependentId" : "DEP-C-c948e41e",
+        "firstName" : "Jarod",
+        "lastName" : "Bergstrom",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2017-10-20",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : false
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-7a61b8e8-3",
+        "firstName" : "Verda",
+        "lastName" : "Bergstrom",
+        "relationship" : "SPOUSE",
+        "allocationPercentage" : 32.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-1d3cd79a-7",
+        "firstName" : "Michal",
+        "lastName" : "Bergstrom",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 68.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2021-04-08",
+      "enrollmentDate" : "2021-05-19",
+      "autoEnrollmentFlag" : false,
+      "deferralStatus" : "PENDING",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:49Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:16.261Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000014",
+      "employeeId" : "E00700014",
+      "ssnMasked" : "***-**-8408",
+      "firstName" : "Alva",
+      "middleName" : "Rosario",
+      "lastName" : "Kulas",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "MALE",
+      "maritalStatus" : "DOMESTIC_PARTNER",
+      "dateOfBirth" : "1955-09-19",
+      "preferredLanguage" : "en-US",
+      "citizenshipStatus" : "PERMANENT_RESIDENT"
+    },
+    "contactDetails" : {
+      "personalEmail" : "minh.rohan@hotmail.com",
+      "workEmail" : "e00700014@client114.example.com",
+      "mobilePhone" : "+1-403-327-7466",
+      "homePhone" : "+1-508-220-2148"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "4654 Hill Ville",
+        "line2" : "Apt 689",
+        "city" : "Shelbymouth",
+        "state" : "TX",
+        "zipCode" : "45042",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "South Dennis County"
+      },
+      "mailingAddress" : {
+        "line1" : "08719 Jessia Highway",
+        "line2" : null,
+        "city" : "Juanchester",
+        "state" : "TX",
+        "zipCode" : "48680",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Port Galeberg County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "1999-11-15",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 61940.05,
+      "departmentCode" : "D0114",
+      "locationCode" : "LOC-TX-015"
+    },
+    "benefits" : {
+      "medicalPlan" : "HMO-CLASSIC",
+      "dentalPlan" : "DENTAL-BASIC",
+      "visionPlan" : "WAIVED",
+      "disabilityPlan" : "LTD-BUYUP",
+      "lifeInsurance" : "EXEC-LIFE",
+      "hsaEligible" : true,
+      "benefitsWaived" : true
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-4ccfa3af",
+        "firstName" : "Jerrold",
+        "lastName" : "Kulas",
+        "relationship" : "DOMESTIC_PARTNER",
+        "dateOfBirth" : "1961-09-19",
+        "medicalCovered" : true,
+        "dentalCovered" : true
+      },
+      "children" : [ {
+        "dependentId" : "DEP-C-89a962f1",
+        "firstName" : "Belinda",
+        "lastName" : "Kulas",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2016-06-24",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      }, {
+        "dependentId" : "DEP-C-acd3c2d1",
+        "firstName" : "Tawnya",
+        "lastName" : "Kulas",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2012-01-22",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : false
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-1a96f73e-e",
+        "firstName" : "Leatrice",
+        "lastName" : "Kulas",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 10.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-dae1fe21-f",
+        "firstName" : "Dorthey",
+        "lastName" : "Douglas",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 90.00,
+        "beneficiaryType" : "CONTINGENT"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2000-02-06",
+      "enrollmentDate" : "2000-03-03",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:47Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:16.358Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : true,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "RETRYABLE_DYNAMODB_WRITE" ]
+    },
+    "retrySimulation" : {
+      "retryable" : true,
+      "errorCode" : "DYNAMODB_CONDITIONAL_WRITE_CONFLICT",
+      "lastFailureReason" : "Simulated participant write conflict during idempotent upsert",
+      "attemptCount" : 3,
+      "retryAfter" : "2026-05-22T23:53:59Z",
+      "idempotencyKey" : "indicative-entity-00014"
+    }
+  }, {
+    "identity" : {
+      "participantId" : "P0990000015",
+      "employeeId" : "E00700015",
+      "ssnMasked" : "***-**-4940",
+      "firstName" : "Anglea",
+      "middleName" : null,
+      "lastName" : "Dickens",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "NON_BINARY",
+      "maritalStatus" : "WIDOWED",
+      "dateOfBirth" : "1959-09-09",
+      "preferredLanguage" : "en-US",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "bad-email-at-domain",
+      "workEmail" : "e00700015@client115.example.com",
+      "mobilePhone" : "+1-497-898-1418",
+      "homePhone" : "+1-703-252-4252"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "0467 Kiehn Corners",
+        "line2" : "Apt 147",
+        "city" : "East Alfrediafurt",
+        "state" : "VA",
+        "zipCode" : "66705",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Lake Horacioborough County"
+      },
+      "mailingAddress" : {
+        "line1" : "1149 Inez Wells",
+        "line2" : null,
+        "city" : "Lake Roderickburgh",
+        "state" : "VA",
+        "zipCode" : "88001",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Beierborough County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2018-12-11",
+      "terminationDate" : "2026-11-18",
+      "employmentStatus" : "TERMINATED",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "SALARIED",
+      "annualizedCompensation" : 0.00,
+      "departmentCode" : "D0115",
+      "locationCode" : "LOC-VA-016"
+    },
+    "benefits" : {
+      "medicalPlan" : "HMO-CLASSIC",
+      "dentalPlan" : "WAIVED",
+      "visionPlan" : "VISION-STANDARD",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "BASIC-LIFE-1X",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ {
+        "dependentId" : "DEP-C-db4d339a",
+        "firstName" : "Verlene",
+        "lastName" : "Dickens",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2020-06-11",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      }, {
+        "dependentId" : "DEP-C-62247c97",
+        "firstName" : "Clark",
+        "lastName" : "Dickens",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2025-08-13",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      }, {
+        "dependentId" : "DEP-C-792f0732",
+        "firstName" : "Kasha",
+        "lastName" : "Dickens",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2012-02-16",
+        "studentStatus" : true,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-5d875dee-9",
+        "firstName" : "Armando",
+        "lastName" : "Dickens",
+        "relationship" : "SIBLING",
+        "allocationPercentage" : 33.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-e493f373-b",
+        "firstName" : "Violet",
+        "lastName" : "Dickens",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 36.00,
+        "beneficiaryType" : "CONTINGENT"
+      }, {
+        "beneficiaryId" : "BEN-46f873ac-2",
+        "firstName" : "Jasper",
+        "lastName" : "Dickens",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 31.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "NOT_FULLY_VESTED",
+      "eligibilityDate" : "2019-02-07",
+      "enrollmentDate" : "2019-02-28",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "STOPPED",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:45Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:16.455Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000016",
+      "employeeId" : "E00700016",
+      "ssnMasked" : "999999999",
+      "firstName" : "Devon",
+      "middleName" : "Rodrigo",
+      "lastName" : "Wisoky",
+      "suffix" : "II"
+    },
+    "personalDetails" : {
+      "gender" : "FEMALE",
+      "maritalStatus" : "WIDOWED",
+      "dateOfBirth" : "1988-10-19",
+      "preferredLanguage" : "vi-VN",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "chas.wisozk@hotmail.com",
+      "workEmail" : "e00700016@client116.example.com",
+      "mobilePhone" : "+1-726-427-9250",
+      "homePhone" : "+1-385-464-3213"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "48826 Van Greens",
+        "line2" : "Apt 289",
+        "city" : "Jonelleberg",
+        "state" : "PA",
+        "zipCode" : "68962",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "East Maryellen County"
+      },
+      "mailingAddress" : {
+        "line1" : "0727 Ward Rapid",
+        "line2" : "Apt 545",
+        "city" : "West Mervinton",
+        "state" : "PA",
+        "zipCode" : "86635",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Haneville County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2017-07-19",
+      "terminationDate" : null,
+      "employmentStatus" : "LEAVE",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 80352.89,
+      "departmentCode" : "D0116",
+      "locationCode" : "LOC-PA-017"
+    },
+    "benefits" : {
+      "medicalPlan" : "WAIVED",
+      "dentalPlan" : "DENTAL-BASIC",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "STD-EMPLOYER-PAID",
+      "lifeInsurance" : "WAIVED",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ {
+        "dependentId" : "DEP-C-c09c440c",
+        "firstName" : "Richie",
+        "lastName" : "Wisoky",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2019-06-25",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      }, {
+        "dependentId" : "DEP-C-8aaf3d27",
+        "firstName" : "Dorian",
+        "lastName" : "Wisoky",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2020-11-13",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-319a3aec-b",
+        "firstName" : "Eli",
+        "lastName" : "Wisoky",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 42.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-b7784417-1",
+        "firstName" : "Kai",
+        "lastName" : "Wisoky",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 58.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2017-10-22",
+      "enrollmentDate" : "2017-12-05",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:43Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:16.552Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : false,
+      "retryScenario" : true,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD", "RETRYABLE_DYNAMODB_WRITE" ]
+    },
+    "retrySimulation" : {
+      "retryable" : true,
+      "errorCode" : "DYNAMODB_CONDITIONAL_WRITE_CONFLICT",
+      "lastFailureReason" : "Simulated participant write conflict during idempotent upsert",
+      "attemptCount" : 1,
+      "retryAfter" : "2026-05-22T23:54:01Z",
+      "idempotencyKey" : "indicative-entity-00016"
+    }
+  }, {
+    "identity" : {
+      "participantId" : "P0990000017",
+      "employeeId" : "E00700017",
+      "ssnMasked" : "***-**-8828",
+      "firstName" : "Charise",
+      "middleName" : "Sol",
+      "lastName" : "Schmitt",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "UNDISCLOSED",
+      "maritalStatus" : "MARRIED",
+      "dateOfBirth" : "1989-04-03",
+      "preferredLanguage" : "hi-IN",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "christopher.grant@hotmail.com",
+      "workEmail" : "e00700017@client100.example.com",
+      "mobilePhone" : "+1-304-782-3163",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "282 Alleen Expressway",
+        "line2" : null,
+        "city" : "South Ada",
+        "state" : "VA",
+        "zipCode" : "43807",
+        "country" : "US",
+        "addressValidated" : false,
+        "county" : "Danielleton County"
+      },
+      "mailingAddress" : {
+        "line1" : "95296 Kilback Green",
+        "line2" : "Apt 310",
+        "city" : "Etheleneview",
+        "state" : "VA",
+        "zipCode" : "31690",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "South Emmy County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2011-02-08",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HYBRID",
+      "annualizedCompensation" : 139361.10,
+      "departmentCode" : "D0117",
+      "locationCode" : "LOC-VA-018"
+    },
+    "benefits" : {
+      "medicalPlan" : "WAIVED",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "BASIC-LIFE-1X",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-7c9760fe",
+        "firstName" : "Carmen",
+        "lastName" : "Schmitt",
+        "relationship" : "SPOUSE",
+        "dateOfBirth" : "1993-04-03",
+        "medicalCovered" : true,
+        "dentalCovered" : false
+      },
+      "children" : [ {
+        "dependentId" : "DEP-C-60f0b21f",
+        "firstName" : "Louisa",
+        "lastName" : "Schmitt",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2021-01-09",
+        "studentStatus" : true,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      }, {
+        "dependentId" : "DEP-C-84fa683e",
+        "firstName" : "Daryl",
+        "lastName" : "Schmitt",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2025-11-06",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      }, {
+        "dependentId" : "DEP-C-9e4b71b7",
+        "firstName" : "Noble",
+        "lastName" : "Schmitt",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2016-02-04",
+        "studentStatus" : true,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-0b85597e-2",
+        "firstName" : "Joe",
+        "lastName" : "Schmitt",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 100,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2011-03-22",
+      "enrollmentDate" : "2011-04-20",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "OPTED_OUT",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:41Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:16.649Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000017",
+      "employeeId" : "E00700018",
+      "ssnMasked" : "***-**-6309",
+      "firstName" : "Carmelo",
+      "middleName" : null,
+      "lastName" : "Blanda",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "MALE",
+      "maritalStatus" : "WIDOWED",
+      "dateOfBirth" : "1990-01-05",
+      "preferredLanguage" : "zh-CN",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "lena.price@gmail.com",
+      "workEmail" : "e00700018@client101.example.com",
+      "mobilePhone" : "+1-578-211-2822",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "1567 Jeffery Run",
+        "line2" : null,
+        "city" : "Volkmanville",
+        "state" : "AL",
+        "zipCode" : "86743",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Krajcikfurt County"
+      },
+      "mailingAddress" : {
+        "line1" : "70590 Nakia Junction",
+        "line2" : null,
+        "city" : "Port Terrance",
+        "state" : "CO",
+        "zipCode" : "65883",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Turcottestad County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2005-08-29",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "PART_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HYBRID",
+      "annualizedCompensation" : 128998.55,
+      "departmentCode" : "D0118",
+      "locationCode" : "LOC-AL-019"
+    },
+    "benefits" : {
+      "medicalPlan" : "PPO-1500",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "LTD-BUYUP",
+      "lifeInsurance" : "EXEC-LIFE",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-d1263a27-4",
+        "firstName" : "Moses",
+        "lastName" : "Zulauf",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 59.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-fc0548d2-a",
+        "firstName" : "Max",
+        "lastName" : "Blanda",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 41.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2005-12-01",
+      "enrollmentDate" : "2005-12-11",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "PENDING",
+      "catchUpEligible" : true
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:39Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:16.746Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : true,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "DUPLICATE_PARTICIPANT_ID" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000019",
+      "employeeId" : "E00700019",
+      "ssnMasked" : "***-**-5099",
+      "firstName" : "Shawn",
+      "middleName" : null,
+      "lastName" : "Swift",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "MALE",
+      "maritalStatus" : "MARRIED",
+      "dateOfBirth" : "2006-10-20",
+      "preferredLanguage" : "hi-IN",
+      "citizenshipStatus" : "UNKNOWN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "abigail.bergnaum@hotmail.com",
+      "workEmail" : "e00700019@client102.example.com",
+      "mobilePhone" : "+1-715-668-4230",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "5697 Graig Hills",
+        "line2" : null,
+        "city" : "Lake Jimberg",
+        "state" : "MA",
+        "zipCode" : "45962",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "New Dennis County"
+      },
+      "mailingAddress" : {
+        "line1" : "21889 Becker Fields",
+        "line2" : null,
+        "city" : "Mistiestad",
+        "state" : "MA",
+        "zipCode" : "67958",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Noahchester County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2009-06-05",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "SEASONAL",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "SALARIED",
+      "annualizedCompensation" : 111649.94,
+      "departmentCode" : "D0119",
+      "locationCode" : "LOC-MA-020"
+    },
+    "benefits" : {
+      "medicalPlan" : "HMO-CLASSIC",
+      "dentalPlan" : "WAIVED",
+      "visionPlan" : "WAIVED",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "WAIVED",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-ded121fd",
+        "firstName" : "Nilda",
+        "lastName" : "Swift",
+        "relationship" : "SPOUSE",
+        "dateOfBirth" : "2007-10-20",
+        "medicalCovered" : true,
+        "dentalCovered" : true
+      },
+      "children" : [ {
+        "dependentId" : "DEP-C-e7ed4aa1",
+        "firstName" : "Ralph",
+        "lastName" : "Swift",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2023-02-12",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : false
+      }, {
+        "dependentId" : "DEP-C-77a90ab8",
+        "firstName" : "Grady",
+        "lastName" : "Swift",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2016-08-19",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : false
+      }, {
+        "dependentId" : "DEP-C-d43a9c2c",
+        "firstName" : "Kraig",
+        "lastName" : "Swift",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2012-04-19",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-8570200f-0",
+        "firstName" : "Adan",
+        "lastName" : "Swift",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 51.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-c374c67b-e",
+        "firstName" : "Toby",
+        "lastName" : "Swift",
+        "relationship" : "CHILD",
+        "allocationPercentage" : 49.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2009-08-21",
+      "enrollmentDate" : "2009-09-10",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:37Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:16.843Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000020",
+      "employeeId" : "E00700020",
+      "ssnMasked" : "***-**-1786",
+      "firstName" : "Jeanetta",
+      "middleName" : "Kerry",
+      "lastName" : "Marks",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "MALE",
+      "maritalStatus" : "MARRIED",
+      "dateOfBirth" : "2003-01-10",
+      "preferredLanguage" : "fr-CA",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "val.kohler@yahoo.com",
+      "workEmail" : "e00700020@client103.example.com",
+      "mobilePhone" : null,
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "8951 Gustavo Curve",
+        "line2" : null,
+        "city" : "Marjoryborough",
+        "state" : "AZ",
+        "zipCode" : "19174",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "West Winston County"
+      },
+      "mailingAddress" : {
+        "line1" : "5246 Abshire Streets",
+        "line2" : null,
+        "city" : "Botsfordton",
+        "state" : "AZ",
+        "zipCode" : "43741",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Runolfsdottirport County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2010-06-09",
+      "terminationDate" : null,
+      "employmentStatus" : null,
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 121692.06,
+      "departmentCode" : "D0120",
+      "locationCode" : "LOC-AZ-021"
+    },
+    "benefits" : {
+      "medicalPlan" : "HMO-CLASSIC",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "WAIVED",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-64769cd4",
+        "firstName" : "Morris",
+        "lastName" : "Marks",
+        "relationship" : "SPOUSE",
+        "dateOfBirth" : "2006-01-10",
+        "medicalCovered" : true,
+        "dentalCovered" : true
+      },
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-566bd1b4-4",
+        "firstName" : "Dustin",
+        "lastName" : "Marks",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 15.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-3ad43bf1-1",
+        "firstName" : "Francis",
+        "lastName" : "Vandervort",
+        "relationship" : "SIBLING",
+        "allocationPercentage" : 85.00,
+        "beneficiaryType" : "CONTINGENT"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2010-08-28",
+      "enrollmentDate" : "2010-10-06",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "OPTED_OUT",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:35Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:16.940Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : true,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "PARTIAL_INDICATIVE_RECORD" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000021",
+      "employeeId" : "E00700021",
+      "ssnMasked" : "***-**-1978",
+      "firstName" : "Rodrigo",
+      "middleName" : null,
+      "lastName" : "Schamberger",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "MALE",
+      "maritalStatus" : "MARRIED",
+      "dateOfBirth" : "1995-05-27",
+      "preferredLanguage" : "vi-VN",
+      "citizenshipStatus" : "PERMANENT_RESIDENT"
+    },
+    "contactDetails" : {
+      "personalEmail" : "bad-email-at-domain",
+      "workEmail" : "e00700021@client104.example.com",
+      "mobilePhone" : "+1-530-301-8287",
+      "homePhone" : "+1-547-346-8741"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "3992 Rath Orchard",
+        "line2" : "Apt 322",
+        "city" : "Carolynnfort",
+        "state" : "VA",
+        "zipCode" : "71964",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "East Jermaine County"
+      },
+      "mailingAddress" : {
+        "line1" : "49311 Gulgowski Motorway",
+        "line2" : null,
+        "city" : "Michalberg",
+        "state" : "AL",
+        "zipCode" : "10933",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Porshaview County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2005-10-24",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "PART_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HYBRID",
+      "annualizedCompensation" : 129418.07,
+      "departmentCode" : "D0121",
+      "locationCode" : "LOC-VA-022"
+    },
+    "benefits" : {
+      "medicalPlan" : "PPO-1500",
+      "dentalPlan" : "WAIVED",
+      "visionPlan" : "WAIVED",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "EXEC-LIFE",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-842726e9-2",
+        "firstName" : "Antony",
+        "lastName" : "Schamberger",
+        "relationship" : "SIBLING",
+        "allocationPercentage" : 24.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-3920f045-9",
+        "firstName" : "Isadora",
+        "lastName" : "Schamberger",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 36.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-5fb9e589-3",
+        "firstName" : "Sook",
+        "lastName" : "Nicolas",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 40.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2005-12-04",
+      "enrollmentDate" : "2005-12-19",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "PENDING",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:33Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:17.037Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000022",
+      "employeeId" : "E00700022",
+      "ssnMasked" : "999999999",
+      "firstName" : "Osvaldo",
+      "middleName" : null,
+      "lastName" : "Von",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "NON_BINARY",
+      "maritalStatus" : "DIVORCED",
+      "dateOfBirth" : "1965-10-27",
+      "preferredLanguage" : "es-US",
+      "citizenshipStatus" : "WORK_AUTHORIZED"
+    },
+    "contactDetails" : {
+      "personalEmail" : "landon.rippin@yahoo.com",
+      "workEmail" : "e00700022@client105.example.com",
+      "mobilePhone" : "+1-893-638-1645",
+      "homePhone" : "+1-669-606-1623"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "323 Eli Key",
+        "line2" : "Apt 535",
+        "city" : "West Maciemouth",
+        "state" : "GA",
+        "zipCode" : "91916",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Zulaland County"
+      },
+      "mailingAddress" : {
+        "line1" : "1528 Runolfsson Spurs",
+        "line2" : null,
+        "city" : "South Janyce",
+        "state" : "GA",
+        "zipCode" : "17414",
+        "country" : "US",
+        "addressValidated" : false,
+        "county" : "North Adalinemouth County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2016-03-25",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "SEASONAL",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "SALARIED",
+      "annualizedCompensation" : 144045.81,
+      "departmentCode" : "D0122",
+      "locationCode" : "LOC-GA-023"
+    },
+    "benefits" : {
+      "medicalPlan" : "HMO-CLASSIC",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "VISION-STANDARD",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "SUPPLEMENTAL-LIFE",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-f112a072-f",
+        "firstName" : "Simon",
+        "lastName" : "Cummerata",
+        "relationship" : "SPOUSE",
+        "allocationPercentage" : 58.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-91d55e2a-6",
+        "firstName" : "Myrtle",
+        "lastName" : "Yundt",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 42.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "NOT_FULLY_VESTED",
+      "eligibilityDate" : "2016-06-23",
+      "enrollmentDate" : "2016-07-04",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:31Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:17.134Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000023",
+      "employeeId" : "E00700023",
+      "ssnMasked" : "***-**-6236",
+      "firstName" : "Cathern",
+      "middleName" : "Romona",
+      "lastName" : "Wintheiser",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "MALE",
+      "maritalStatus" : "DIVORCED",
+      "dateOfBirth" : "1954-08-31",
+      "preferredLanguage" : "hi-IN",
+      "citizenshipStatus" : "WORK_AUTHORIZED"
+    },
+    "contactDetails" : {
+      "personalEmail" : "rosamond.beer@hotmail.com",
+      "workEmail" : "e00700023@client106.example.com",
+      "mobilePhone" : "+1-218-621-2751",
+      "homePhone" : "+1-412-334-4500"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "5342 Javier Throughway",
+        "line2" : null,
+        "city" : "Irahaven",
+        "state" : "MI",
+        "zipCode" : "72237",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Marniville County"
+      },
+      "mailingAddress" : {
+        "line1" : "77424 Thompson Extensions",
+        "line2" : null,
+        "city" : "Brekkeland",
+        "state" : "MI",
+        "zipCode" : "31000",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "West Jose County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2006-10-14",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "CONTRACT",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "SALARIED",
+      "annualizedCompensation" : 82760.05,
+      "departmentCode" : "D0123",
+      "locationCode" : "LOC-MI-024"
+    },
+    "benefits" : {
+      "medicalPlan" : "EPO-500",
+      "dentalPlan" : "WAIVED",
+      "visionPlan" : "WAIVED",
+      "disabilityPlan" : "STD-EMPLOYER-PAID",
+      "lifeInsurance" : "BASIC-LIFE-1X",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ {
+        "dependentId" : "DEP-C-5ef24d24",
+        "firstName" : "Stacie",
+        "lastName" : "Wintheiser",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2013-07-14",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : false
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-7089e107-0",
+        "firstName" : "Charles",
+        "lastName" : "Wehner",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 100,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2006-12-16",
+      "enrollmentDate" : "2007-01-21",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "PENDING",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:29Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:17.231Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000024",
+      "employeeId" : "E00700024",
+      "ssnMasked" : "***-**-9974",
+      "firstName" : "Marc",
+      "middleName" : "Betsey",
+      "lastName" : "Gottlieb",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "FEMALE",
+      "maritalStatus" : "DOMESTIC_PARTNER",
+      "dateOfBirth" : "2006-06-12",
+      "preferredLanguage" : "zh-CN",
+      "citizenshipStatus" : "UNKNOWN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "jewell.dickens@hotmail.com",
+      "workEmail" : "e00700024@client107.example.com",
+      "mobilePhone" : "+1-860-831-3545",
+      "homePhone" : "+1-274-350-7850"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "62017 Walter Flat",
+        "line2" : null,
+        "city" : "Maggioborough",
+        "state" : "NC",
+        "zipCode" : "96440",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "West Mariburgh County"
+      },
+      "mailingAddress" : {
+        "line1" : "411 Giovanni Views",
+        "line2" : "Apt 131",
+        "city" : "East Collinhaven",
+        "state" : "MI",
+        "zipCode" : "70439",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Shelbaview County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2021-07-23",
+      "terminationDate" : "2024-01-11",
+      "employmentStatus" : "TERMINATED",
+      "employmentType" : "PART_TIME",
+      "unionStatus" : "UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 0.00,
+      "departmentCode" : "D0124",
+      "locationCode" : "LOC-NC-025"
+    },
+    "benefits" : {
+      "medicalPlan" : "WAIVED",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "WAIVED",
+      "disabilityPlan" : "STD-EMPLOYER-PAID",
+      "lifeInsurance" : "BASIC-LIFE-1X",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-38aa0742",
+        "firstName" : "Jalisa",
+        "lastName" : "Gottlieb",
+        "relationship" : "DOMESTIC_PARTNER",
+        "dateOfBirth" : "2008-06-12",
+        "medicalCovered" : true,
+        "dentalCovered" : true
+      },
+      "children" : [ {
+        "dependentId" : "DEP-C-36e17391",
+        "firstName" : "Everette",
+        "lastName" : "Gottlieb",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2025-12-25",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      }, {
+        "dependentId" : "DEP-C-fe2cab23",
+        "firstName" : "Isidro",
+        "lastName" : "Gottlieb",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2020-01-16",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      }, {
+        "dependentId" : "DEP-C-64ad7c74",
+        "firstName" : "Kasey",
+        "lastName" : "Gottlieb",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2017-03-20",
+        "studentStatus" : true,
+        "disabledDependent" : false,
+        "medicalCovered" : false
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-3cb39718-d",
+        "firstName" : "Rafael",
+        "lastName" : "Turner",
+        "relationship" : "SIBLING",
+        "allocationPercentage" : 100,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2021-10-14",
+      "enrollmentDate" : "2021-10-28",
+      "autoEnrollmentFlag" : false,
+      "deferralStatus" : "STOPPED",
+      "catchUpEligible" : true
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:27Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:17.328Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000025",
+      "employeeId" : "E00700025",
+      "ssnMasked" : "***-**-3084",
+      "firstName" : "Joannie",
+      "middleName" : "Shirleen",
+      "lastName" : "Prohaska",
+      "suffix" : "Jr."
+    },
+    "personalDetails" : {
+      "gender" : "NON_BINARY",
+      "maritalStatus" : "DOMESTIC_PARTNER",
+      "dateOfBirth" : "1997-04-27",
+      "preferredLanguage" : "es-US",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "henriette.gusikowski@gmail.com",
+      "workEmail" : "e00700025@client108.example.com",
+      "mobilePhone" : "+1-215-873-4109",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "737 Carey Mall",
+        "line2" : "Apt 252",
+        "city" : "South Eugeneburgh",
+        "state" : "AL",
+        "zipCode" : "47770",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Lake Andrew County"
+      },
+      "mailingAddress" : {
+        "line1" : "5458 Chandra Fields",
+        "line2" : null,
+        "city" : "North Crystalstad",
+        "state" : "AL",
+        "zipCode" : "61698",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "South Charles County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2010-04-28",
+      "terminationDate" : null,
+      "employmentStatus" : "LEAVE",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 159449.49,
+      "departmentCode" : "D0125",
+      "locationCode" : "LOC-AL-026"
+    },
+    "benefits" : {
+      "medicalPlan" : "HDHP-HSA",
+      "dentalPlan" : "DENTAL-BASIC",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "LTD-BUYUP",
+      "lifeInsurance" : "BASIC-LIFE-1X",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-7b34fd31",
+        "firstName" : "Jason",
+        "lastName" : "Prohaska",
+        "relationship" : "DOMESTIC_PARTNER",
+        "dateOfBirth" : "1999-04-27",
+        "medicalCovered" : false,
+        "dentalCovered" : true
+      },
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-eec50dba-7",
+        "firstName" : "Grayce",
+        "lastName" : "Pacocha",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 49.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-ee89be7f-4",
+        "firstName" : "Duane",
+        "lastName" : "Heller",
+        "relationship" : "SPOUSE",
+        "allocationPercentage" : 21.00,
+        "beneficiaryType" : "CONTINGENT"
+      }, {
+        "beneficiaryId" : "BEN-830ae81d-e",
+        "firstName" : "Donn",
+        "lastName" : "Vandervort",
+        "relationship" : "CHILD",
+        "allocationPercentage" : 30.00,
+        "beneficiaryType" : "CONTINGENT"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "NOT_FULLY_VESTED",
+      "eligibilityDate" : "2010-08-10",
+      "enrollmentDate" : "2010-09-05",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "PENDING",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:25Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:17.425Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000026",
+      "employeeId" : "E00700026",
+      "ssnMasked" : "999999999",
+      "firstName" : "Irma",
+      "middleName" : "Mariano",
+      "lastName" : "Osinski",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "FEMALE",
+      "maritalStatus" : "SINGLE",
+      "dateOfBirth" : "1984-08-05",
+      "preferredLanguage" : "zh-CN",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "loura.williamson@gmail.com",
+      "workEmail" : "e00700026@client109.example.com",
+      "mobilePhone" : "+1-532-356-0135",
+      "homePhone" : "+1-803-886-8623"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "974 Skiles Alley",
+        "line2" : null,
+        "city" : "Fisherville",
+        "state" : "MI",
+        "zipCode" : "50185",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "South Kristian County"
+      },
+      "mailingAddress" : {
+        "line1" : "20694 Damion Valley",
+        "line2" : null,
+        "city" : "Kirkhaven",
+        "state" : "MI",
+        "zipCode" : "43889",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "West Garlandbury County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2012-11-18",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "PART_TIME",
+      "unionStatus" : "UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 35362.98,
+      "departmentCode" : "D0126",
+      "locationCode" : "LOC-MI-027"
+    },
+    "benefits" : {
+      "medicalPlan" : "EPO-500",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "VISION-STANDARD",
+      "disabilityPlan" : "LTD-BUYUP",
+      "lifeInsurance" : "EXEC-LIFE",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-5c69c6f8-9",
+        "firstName" : "Veronika",
+        "lastName" : "Homenick",
+        "relationship" : "CHILD",
+        "allocationPercentage" : 100,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "NOT_FULLY_VESTED",
+      "eligibilityDate" : "2013-01-13",
+      "enrollmentDate" : "2013-01-20",
+      "autoEnrollmentFlag" : false,
+      "deferralStatus" : "OPTED_OUT",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:23Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:17.522Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000026",
+      "employeeId" : "E00700027",
+      "ssnMasked" : "***-**-9493",
+      "firstName" : "Lavon",
+      "middleName" : "Adelina",
+      "lastName" : "Wolf",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "MALE",
+      "maritalStatus" : "MARRIED",
+      "dateOfBirth" : "1971-11-15",
+      "preferredLanguage" : "hi-IN",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "stanton.blick@yahoo.com",
+      "workEmail" : "e00700027@client110.example.com",
+      "mobilePhone" : "+1-642-559-6462",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "76956 Carmelo Lock",
+        "line2" : null,
+        "city" : "Dickifurt",
+        "state" : "AL",
+        "zipCode" : "46269",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "North Emmett County"
+      },
+      "mailingAddress" : {
+        "line1" : "6338 Agueda Extensions",
+        "line2" : null,
+        "city" : "New Almaburgh",
+        "state" : "AL",
+        "zipCode" : "84414",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Quitzonfurt County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2000-07-10",
+      "terminationDate" : "2026-06-30",
+      "employmentStatus" : "TERMINATED",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "SALARIED",
+      "annualizedCompensation" : 0.00,
+      "departmentCode" : "D0127",
+      "locationCode" : "LOC-AL-028"
+    },
+    "benefits" : {
+      "medicalPlan" : "HMO-CLASSIC",
+      "dentalPlan" : "DENTAL-BASIC",
+      "visionPlan" : "WAIVED",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "EXEC-LIFE",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-3da1c92f",
+        "firstName" : "Danny",
+        "lastName" : "Wolf",
+        "relationship" : "SPOUSE",
+        "dateOfBirth" : "1974-11-15",
+        "medicalCovered" : true,
+        "dentalCovered" : true
+      },
+      "children" : [ {
+        "dependentId" : "DEP-C-7e7e2105",
+        "firstName" : "Elaine",
+        "lastName" : "Wolf",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2013-01-04",
+        "studentStatus" : false,
+        "disabledDependent" : true,
+        "medicalCovered" : true
+      }, {
+        "dependentId" : "DEP-C-fc4ecc0e",
+        "firstName" : "Joesph",
+        "lastName" : "Wolf",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2020-01-08",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-2714fe56-4",
+        "firstName" : "Homer",
+        "lastName" : "Wolf",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 23.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-87c87f27-3",
+        "firstName" : "Kimberley",
+        "lastName" : "Wolf",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 77.00,
+        "beneficiaryType" : "CONTINGENT"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2000-09-15",
+      "enrollmentDate" : "2000-10-07",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "STOPPED",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:21Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:17.619Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : true,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "DUPLICATE_PARTICIPANT_ID" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000028",
+      "employeeId" : "E00700028",
+      "ssnMasked" : "999999999",
+      "firstName" : "Ligia",
+      "middleName" : "Carolyne",
+      "lastName" : "Mayert",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "UNDISCLOSED",
+      "maritalStatus" : "DIVORCED",
+      "dateOfBirth" : "1988-06-19",
+      "preferredLanguage" : "es-US",
+      "citizenshipStatus" : "PERMANENT_RESIDENT"
+    },
+    "contactDetails" : {
+      "personalEmail" : "jame.schaden@gmail.com",
+      "workEmail" : "e00700028@client111.example.com",
+      "mobilePhone" : "+1-346-825-3424",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "529 Sanford Bridge",
+        "line2" : null,
+        "city" : "Port Terrance",
+        "state" : "TX",
+        "zipCode" : "94932",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Chasberg County"
+      },
+      "mailingAddress" : {
+        "line1" : "463 Sonia Road",
+        "line2" : null,
+        "city" : "Mathewtown",
+        "state" : "TX",
+        "zipCode" : "76539",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "South Coreyburgh County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2009-05-12",
+      "terminationDate" : "2026-04-02",
+      "employmentStatus" : "TERMINATED",
+      "employmentType" : "CONTRACT",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "COMMISSION",
+      "annualizedCompensation" : 0.00,
+      "departmentCode" : "D0128",
+      "locationCode" : "LOC-TX-029"
+    },
+    "benefits" : {
+      "medicalPlan" : "EPO-500",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "VISION-STANDARD",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "WAIVED",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-aad1eb87-8",
+        "firstName" : "Michaele",
+        "lastName" : "White",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 100,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2009-08-15",
+      "enrollmentDate" : "2009-08-18",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "STOPPED",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:19Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:17.716Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000028",
+      "employeeId" : "E00700029",
+      "ssnMasked" : "***-**-2997",
+      "firstName" : "Akilah",
+      "middleName" : "Alfred",
+      "lastName" : "Huel",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "UNDISCLOSED",
+      "maritalStatus" : "MARRIED",
+      "dateOfBirth" : "2006-11-10",
+      "preferredLanguage" : "es-US",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "bad-email-at-domain",
+      "workEmail" : "e00700029@client112.example.com",
+      "mobilePhone" : "+1-695-481-0010",
+      "homePhone" : "+1-222-427-9691"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "949 Tracey Mount",
+        "line2" : "Apt 427",
+        "city" : "Duaneland",
+        "state" : "CA",
+        "zipCode" : "97710",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "South Melony County"
+      },
+      "mailingAddress" : {
+        "line1" : "52206 Tyra Landing",
+        "line2" : null,
+        "city" : "East Cruz",
+        "state" : "CA",
+        "zipCode" : "21743",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "North Harrietton County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2015-03-14",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "SEASONAL",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "COMMISSION",
+      "annualizedCompensation" : 375921.18,
+      "departmentCode" : "D0129",
+      "locationCode" : "LOC-CA-030"
+    },
+    "benefits" : {
+      "medicalPlan" : "HDHP-HSA",
+      "dentalPlan" : "DENTAL-BASIC",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "SUPPLEMENTAL-LIFE",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-a1d4e65f",
+        "firstName" : "Erma",
+        "lastName" : "Huel",
+        "relationship" : "SPOUSE",
+        "dateOfBirth" : "2008-11-10",
+        "medicalCovered" : false,
+        "dentalCovered" : true
+      },
+      "children" : [ {
+        "dependentId" : "DEP-C-c97ce2ca",
+        "firstName" : "Hubert",
+        "lastName" : "Huel",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2014-12-13",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      }, {
+        "dependentId" : "DEP-C-e891380f",
+        "firstName" : "Jazmin",
+        "lastName" : "Huel",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2019-11-01",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-10739498-7",
+        "firstName" : "Art",
+        "lastName" : "Huel",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 100,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2015-06-04",
+      "enrollmentDate" : null,
+      "autoEnrollmentFlag" : false,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:17Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:17.813Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : true,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD", "DUPLICATE_PARTICIPANT_ID" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000030",
+      "employeeId" : "E00700030",
+      "ssnMasked" : "999999999",
+      "firstName" : "Elvin",
+      "middleName" : null,
+      "lastName" : "O'Keefe",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "UNDISCLOSED",
+      "maritalStatus" : "WIDOWED",
+      "dateOfBirth" : "1968-02-25",
+      "preferredLanguage" : "en-US",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "serina.feest@yahoo.com",
+      "workEmail" : "e00700030@client113.example.com",
+      "mobilePhone" : "+1-454-222-8740",
+      "homePhone" : "+1-821-205-7991"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "1227 Pagac Unions",
+        "line2" : "Apt 943",
+        "city" : "New Casieberg",
+        "state" : "MI",
+        "zipCode" : "30383",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Rafaelaburgh County"
+      },
+      "mailingAddress" : {
+        "line1" : "3692 Dale Walks",
+        "line2" : null,
+        "city" : "Vincenzoview",
+        "state" : "AL",
+        "zipCode" : "55870",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "North Tomas County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2016-01-23",
+      "terminationDate" : "2024-02-02",
+      "employmentStatus" : "TERMINATED",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 0.00,
+      "departmentCode" : "D0130",
+      "locationCode" : "LOC-MI-031"
+    },
+    "benefits" : {
+      "medicalPlan" : "HMO-CLASSIC",
+      "dentalPlan" : "WAIVED",
+      "visionPlan" : "VISION-STANDARD",
+      "disabilityPlan" : "STD-EMPLOYER-PAID",
+      "lifeInsurance" : "EXEC-LIFE",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ {
+        "dependentId" : "DEP-C-d216fdaa",
+        "firstName" : "Graham",
+        "lastName" : "O'Keefe",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2012-11-01",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-a04476e1-a",
+        "firstName" : "Amos",
+        "lastName" : "O'Keefe",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 20.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-326e9b15-d",
+        "firstName" : "Renato",
+        "lastName" : "O'Keefe",
+        "relationship" : "SPOUSE",
+        "allocationPercentage" : 58.00,
+        "beneficiaryType" : "CONTINGENT"
+      }, {
+        "beneficiaryId" : "BEN-a5ad2569-d",
+        "firstName" : "Ferdinand",
+        "lastName" : "Johnston",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 22.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2016-04-22",
+      "enrollmentDate" : "2016-05-10",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "STOPPED",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:15Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:17.910Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : false,
+      "retryScenario" : true,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD", "RETRYABLE_DYNAMODB_WRITE" ]
+    },
+    "retrySimulation" : {
+      "retryable" : true,
+      "errorCode" : "DYNAMODB_CONDITIONAL_WRITE_CONFLICT",
+      "lastFailureReason" : "Simulated participant write conflict during idempotent upsert",
+      "attemptCount" : 3,
+      "retryAfter" : "2026-05-22T23:54:15Z",
+      "idempotencyKey" : "indicative-entity-00030"
+    }
+  }, {
+    "identity" : {
+      "participantId" : "P0990000030",
+      "employeeId" : "E00700031",
+      "ssnMasked" : "***-**-6234",
+      "firstName" : "Winfred",
+      "middleName" : "Tova",
+      "lastName" : "Kunde",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "FEMALE",
+      "maritalStatus" : "SINGLE",
+      "dateOfBirth" : "1988-01-01",
+      "preferredLanguage" : "en-US",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "ethan.berge@hotmail.com",
+      "workEmail" : "e00700031@client114.example.com",
+      "mobilePhone" : "+1-488-834-5335",
+      "homePhone" : "+1-391-490-8986"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "47945 Aubrey Centers",
+        "line2" : "Apt 812",
+        "city" : "Mannborough",
+        "state" : "GA",
+        "zipCode" : "31390",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Anibalfurt County"
+      },
+      "mailingAddress" : {
+        "line1" : "37314 O'Connell Plains",
+        "line2" : null,
+        "city" : "South Lilliam",
+        "state" : "GA",
+        "zipCode" : "75442",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Rodriguezchester County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2022-05-10",
+      "terminationDate" : null,
+      "employmentStatus" : "RETIRED",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "SALARIED",
+      "annualizedCompensation" : 0.00,
+      "departmentCode" : "D0131",
+      "locationCode" : "LOC-GA-032"
+    },
+    "benefits" : {
+      "medicalPlan" : "HMO-CLASSIC",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "VISION-STANDARD",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "EXEC-LIFE",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ {
+        "dependentId" : "DEP-C-0090c875",
+        "firstName" : "Patrick",
+        "lastName" : "Kunde",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2025-08-01",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      }, {
+        "dependentId" : "DEP-C-0a647e47",
+        "firstName" : "Gita",
+        "lastName" : "Kunde",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2024-08-19",
+        "studentStatus" : false,
+        "disabledDependent" : true,
+        "medicalCovered" : false
+      }, {
+        "dependentId" : "DEP-C-6e2fff63",
+        "firstName" : "Sydney",
+        "lastName" : "Kunde",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2019-03-04",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-a4c70e25-f",
+        "firstName" : "Lillia",
+        "lastName" : "Kunde",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 100,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2022-06-27",
+      "enrollmentDate" : "2022-07-25",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "PENDING",
+      "catchUpEligible" : true
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:13Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:18.007Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : true,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "DUPLICATE_PARTICIPANT_ID" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000032",
+      "employeeId" : "E00700032",
+      "ssnMasked" : "999999999",
+      "firstName" : "Hiram",
+      "middleName" : "Cinderella",
+      "lastName" : "Pouros",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "MALE",
+      "maritalStatus" : "MARRIED",
+      "dateOfBirth" : "1996-08-06",
+      "preferredLanguage" : "en-US",
+      "citizenshipStatus" : "WORK_AUTHORIZED"
+    },
+    "contactDetails" : {
+      "personalEmail" : "gerald.pagac@gmail.com",
+      "workEmail" : "e00700032@client115.example.com",
+      "mobilePhone" : "+1-542-565-3846",
+      "homePhone" : "+1-268-579-4425"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "02515 Ollie Wall",
+        "line2" : "Apt 167",
+        "city" : "South Zackarystad",
+        "state" : "CA",
+        "zipCode" : "46872",
+        "country" : "US",
+        "addressValidated" : false,
+        "county" : "Weimannside County"
+      },
+      "mailingAddress" : {
+        "line1" : "7541 Gonzalo Mountain",
+        "line2" : null,
+        "city" : "Ngachester",
+        "state" : "TX",
+        "zipCode" : "51564",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "East Dreamashire County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2003-12-09",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "SEASONAL",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 85254.10,
+      "departmentCode" : "D0132",
+      "locationCode" : "LOC-CA-033"
+    },
+    "benefits" : {
+      "medicalPlan" : "HMO-CLASSIC",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "STD-EMPLOYER-PAID",
+      "lifeInsurance" : "EXEC-LIFE",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-839fb945",
+        "firstName" : "Marilyn",
+        "lastName" : "Pouros",
+        "relationship" : "SPOUSE",
+        "dateOfBirth" : "1997-08-06",
+        "medicalCovered" : false,
+        "dentalCovered" : true
+      },
+      "children" : [ {
+        "dependentId" : "DEP-C-69e302a9",
+        "firstName" : "Erma",
+        "lastName" : "Pouros",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2010-03-14",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : false
+      }, {
+        "dependentId" : "DEP-C-c09d526e",
+        "firstName" : "Tyler",
+        "lastName" : "Pouros",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2016-01-03",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : false
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-92df3f3d-6",
+        "firstName" : "Carroll",
+        "lastName" : "Pouros",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 100,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2004-02-07",
+      "enrollmentDate" : "2004-03-12",
+      "autoEnrollmentFlag" : false,
+      "deferralStatus" : "OPTED_OUT",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:11Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:18.104Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000033",
+      "employeeId" : "E00700033",
+      "ssnMasked" : "***-**-7868",
+      "firstName" : "Rosendo",
+      "middleName" : null,
+      "lastName" : "Graham",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "MALE",
+      "maritalStatus" : "SINGLE",
+      "dateOfBirth" : "1989-08-19",
+      "preferredLanguage" : "en-US",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "bad-email-at-domain",
+      "workEmail" : "e00700033@client116.example.com",
+      "mobilePhone" : "+1-527-390-1196",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "7563 Mueller Walks",
+        "line2" : null,
+        "city" : "West Julietta",
+        "state" : "NJ",
+        "zipCode" : "19042",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "South Lucrecia County"
+      },
+      "mailingAddress" : {
+        "line1" : "96100 Schowalter Causeway",
+        "line2" : null,
+        "city" : "Griselland",
+        "state" : "FL",
+        "zipCode" : "32519",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Port Alyceberg County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2025-04-02",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "PART_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "SALARIED",
+      "annualizedCompensation" : 146017.54,
+      "departmentCode" : "D0133",
+      "locationCode" : "LOC-NJ-034"
+    },
+    "benefits" : {
+      "medicalPlan" : "HMO-CLASSIC",
+      "dentalPlan" : "DENTAL-BASIC",
+      "visionPlan" : "WAIVED",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "WAIVED",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ {
+        "dependentId" : "DEP-C-cd3945a1",
+        "firstName" : "Moshe",
+        "lastName" : "Graham",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2022-03-21",
+        "studentStatus" : true,
+        "disabledDependent" : false,
+        "medicalCovered" : false
+      }, {
+        "dependentId" : "DEP-C-3d31bd07",
+        "firstName" : "Lanette",
+        "lastName" : "Graham",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2024-02-07",
+        "studentStatus" : true,
+        "disabledDependent" : false,
+        "medicalCovered" : false
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-e47fe21c-1",
+        "firstName" : "Floyd",
+        "lastName" : "Wolff",
+        "relationship" : "SIBLING",
+        "allocationPercentage" : 54.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-7210fd23-8",
+        "firstName" : "Ninfa",
+        "lastName" : "Graham",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 46.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2025-06-12",
+      "enrollmentDate" : "2025-06-16",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "PENDING",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:09Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:18.201Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000034",
+      "employeeId" : "E00700034",
+      "ssnMasked" : "999999999",
+      "firstName" : "Rolf",
+      "middleName" : null,
+      "lastName" : "Fisher",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "FEMALE",
+      "maritalStatus" : "SINGLE",
+      "dateOfBirth" : "1958-07-28",
+      "preferredLanguage" : "zh-CN",
+      "citizenshipStatus" : "WORK_AUTHORIZED"
+    },
+    "contactDetails" : {
+      "personalEmail" : "ladonna.witting@gmail.com",
+      "workEmail" : "e00700034@client100.example.com",
+      "mobilePhone" : "+1-827-803-0500",
+      "homePhone" : "+1-241-788-2747"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "9211 Laurence Common",
+        "line2" : null,
+        "city" : "Colleenburgh",
+        "state" : "CO",
+        "zipCode" : "66270",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Hammesburgh County"
+      },
+      "mailingAddress" : {
+        "line1" : "351 Lynwood Field",
+        "line2" : "Apt 482",
+        "city" : "Kundebury",
+        "state" : "CO",
+        "zipCode" : "28436",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "South Gayleside County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "1999-10-02",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "PART_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "SALARIED",
+      "annualizedCompensation" : 132038.99,
+      "departmentCode" : "D0134",
+      "locationCode" : "LOC-CO-035"
+    },
+    "benefits" : {
+      "medicalPlan" : "PPO-1500",
+      "dentalPlan" : "WAIVED",
+      "visionPlan" : "WAIVED",
+      "disabilityPlan" : "LTD-BUYUP",
+      "lifeInsurance" : "WAIVED",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-d5e4ef17-3",
+        "firstName" : "Sabrina",
+        "lastName" : "Fisher",
+        "relationship" : "SPOUSE",
+        "allocationPercentage" : 100,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "NOT_FULLY_VESTED",
+      "eligibilityDate" : "2000-01-10",
+      "enrollmentDate" : "2000-01-24",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:07Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:18.298Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000035",
+      "employeeId" : "E00700035",
+      "ssnMasked" : "***-**-2782",
+      "firstName" : "Maurice",
+      "middleName" : null,
+      "lastName" : "Sawayn",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "FEMALE",
+      "maritalStatus" : "SINGLE",
+      "dateOfBirth" : "1955-03-31",
+      "preferredLanguage" : "es-US",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "nia.legros@hotmail.com",
+      "workEmail" : "e00700035@client101.example.com",
+      "mobilePhone" : "+1-288-520-0278",
+      "homePhone" : "+1-896-639-7729"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "3858 Renata Curve",
+        "line2" : "Apt 186",
+        "city" : "Port Wilberbury",
+        "state" : "AZ",
+        "zipCode" : "54169",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Weldonville County"
+      },
+      "mailingAddress" : {
+        "line1" : "312 Alfredo Fords",
+        "line2" : "Apt 566",
+        "city" : "West Tegan",
+        "state" : "AZ",
+        "zipCode" : "36578",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "New Rebecabury County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2004-09-12",
+      "terminationDate" : null,
+      "employmentStatus" : "RETIRED",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 0.00,
+      "departmentCode" : "D0135",
+      "locationCode" : "LOC-AZ-036"
+    },
+    "benefits" : {
+      "medicalPlan" : "WAIVED",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "STD-EMPLOYER-PAID",
+      "lifeInsurance" : "WAIVED",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-64c306ff-f",
+        "firstName" : "Enoch",
+        "lastName" : "Sawayn",
+        "relationship" : "SIBLING",
+        "allocationPercentage" : 11.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-57426984-b",
+        "firstName" : "Ivory",
+        "lastName" : "Sawayn",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 89.00,
+        "beneficiaryType" : "CONTINGENT"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2004-12-09",
+      "enrollmentDate" : "2005-01-17",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "PENDING",
+      "catchUpEligible" : true
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:05Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:18.395Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000035",
+      "employeeId" : "E00700036",
+      "ssnMasked" : "***-**-7621",
+      "firstName" : "Edmond",
+      "middleName" : "Rhoda",
+      "lastName" : "Abbott",
+      "suffix" : "Sr."
+    },
+    "personalDetails" : {
+      "gender" : "FEMALE",
+      "maritalStatus" : "MARRIED",
+      "dateOfBirth" : "1991-08-06",
+      "preferredLanguage" : "es-US",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "dyan.rempel@gmail.com",
+      "workEmail" : "e00700036@client102.example.com",
+      "mobilePhone" : "+1-786-833-2281",
+      "homePhone" : "+1-889-880-6790"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "9717 Lucille Drive",
+        "line2" : "Apt 238",
+        "city" : "Port Horaciostad",
+        "state" : "IL",
+        "zipCode" : "86725",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Port Codystad County"
+      },
+      "mailingAddress" : {
+        "line1" : "81764 Wanda Stravenue",
+        "line2" : null,
+        "city" : "New Ferdinand",
+        "state" : "IL",
+        "zipCode" : "74976",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Cedricside County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2018-02-01",
+      "terminationDate" : null,
+      "employmentStatus" : "RETIRED",
+      "employmentType" : "CONTRACT",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 0.00,
+      "departmentCode" : "D0136",
+      "locationCode" : "LOC-IL-037"
+    },
+    "benefits" : {
+      "medicalPlan" : "EPO-500",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "SUPPLEMENTAL-LIFE",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-9f7f6de0",
+        "firstName" : "Kenton",
+        "lastName" : "Abbott",
+        "relationship" : "SPOUSE",
+        "dateOfBirth" : "1997-08-06",
+        "medicalCovered" : true,
+        "dentalCovered" : true
+      },
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-99047284-4",
+        "firstName" : "Graham",
+        "lastName" : "Gerhold",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 17.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-98d7e516-1",
+        "firstName" : "Quinn",
+        "lastName" : "Reilly",
+        "relationship" : "SIBLING",
+        "allocationPercentage" : 29.00,
+        "beneficiaryType" : "CONTINGENT"
+      }, {
+        "beneficiaryId" : "BEN-9e83753b-0",
+        "firstName" : "Gracia",
+        "lastName" : "Rutherford",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 54.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "NOT_FULLY_VESTED",
+      "eligibilityDate" : "2018-05-13",
+      "enrollmentDate" : null,
+      "autoEnrollmentFlag" : false,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : true
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:03Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:18.492Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : true,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "DUPLICATE_PARTICIPANT_ID" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000037",
+      "employeeId" : "E00700037",
+      "ssnMasked" : "***-**-9405",
+      "firstName" : "Samual",
+      "middleName" : "Moses",
+      "lastName" : "Treutel",
+      "suffix" : "Jr."
+    },
+    "personalDetails" : {
+      "gender" : "UNDISCLOSED",
+      "maritalStatus" : "WIDOWED",
+      "dateOfBirth" : "1996-05-26",
+      "preferredLanguage" : "vi-VN",
+      "citizenshipStatus" : "UNKNOWN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "myrl.conroy@hotmail.com",
+      "workEmail" : "e00700037@client103.example.com",
+      "mobilePhone" : "+1-447-487-7447",
+      "homePhone" : "+1-720-273-2153"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "2019 Koss Terrace",
+        "line2" : null,
+        "city" : "Numbersview",
+        "state" : "IL",
+        "zipCode" : "64081",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Desireside County"
+      },
+      "mailingAddress" : {
+        "line1" : "3825 Bergstrom Trace",
+        "line2" : null,
+        "city" : "Breitenbergmouth",
+        "state" : "IL",
+        "zipCode" : "47896",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Schmelerbury County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2004-11-24",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "SALARIED",
+      "annualizedCompensation" : 62540.55,
+      "departmentCode" : "D0137",
+      "locationCode" : "LOC-IL-038"
+    },
+    "benefits" : {
+      "medicalPlan" : "WAIVED",
+      "dentalPlan" : "DENTAL-BASIC",
+      "visionPlan" : "VISION-STANDARD",
+      "disabilityPlan" : "STD-EMPLOYER-PAID",
+      "lifeInsurance" : "BASIC-LIFE-1X",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ {
+        "dependentId" : "DEP-C-071eaf6a",
+        "firstName" : "Lloyd",
+        "lastName" : "Treutel",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2020-02-15",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-98bc90ba-a",
+        "firstName" : "Coleman",
+        "lastName" : "Treutel",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 100,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2005-01-31",
+      "enrollmentDate" : "2005-02-13",
+      "autoEnrollmentFlag" : false,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:51:01Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:18.589Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000038",
+      "employeeId" : "E00700038",
+      "ssnMasked" : "***-**-6259",
+      "firstName" : "Annabel",
+      "middleName" : null,
+      "lastName" : "Kuhn",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "UNDISCLOSED",
+      "maritalStatus" : "MARRIED",
+      "dateOfBirth" : "1967-08-06",
+      "preferredLanguage" : "en-US",
+      "citizenshipStatus" : "UNKNOWN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "elden.kuphal@hotmail.com",
+      "workEmail" : "e00700038@client104.example.com",
+      "mobilePhone" : "+1-550-867-7471",
+      "homePhone" : "+1-290-897-8815"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "45362 Gerlach Extensions",
+        "line2" : null,
+        "city" : "Schmittberg",
+        "state" : "MA",
+        "zipCode" : "37065",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "South Robbi County"
+      },
+      "mailingAddress" : {
+        "line1" : "41365 Darrel Village",
+        "line2" : null,
+        "city" : "New Jayland",
+        "state" : "MA",
+        "zipCode" : "12168",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "East Ebony County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2013-08-08",
+      "terminationDate" : null,
+      "employmentStatus" : "RETIRED",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 0.00,
+      "departmentCode" : "D0138",
+      "locationCode" : "LOC-MA-039"
+    },
+    "benefits" : {
+      "medicalPlan" : "PPO-1500",
+      "dentalPlan" : "DENTAL-BASIC",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "SUPPLEMENTAL-LIFE",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-2476fa9b",
+        "firstName" : "Carlota",
+        "lastName" : "Kuhn",
+        "relationship" : "SPOUSE",
+        "dateOfBirth" : "1974-08-06",
+        "medicalCovered" : true,
+        "dentalCovered" : false
+      },
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-f7e69457-0",
+        "firstName" : "Julius",
+        "lastName" : "Kuhn",
+        "relationship" : "SPOUSE",
+        "allocationPercentage" : 10.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-81498e07-9",
+        "firstName" : "Emil",
+        "lastName" : "Wolf",
+        "relationship" : "SIBLING",
+        "allocationPercentage" : 27.00,
+        "beneficiaryType" : "CONTINGENT"
+      }, {
+        "beneficiaryId" : "BEN-8a773b8e-8",
+        "firstName" : "Ivory",
+        "lastName" : "Kuhn",
+        "relationship" : "SPOUSE",
+        "allocationPercentage" : 63.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2013-11-18",
+      "enrollmentDate" : "2013-12-27",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : true
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:50:59Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:18.686Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : true,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "RETRYABLE_DYNAMODB_WRITE" ]
+    },
+    "retrySimulation" : {
+      "retryable" : true,
+      "errorCode" : "DYNAMODB_CONDITIONAL_WRITE_CONFLICT",
+      "lastFailureReason" : "Simulated participant write conflict during idempotent upsert",
+      "attemptCount" : 3,
+      "retryAfter" : "2026-05-22T23:54:23Z",
+      "idempotencyKey" : "indicative-entity-00038"
+    }
+  }, {
+    "identity" : {
+      "participantId" : "P0990000039",
+      "employeeId" : "E00700039",
+      "ssnMasked" : "***-**-7840",
+      "firstName" : "Kacy",
+      "middleName" : "Danyelle",
+      "lastName" : "McLaughlin",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "MALE",
+      "maritalStatus" : "MARRIED",
+      "dateOfBirth" : "2003-01-24",
+      "preferredLanguage" : "es-US",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "bad-email-at-domain",
+      "workEmail" : "e00700039@client105.example.com",
+      "mobilePhone" : "+1-560-443-9257",
+      "homePhone" : "+1-613-386-3851"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "7035 Durgan Shores",
+        "line2" : null,
+        "city" : "Port Kandy",
+        "state" : "NY",
+        "zipCode" : "56132",
+        "country" : "US",
+        "addressValidated" : false,
+        "county" : "Dannyborough County"
+      },
+      "mailingAddress" : {
+        "line1" : "88760 Stephenie Brook",
+        "line2" : null,
+        "city" : "Normanchester",
+        "state" : "NY",
+        "zipCode" : "14962",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "East Lisbethborough County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2001-01-13",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 133384.70,
+      "departmentCode" : "D0139",
+      "locationCode" : "LOC-NY-040"
+    },
+    "benefits" : {
+      "medicalPlan" : "WAIVED",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "VISION-STANDARD",
+      "disabilityPlan" : "LTD-BUYUP",
+      "lifeInsurance" : "BASIC-LIFE-1X",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-f0fe55a3",
+        "firstName" : "Phillip",
+        "lastName" : "McLaughlin",
+        "relationship" : "SPOUSE",
+        "dateOfBirth" : "2005-01-24",
+        "medicalCovered" : true,
+        "dentalCovered" : true
+      },
+      "children" : [ {
+        "dependentId" : "DEP-C-fc3f0fb6",
+        "firstName" : "Rodrick",
+        "lastName" : "McLaughlin",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2024-12-22",
+        "studentStatus" : true,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-5c23b29f-d",
+        "firstName" : "Eloy",
+        "lastName" : "Ritchie",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 100,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "NOT_FULLY_VESTED",
+      "eligibilityDate" : "2001-02-15",
+      "enrollmentDate" : "2001-03-18",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:50:57Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:18.783Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000040",
+      "employeeId" : "E00700040",
+      "ssnMasked" : "999999999",
+      "firstName" : "Delsie",
+      "middleName" : "Burton",
+      "lastName" : "Zemlak",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "MALE",
+      "maritalStatus" : "WIDOWED",
+      "dateOfBirth" : "1952-06-24",
+      "preferredLanguage" : "en-US",
+      "citizenshipStatus" : "WORK_AUTHORIZED"
+    },
+    "contactDetails" : {
+      "personalEmail" : "neville.koepp@hotmail.com",
+      "workEmail" : "e00700040@client106.example.com",
+      "mobilePhone" : "+1-588-714-0602",
+      "homePhone" : "+1-270-533-6224"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "689 Becker Knoll",
+        "line2" : null,
+        "city" : "Maybelleton",
+        "state" : "WA",
+        "zipCode" : "62219",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Roobtown County"
+      },
+      "mailingAddress" : {
+        "line1" : "56032 Bergstrom Burg",
+        "line2" : null,
+        "city" : "New Shameka",
+        "state" : "WA",
+        "zipCode" : "22561",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "West Tiny County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2000-11-28",
+      "terminationDate" : null,
+      "employmentStatus" : "RETIRED",
+      "employmentType" : "SEASONAL",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "COMMISSION",
+      "annualizedCompensation" : 0.00,
+      "departmentCode" : "D0140",
+      "locationCode" : "LOC-WA-041"
+    },
+    "benefits" : {
+      "medicalPlan" : "PPO-1500",
+      "dentalPlan" : "DENTAL-BASIC",
+      "visionPlan" : "VISION-STANDARD",
+      "disabilityPlan" : "STD-EMPLOYER-PAID",
+      "lifeInsurance" : "WAIVED",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ {
+        "dependentId" : "DEP-C-b0a93ab0",
+        "firstName" : "Adolfo",
+        "lastName" : "Zemlak",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2016-04-16",
+        "studentStatus" : true,
+        "disabledDependent" : false,
+        "medicalCovered" : false
+      }, {
+        "dependentId" : "DEP-C-cf47d18a",
+        "firstName" : "Rosalia",
+        "lastName" : "Zemlak",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2020-04-22",
+        "studentStatus" : true,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      }, {
+        "dependentId" : "DEP-C-a7dab6ef",
+        "firstName" : "Latonya",
+        "lastName" : "Zemlak",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2020-12-12",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-c807c3e2-1",
+        "firstName" : "Lavelle",
+        "lastName" : "Zemlak",
+        "relationship" : "SPOUSE",
+        "allocationPercentage" : 32.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-862d193f-1",
+        "firstName" : "Maria",
+        "lastName" : "Zemlak",
+        "relationship" : "SIBLING",
+        "allocationPercentage" : 68.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2001-01-08",
+      "enrollmentDate" : "2001-01-26",
+      "autoEnrollmentFlag" : false,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:50:55Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:18.880Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000041",
+      "employeeId" : "E00700041",
+      "ssnMasked" : "***-**-0717",
+      "firstName" : "Clark",
+      "middleName" : "Kelsie",
+      "lastName" : "Murazik",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "NON_BINARY",
+      "maritalStatus" : "MARRIED",
+      "dateOfBirth" : "1994-08-21",
+      "preferredLanguage" : "hi-IN",
+      "citizenshipStatus" : "PERMANENT_RESIDENT"
+    },
+    "contactDetails" : {
+      "personalEmail" : "bad-email-at-domain",
+      "workEmail" : "e00700041@client107.example.com",
+      "mobilePhone" : "+1-675-665-2680",
+      "homePhone" : "+1-257-834-8239"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "81900 Wilfredo Harbors",
+        "line2" : "Apt 213",
+        "city" : "Junieview",
+        "state" : "MA",
+        "zipCode" : "50177",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Port Breannaton County"
+      },
+      "mailingAddress" : {
+        "line1" : "02398 Krajcik Fields",
+        "line2" : null,
+        "city" : "New Norma",
+        "state" : "MA",
+        "zipCode" : "12880",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Bertchester County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2002-06-22",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "COMMISSION",
+      "annualizedCompensation" : 121721.64,
+      "departmentCode" : "D0141",
+      "locationCode" : "LOC-MA-042"
+    },
+    "benefits" : {
+      "medicalPlan" : "HDHP-HSA",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "WAIVED",
+      "disabilityPlan" : "STD-EMPLOYER-PAID",
+      "lifeInsurance" : "BASIC-LIFE-1X",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-72b3e49f",
+        "firstName" : "Klara",
+        "lastName" : "Murazik",
+        "relationship" : "SPOUSE",
+        "dateOfBirth" : "2001-08-21",
+        "medicalCovered" : true,
+        "dentalCovered" : false
+      },
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-e993f863-e",
+        "firstName" : "Ned",
+        "lastName" : "Murazik",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 27.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-567b2dd6-a",
+        "firstName" : "Joe",
+        "lastName" : "Murazik",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 59.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-b1d80266-0",
+        "firstName" : "Alton",
+        "lastName" : "Harris",
+        "relationship" : "CHILD",
+        "allocationPercentage" : 14.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "NOT_FULLY_VESTED",
+      "eligibilityDate" : "2002-07-26",
+      "enrollmentDate" : "2002-08-12",
+      "autoEnrollmentFlag" : false,
+      "deferralStatus" : "OPTED_OUT",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:50:53Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:18.977Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : false,
+      "retryScenario" : true,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD", "RETRYABLE_DYNAMODB_WRITE" ]
+    },
+    "retrySimulation" : {
+      "retryable" : true,
+      "errorCode" : "DYNAMODB_CONDITIONAL_WRITE_CONFLICT",
+      "lastFailureReason" : "Simulated participant write conflict during idempotent upsert",
+      "attemptCount" : 2,
+      "retryAfter" : "2026-05-22T23:54:26Z",
+      "idempotencyKey" : "indicative-entity-00041"
+    }
+  }, {
+    "identity" : {
+      "participantId" : "P0990000042",
+      "employeeId" : "E00700042",
+      "ssnMasked" : "***-**-6660",
+      "firstName" : "Georgina",
+      "middleName" : null,
+      "lastName" : "Hirthe",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "NON_BINARY",
+      "maritalStatus" : "SINGLE",
+      "dateOfBirth" : "1962-01-24",
+      "preferredLanguage" : "hi-IN",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "felton.kunze@yahoo.com",
+      "workEmail" : "e00700042@client108.example.com",
+      "mobilePhone" : "+1-429-645-2599",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "31530 Chun Estates",
+        "line2" : null,
+        "city" : "Kingchester",
+        "state" : "WA",
+        "zipCode" : "51017",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Naidaport County"
+      },
+      "mailingAddress" : {
+        "line1" : "50103 Braun Ports",
+        "line2" : null,
+        "city" : "New Bobport",
+        "state" : "AL",
+        "zipCode" : "32835",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "West Jude County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2025-07-01",
+      "terminationDate" : null,
+      "employmentStatus" : "RETIRED",
+      "employmentType" : "CONTRACT",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 0.00,
+      "departmentCode" : "D0142",
+      "locationCode" : "LOC-WA-043"
+    },
+    "benefits" : {
+      "medicalPlan" : "PPO-1500",
+      "dentalPlan" : "WAIVED",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "STD-EMPLOYER-PAID",
+      "lifeInsurance" : "WAIVED",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-376c9a23-9",
+        "firstName" : "Jeremiah",
+        "lastName" : "Hirthe",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 31.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-f2752b56-6",
+        "firstName" : "Devin",
+        "lastName" : "Stiedemann",
+        "relationship" : "SPOUSE",
+        "allocationPercentage" : 15.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-c50ec781-f",
+        "firstName" : "Cedrick",
+        "lastName" : "Kunze",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 54.00,
+        "beneficiaryType" : "CONTINGENT"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2025-08-09",
+      "enrollmentDate" : "2025-08-20",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "OPTED_OUT",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:50:51Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:19.074Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000043",
+      "employeeId" : "E00700043",
+      "ssnMasked" : "***-**-4634",
+      "firstName" : "Stan",
+      "middleName" : "Elvina",
+      "lastName" : "Leannon",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "NON_BINARY",
+      "maritalStatus" : "SINGLE",
+      "dateOfBirth" : "1996-08-18",
+      "preferredLanguage" : "en-US",
+      "citizenshipStatus" : "WORK_AUTHORIZED"
+    },
+    "contactDetails" : {
+      "personalEmail" : "hugo.boehm@hotmail.com",
+      "workEmail" : "e00700043@client109.example.com",
+      "mobilePhone" : "+1-599-870-1654",
+      "homePhone" : "+1-435-313-8965"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "753 Wilbert Garden",
+        "line2" : "Apt 988",
+        "city" : "North Wilson",
+        "state" : "MI",
+        "zipCode" : "68113",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "East Josebury County"
+      },
+      "mailingAddress" : {
+        "line1" : "89301 Bernhard Club",
+        "line2" : null,
+        "city" : "Jacqualineburgh",
+        "state" : "AL",
+        "zipCode" : "67622",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Elizastad County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2001-03-30",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "UNION",
+      "compensationType" : "SALARIED",
+      "annualizedCompensation" : 129772.35,
+      "departmentCode" : "D0143",
+      "locationCode" : "LOC-MI-044"
+    },
+    "benefits" : {
+      "medicalPlan" : "WAIVED",
+      "dentalPlan" : "WAIVED",
+      "visionPlan" : "VISION-STANDARD",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "SUPPLEMENTAL-LIFE",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ {
+        "dependentId" : "DEP-C-343f109b",
+        "firstName" : "Juliann",
+        "lastName" : "Leannon",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2020-08-01",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : false
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-1dce452b-f",
+        "firstName" : "Harlan",
+        "lastName" : "Trantow",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 39.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-c0d457a8-2",
+        "firstName" : "Brande",
+        "lastName" : "Leannon",
+        "relationship" : "SPOUSE",
+        "allocationPercentage" : 55.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-1a330a15-1",
+        "firstName" : "Eldon",
+        "lastName" : "Leannon",
+        "relationship" : "SIBLING",
+        "allocationPercentage" : 6.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2001-05-28",
+      "enrollmentDate" : null,
+      "autoEnrollmentFlag" : false,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:50:49Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:19.171Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000044",
+      "employeeId" : "E00700044",
+      "ssnMasked" : "***-**-8088",
+      "firstName" : "Royce",
+      "middleName" : "Ivelisse",
+      "lastName" : "Bogisich",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "FEMALE",
+      "maritalStatus" : "DOMESTIC_PARTNER",
+      "dateOfBirth" : "1979-10-24",
+      "preferredLanguage" : "en-US",
+      "citizenshipStatus" : "WORK_AUTHORIZED"
+    },
+    "contactDetails" : {
+      "personalEmail" : "viva.dubuque@gmail.com",
+      "workEmail" : "e00700044@client110.example.com",
+      "mobilePhone" : null,
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "953 Homenick Lane",
+        "line2" : null,
+        "city" : "West Shala",
+        "state" : "GA",
+        "zipCode" : "26605",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "West Pandoraberg County"
+      },
+      "mailingAddress" : {
+        "line1" : "521 Louis Gateway",
+        "line2" : "Apt 210",
+        "city" : "South Margaretaland",
+        "state" : "IL",
+        "zipCode" : "72992",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "East Soledad County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2018-10-13",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "CONTRACT",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "SALARIED",
+      "annualizedCompensation" : 108149.28,
+      "departmentCode" : "D0144",
+      "locationCode" : "LOC-GA-045"
+    },
+    "benefits" : {
+      "medicalPlan" : "HMO-CLASSIC",
+      "dentalPlan" : "WAIVED",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "LTD-BUYUP",
+      "lifeInsurance" : "BASIC-LIFE-1X",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-d40c0f2d",
+        "firstName" : "Shirlee",
+        "lastName" : "Bogisich",
+        "relationship" : "DOMESTIC_PARTNER",
+        "dateOfBirth" : "1986-10-24",
+        "medicalCovered" : true,
+        "dentalCovered" : true
+      },
+      "children" : [ {
+        "dependentId" : "DEP-C-ba2cc51a",
+        "firstName" : "Keira",
+        "lastName" : "Bogisich",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2022-09-07",
+        "studentStatus" : true,
+        "disabledDependent" : false,
+        "medicalCovered" : false
+      }, {
+        "dependentId" : "DEP-C-85095a6b",
+        "firstName" : "Mendy",
+        "lastName" : "Bogisich",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2015-06-23",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : false
+      }, {
+        "dependentId" : "DEP-C-d094c370",
+        "firstName" : "Rosalind",
+        "lastName" : "Bogisich",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2011-04-09",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-b3c6aa57-4",
+        "firstName" : "Kathrine",
+        "lastName" : "Bogisich",
+        "relationship" : "CHILD",
+        "allocationPercentage" : 16.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-3c04ba45-d",
+        "firstName" : "Faustino",
+        "lastName" : "Predovic",
+        "relationship" : "SIBLING",
+        "allocationPercentage" : 84.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2018-12-29",
+      "enrollmentDate" : "2018-12-30",
+      "autoEnrollmentFlag" : false,
+      "deferralStatus" : "PENDING",
+      "catchUpEligible" : true
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:50:47Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:19.268Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : true,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "PARTIAL_INDICATIVE_RECORD" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000045",
+      "employeeId" : "E00700045",
+      "ssnMasked" : "***-**-0619",
+      "firstName" : "Lauren",
+      "middleName" : "Shantell",
+      "lastName" : "Cummings",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "FEMALE",
+      "maritalStatus" : "DOMESTIC_PARTNER",
+      "dateOfBirth" : "1984-09-05",
+      "preferredLanguage" : "vi-VN",
+      "citizenshipStatus" : "PERMANENT_RESIDENT"
+    },
+    "contactDetails" : {
+      "personalEmail" : "keshia.goodwin@gmail.com",
+      "workEmail" : "e00700045@client111.example.com",
+      "mobilePhone" : "+1-431-302-8849",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "72898 Kohler Square",
+        "line2" : "Apt 328",
+        "city" : "Schillerside",
+        "state" : "AL",
+        "zipCode" : "94625",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Stromanville County"
+      },
+      "mailingAddress" : {
+        "line1" : "69087 Nolan Park",
+        "line2" : null,
+        "city" : "Millsborough",
+        "state" : "AZ",
+        "zipCode" : "79519",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Suechester County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2002-05-09",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "COMMISSION",
+      "annualizedCompensation" : 111252.05,
+      "departmentCode" : "D0145",
+      "locationCode" : "LOC-AL-046"
+    },
+    "benefits" : {
+      "medicalPlan" : "WAIVED",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "SUPPLEMENTAL-LIFE",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-4cb52f9d",
+        "firstName" : "Arnette",
+        "lastName" : "Cummings",
+        "relationship" : "DOMESTIC_PARTNER",
+        "dateOfBirth" : "1988-09-05",
+        "medicalCovered" : true,
+        "dentalCovered" : true
+      },
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-fffccba6-6",
+        "firstName" : "Stephen",
+        "lastName" : "Jacobi",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 48.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-3829fd96-0",
+        "firstName" : "Graig",
+        "lastName" : "McGlynn",
+        "relationship" : "CHILD",
+        "allocationPercentage" : 52.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2002-08-07",
+      "enrollmentDate" : null,
+      "autoEnrollmentFlag" : false,
+      "deferralStatus" : "OPTED_OUT",
+      "catchUpEligible" : true
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:50:45Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:19.365Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000046",
+      "employeeId" : "E00700046",
+      "ssnMasked" : "***-**-1803",
+      "firstName" : "Sanford",
+      "middleName" : "Melina",
+      "lastName" : "Mante",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "UNDISCLOSED",
+      "maritalStatus" : "DIVORCED",
+      "dateOfBirth" : "1992-05-01",
+      "preferredLanguage" : "en-US",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "jasper.pouros@gmail.com",
+      "workEmail" : "e00700046@client112.example.com",
+      "mobilePhone" : "+1-566-221-6588",
+      "homePhone" : "+1-265-331-4189"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "3458 Ullrich Alley",
+        "line2" : null,
+        "city" : "New Rooseveltville",
+        "state" : "GA",
+        "zipCode" : "78659",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Lednerville County"
+      },
+      "mailingAddress" : {
+        "line1" : "7847 Camie Heights",
+        "line2" : null,
+        "city" : "New Tommie",
+        "state" : "GA",
+        "zipCode" : "18184",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Boganside County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2003-06-11",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 91664.83,
+      "departmentCode" : "D0146",
+      "locationCode" : "LOC-GA-047"
+    },
+    "benefits" : {
+      "medicalPlan" : "PPO-1500",
+      "dentalPlan" : "WAIVED",
+      "visionPlan" : "WAIVED",
+      "disabilityPlan" : "STD-EMPLOYER-PAID",
+      "lifeInsurance" : "BASIC-LIFE-1X",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ {
+        "dependentId" : "DEP-C-5cbe28ec",
+        "firstName" : "Ruthie",
+        "lastName" : "Mante",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2008-12-01",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : false
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-9cc4b8e0-f",
+        "firstName" : "Reinaldo",
+        "lastName" : "Mante",
+        "relationship" : "PARENT",
+        "allocationPercentage" : 100,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "NOT_FULLY_VESTED",
+      "eligibilityDate" : "2003-09-20",
+      "enrollmentDate" : "2003-11-01",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:50:43Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:19.462Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000046",
+      "employeeId" : "E00700047",
+      "ssnMasked" : "***-**-8309",
+      "firstName" : "Clarence",
+      "middleName" : null,
+      "lastName" : "Grady",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "FEMALE",
+      "maritalStatus" : "SINGLE",
+      "dateOfBirth" : "1971-11-28",
+      "preferredLanguage" : "en-US",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "bad-email-at-domain",
+      "workEmail" : "e00700047@client113.example.com",
+      "mobilePhone" : "+1-895-558-6720",
+      "homePhone" : "+1-346-841-1085"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "49425 Kendrick Stravenue",
+        "line2" : null,
+        "city" : "Donnellyview",
+        "state" : "TX",
+        "zipCode" : "52096",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "East Tyrone County"
+      },
+      "mailingAddress" : {
+        "line1" : "400 Satterfield Shoals",
+        "line2" : null,
+        "city" : "East Cindystad",
+        "state" : "AL",
+        "zipCode" : "92632",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Pfefferbury County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2024-01-31",
+      "terminationDate" : "2025-08-25",
+      "employmentStatus" : "TERMINATED",
+      "employmentType" : "PART_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HOURLY",
+      "annualizedCompensation" : 0.00,
+      "departmentCode" : "D0147",
+      "locationCode" : "LOC-TX-048"
+    },
+    "benefits" : {
+      "medicalPlan" : "WAIVED",
+      "dentalPlan" : "DENTAL-BASIC",
+      "visionPlan" : "VISION-STANDARD",
+      "disabilityPlan" : "STD-EMPLOYER-PAID",
+      "lifeInsurance" : "EXEC-LIFE",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-d1b538bf-2",
+        "firstName" : "Leeanna",
+        "lastName" : "Grady",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 26.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-2c4e1470-b",
+        "firstName" : "Harvey",
+        "lastName" : "Grady",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 34.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-a8da59b3-3",
+        "firstName" : "Tony",
+        "lastName" : "Grady",
+        "relationship" : "SIBLING",
+        "allocationPercentage" : 40.00,
+        "beneficiaryType" : "CONTINGENT"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2024-03-14",
+      "enrollmentDate" : "2024-04-08",
+      "autoEnrollmentFlag" : false,
+      "deferralStatus" : "STOPPED",
+      "catchUpEligible" : true
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:50:41Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:19.559Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : true,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : true,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "MALFORMED_INDICATIVE_RECORD", "DUPLICATE_PARTICIPANT_ID" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000048",
+      "employeeId" : null,
+      "ssnMasked" : "***-**-1604",
+      "firstName" : "Myrtice",
+      "middleName" : null,
+      "lastName" : "Kohler",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "FEMALE",
+      "maritalStatus" : "SINGLE",
+      "dateOfBirth" : "1977-12-06",
+      "preferredLanguage" : "zh-CN",
+      "citizenshipStatus" : "US_CITIZEN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "williams.rowe@yahoo.com",
+      "workEmail" : "e00700048@client114.example.com",
+      "mobilePhone" : null,
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "5174 Dann Bypass",
+        "line2" : null,
+        "city" : "Lake Brendatown",
+        "state" : "NJ",
+        "zipCode" : "42832",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Collierland County"
+      },
+      "mailingAddress" : {
+        "line1" : "416 Feest Station",
+        "line2" : "Apt 413",
+        "city" : "North Agustinshire",
+        "state" : "NJ",
+        "zipCode" : "95426",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "New Andreasville County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2000-10-30",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "HYBRID",
+      "annualizedCompensation" : 417436.00,
+      "departmentCode" : "D0148",
+      "locationCode" : "LOC-NJ-049"
+    },
+    "benefits" : {
+      "medicalPlan" : "HDHP-HSA",
+      "dentalPlan" : "DENTAL-BASIC",
+      "visionPlan" : "VISION-STANDARD",
+      "disabilityPlan" : "LTD-BUYUP",
+      "lifeInsurance" : "BASIC-LIFE-1X",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ {
+        "dependentId" : "DEP-C-ead69dc7",
+        "firstName" : "Brunilda",
+        "lastName" : "Kohler",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2017-09-03",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      }, {
+        "dependentId" : "DEP-C-77b68b2e",
+        "firstName" : "Gabriel",
+        "lastName" : "Kohler",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2020-02-04",
+        "studentStatus" : true,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      }, {
+        "dependentId" : "DEP-C-d4725b80",
+        "firstName" : "Cameron",
+        "lastName" : "Kohler",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2017-07-04",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : false
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-5be41177-b",
+        "firstName" : "Adela",
+        "lastName" : "Cartwright",
+        "relationship" : "SIBLING",
+        "allocationPercentage" : 100,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2000-12-02",
+      "enrollmentDate" : "2001-01-15",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "PENDING",
+      "catchUpEligible" : true
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:50:39Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:19.656Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : true,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ "PARTIAL_INDICATIVE_RECORD" ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000049",
+      "employeeId" : "E00700049",
+      "ssnMasked" : "***-**-7571",
+      "firstName" : "Marion",
+      "middleName" : "Vada",
+      "lastName" : "Ziemann",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "UNDISCLOSED",
+      "maritalStatus" : "MARRIED",
+      "dateOfBirth" : "1981-05-04",
+      "preferredLanguage" : "fr-CA",
+      "citizenshipStatus" : "UNKNOWN"
+    },
+    "contactDetails" : {
+      "personalEmail" : "christian.watsica@hotmail.com",
+      "workEmail" : "e00700049@client115.example.com",
+      "mobilePhone" : "+1-587-297-2854",
+      "homePhone" : "+1-623-215-4883"
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "881 Quitzon Path",
+        "line2" : null,
+        "city" : "Ronniestad",
+        "state" : "IL",
+        "zipCode" : "30573",
+        "country" : "US",
+        "addressValidated" : false,
+        "county" : "Boylechester County"
+      },
+      "mailingAddress" : {
+        "line1" : "595 Xavier Parks",
+        "line2" : "Apt 512",
+        "city" : "South Kristopher",
+        "state" : "IL",
+        "zipCode" : "91707",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Elliotthaven County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2022-01-31",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "COMMISSION",
+      "annualizedCompensation" : 268540.05,
+      "departmentCode" : "D0149",
+      "locationCode" : "LOC-IL-050"
+    },
+    "benefits" : {
+      "medicalPlan" : "HMO-CLASSIC",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "WAIVED",
+      "disabilityPlan" : "WAIVED",
+      "lifeInsurance" : "WAIVED",
+      "hsaEligible" : true,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : {
+        "dependentId" : "DEP-S-c49c741b",
+        "firstName" : "Julius",
+        "lastName" : "Ziemann",
+        "relationship" : "SPOUSE",
+        "dateOfBirth" : "1988-05-04",
+        "medicalCovered" : true,
+        "dentalCovered" : true
+      },
+      "children" : [ ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-e539e95b-a",
+        "firstName" : "Hollis",
+        "lastName" : "Ziemann",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 18.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-2b6e7561-5",
+        "firstName" : "William",
+        "lastName" : "Ziemann",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 25.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-368cd5b3-b",
+        "firstName" : "Spencer",
+        "lastName" : "Kirlin",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 57.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2022-04-14",
+      "enrollmentDate" : "2022-04-23",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:50:37Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:19.753Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  }, {
+    "identity" : {
+      "participantId" : "P0990000050",
+      "employeeId" : "E00700050",
+      "ssnMasked" : "***-**-0482",
+      "firstName" : "Shanta",
+      "middleName" : null,
+      "lastName" : "Jacobson",
+      "suffix" : null
+    },
+    "personalDetails" : {
+      "gender" : "MALE",
+      "maritalStatus" : "SINGLE",
+      "dateOfBirth" : "1966-08-13",
+      "preferredLanguage" : "fr-CA",
+      "citizenshipStatus" : "WORK_AUTHORIZED"
+    },
+    "contactDetails" : {
+      "personalEmail" : "linn.boehm@gmail.com",
+      "workEmail" : "e00700050@client116.example.com",
+      "mobilePhone" : "+1-743-504-9586",
+      "homePhone" : null
+    },
+    "addresses" : {
+      "homeAddress" : {
+        "line1" : "95766 Martha Track",
+        "line2" : null,
+        "city" : "Johanahaven",
+        "state" : "CO",
+        "zipCode" : "41315",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "South Elmer County"
+      },
+      "mailingAddress" : {
+        "line1" : "38517 Stamm Pine",
+        "line2" : "Apt 717",
+        "city" : "Samualmouth",
+        "state" : "CO",
+        "zipCode" : "43672",
+        "country" : "US",
+        "addressValidated" : true,
+        "county" : "Ahmadtown County"
+      }
+    },
+    "employmentDetails" : {
+      "hireDate" : "2011-01-20",
+      "terminationDate" : null,
+      "employmentStatus" : "ACTIVE",
+      "employmentType" : "FULL_TIME",
+      "unionStatus" : "NON_UNION",
+      "compensationType" : "COMMISSION",
+      "annualizedCompensation" : 54500.10,
+      "departmentCode" : "D0150",
+      "locationCode" : "LOC-CO-051"
+    },
+    "benefits" : {
+      "medicalPlan" : "HDHP-HSA",
+      "dentalPlan" : "DENTAL-PREMIER",
+      "visionPlan" : "VISION-PREMIER",
+      "disabilityPlan" : "STD-EMPLOYER-PAID",
+      "lifeInsurance" : "SUPPLEMENTAL-LIFE",
+      "hsaEligible" : false,
+      "benefitsWaived" : false
+    },
+    "dependents" : {
+      "spouse" : null,
+      "children" : [ {
+        "dependentId" : "DEP-C-c1aa11be",
+        "firstName" : "Brooks",
+        "lastName" : "Jacobson",
+        "relationship" : "CHILD",
+        "dateOfBirth" : "2024-04-19",
+        "studentStatus" : false,
+        "disabledDependent" : false,
+        "medicalCovered" : true
+      } ],
+      "beneficiaries" : [ {
+        "beneficiaryId" : "BEN-45c9b590-5",
+        "firstName" : "Tobias",
+        "lastName" : "Schamberger",
+        "relationship" : "OTHER",
+        "allocationPercentage" : 56.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-38f0b76f-3",
+        "firstName" : "Myrle",
+        "lastName" : "Krajcik",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 16.00,
+        "beneficiaryType" : "PRIMARY"
+      }, {
+        "beneficiaryId" : "BEN-2b270756-6",
+        "firstName" : "Matt",
+        "lastName" : "Robel",
+        "relationship" : "TRUST",
+        "allocationPercentage" : 28.00,
+        "beneficiaryType" : "PRIMARY"
+      } ]
+    },
+    "retirementDetails" : {
+      "vestingStatus" : "VESTED",
+      "eligibilityDate" : "2011-05-03",
+      "enrollmentDate" : "2011-05-06",
+      "autoEnrollmentFlag" : true,
+      "deferralStatus" : "ACTIVE",
+      "catchUpEligible" : false
+    },
+    "auditMetadata" : {
+      "sourceSystem" : "PRISMHR",
+      "sourceTimestamp" : "2026-05-22T23:50:35Z",
+      "ingestionTimestamp" : "2026-05-22T23:52:19.850Z",
+      "schemaVersion" : "2026.05.24-indicative-v1",
+      "sourceFileName" : "PRISMHR_IND_PARTICIPANTS_2026-05-22.json"
+    },
+    "scenarioFlags" : {
+      "malformedRecord" : false,
+      "partialRecord" : false,
+      "retryScenario" : false,
+      "duplicateParticipantId" : false,
+      "invalidAddress" : false,
+      "edgeCaseTypes" : [ ]
+    },
+    "retrySimulation" : null
+  } ],
+  "scenarioSummary" : {
+    "malformedRecords" : 19,
+    "partialRecords" : 4,
+    "retryScenarios" : 5,
+    "duplicateParticipantIds" : 7,
+    "invalidAddresses" : 0,
+    "terminatedParticipantRecords" : 0
+  }
+}

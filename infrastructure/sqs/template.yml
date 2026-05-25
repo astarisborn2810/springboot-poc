@@ -1,0 +1,50 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: PEARL payroll SQS queues.
+
+Parameters:
+  ProjectName:
+    Type: String
+  EnvironmentName:
+    Type: String
+
+Resources:
+  DeadLetterQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub ${ProjectName}-${EnvironmentName}-dead-letter
+      MessageRetentionPeriod: 1209600
+      SqsManagedSseEnabled: true
+
+  BatchEventsQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub ${ProjectName}-${EnvironmentName}-batch-events
+      VisibilityTimeout: 120
+      MessageRetentionPeriod: 345600
+      SqsManagedSseEnabled: true
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt DeadLetterQueue.Arn
+        maxReceiveCount: 5
+
+  CompletionEventsQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub ${ProjectName}-${EnvironmentName}-completion-events
+      VisibilityTimeout: 120
+      MessageRetentionPeriod: 345600
+      SqsManagedSseEnabled: true
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt DeadLetterQueue.Arn
+        maxReceiveCount: 5
+
+Outputs:
+  BatchEventsQueueUrl:
+    Value: !Ref BatchEventsQueue
+  BatchEventsQueueArn:
+    Value: !GetAtt BatchEventsQueue.Arn
+  CompletionEventsQueueUrl:
+    Value: !Ref CompletionEventsQueue
+  CompletionEventsQueueArn:
+    Value: !GetAtt CompletionEventsQueue.Arn
+  DeadLetterQueueArn:
+    Value: !GetAtt DeadLetterQueue.Arn

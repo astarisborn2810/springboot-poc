@@ -1,0 +1,11 @@
+<configuration>
+    <springProperty scope="context" name="applicationName" source="spring.application.name"/>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <customFields>{"service":"${applicationName:-financial-processing-service}","platform":"pearl-payroll-platform"}</customFields>
+        </encoder>
+    </appender>
+    <root level="${LOG_LEVEL_ROOT:-INFO}">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>

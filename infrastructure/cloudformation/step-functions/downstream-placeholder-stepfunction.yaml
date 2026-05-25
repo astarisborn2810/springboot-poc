@@ -1,0 +1,112 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: PEARL payroll downstream placeholder Step Functions state machine.
+
+Parameters:
+  Environment:
+    Type: String
+    Default: dev
+    AllowedValues:
+      - dev
+      - qa
+      - uat
+      - prod
+    Description: Deployment environment for the PEARL payroll downstream orchestrator.
+
+Resources:
+  DownstreamOrchestratorLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/vendedlogs/states/payroll-downstream-orchestrator-${Environment}
+      RetentionInDays: 30
+      Tags:
+        - Key: Project
+          Value: PAYROLL
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: ManagedBy
+          Value: CloudFormation
+
+  DownstreamOrchestratorRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub payroll-downstream-orchestrator-role-${Environment}
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: states.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Policies:
+        - PolicyName: step-functions-cloudwatch-logs
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Sid: AllowStepFunctionsLogging
+                Effect: Allow
+                Action:
+                  - logs:CreateLogDelivery
+                  - logs:GetLogDelivery
+                  - logs:UpdateLogDelivery
+                  - logs:DeleteLogDelivery
+                  - logs:ListLogDeliveries
+                  - logs:PutResourcePolicy
+                  - logs:DescribeResourcePolicies
+                  - logs:DescribeLogGroups
+                Resource: "*"
+      Tags:
+        - Key: Project
+          Value: PAYROLL
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: ManagedBy
+          Value: CloudFormation
+
+  DownstreamOrchestratorStateMachine:
+    Type: AWS::StepFunctions::StateMachine
+    Properties:
+      StateMachineName: !Sub payroll-downstream-orchestrator-${Environment}
+      StateMachineType: STANDARD
+      RoleArn: !GetAtt DownstreamOrchestratorRole.Arn
+      LoggingConfiguration:
+        Destinations:
+          - CloudWatchLogsLogGroup:
+              LogGroupArn: !GetAtt DownstreamOrchestratorLogGroup.Arn
+        IncludeExecutionData: true
+        Level: ALL
+      DefinitionString: !Sub |
+        {
+          "Comment": "PEARL downstream placeholder workflow",
+          "StartAt": "DetermineDataTypePass",
+          "States": {
+            "DetermineDataTypePass": {
+              "Type": "Pass",
+              "ResultPath": "$.orchestration",
+              "Result": {
+                "status": "DATA_TYPE_DETERMINED",
+                "message": "Placeholder data type routing completed"
+              },
+              "Next": "Success"
+            },
+            "Success": {
+              "Type": "Succeed"
+            }
+          }
+        }
+      Tags:
+        - Key: Project
+          Value: PAYROLL
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: ManagedBy
+          Value: CloudFormation
+
+Outputs:
+  StateMachineArn:
+    Description: ARN of the PEARL payroll downstream placeholder state machine.
+    Value: !Ref DownstreamOrchestratorStateMachine
+
+  StateMachineName:
+    Description: Name of the PEARL payroll downstream placeholder state machine.
+    Value: !GetAtt DownstreamOrchestratorStateMachine.Name

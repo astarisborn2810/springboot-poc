@@ -1,0 +1,67 @@
+{
+  "Comment": "PEARL payroll downstream orchestration placeholder",
+  "StartAt": "RoutePayloadType",
+  "States": {
+    "RoutePayloadType": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.payloadType",
+          "StringEquals": "financial",
+          "Next": "ProcessFinancialPayload"
+        },
+        {
+          "Variable": "$.payloadType",
+          "StringEquals": "indicative",
+          "Next": "ProcessIndicativePayload"
+        }
+      ],
+      "Default": "SendToManualReview"
+    },
+    "ProcessFinancialPayload": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::ecs:runTask.sync",
+      "Parameters": {
+        "Cluster": "${ECS_CLUSTER_ARN}",
+        "TaskDefinition": "${FINANCIAL_TASK_DEFINITION_ARN}",
+        "LaunchType": "EC2"
+      },
+      "Next": "TrackResult"
+    },
+    "ProcessIndicativePayload": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::ecs:runTask.sync",
+      "Parameters": {
+        "Cluster": "${ECS_CLUSTER_ARN}",
+        "TaskDefinition": "${INDICATIVE_TASK_DEFINITION_ARN}",
+        "LaunchType": "EC2"
+      },
+      "Next": "TrackResult"
+    },
+    "TrackResult": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::ecs:runTask.sync",
+      "Parameters": {
+        "Cluster": "${ECS_CLUSTER_ARN}",
+        "TaskDefinition": "${RESULT_TRACKING_TASK_DEFINITION_ARN}",
+        "LaunchType": "EC2"
+      },
+      "Next": "CompleteBatch"
+    },
+    "CompleteBatch": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::ecs:runTask.sync",
+      "Parameters": {
+        "Cluster": "${ECS_CLUSTER_ARN}",
+        "TaskDefinition": "${BATCH_COMPLETION_TASK_DEFINITION_ARN}",
+        "LaunchType": "EC2"
+      },
+      "End": true
+    },
+    "SendToManualReview": {
+      "Type": "Fail",
+      "Error": "UnsupportedPayloadType",
+      "Cause": "Payload type was neither financial nor indicative."
+    }
+  }
+}
