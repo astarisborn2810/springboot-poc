@@ -13,17 +13,20 @@ com.pearl.downstream.trigger.handler.SqsTriggerHandler::handleRequest
 The handler implements:
 
 ```java
-RequestHandler<SQSEvent, Void>
+RequestHandler<SQSEvent, SQSBatchResponse>
 ```
 
 ## Flow
 
 1. S3 writes an `s3:ObjectCreated:Put` event into SQS when a new object lands under `outbound/`.
 2. `SqsTriggerHandler` receives one or more SQS records.
-3. `TriggerMessageProcessor` parses the S3 event body.
-4. `s3:TestEvent` messages are ignored safely.
-5. Object-created records are validated and converted into `StepFunctionInput`, including `fileName` and `s3PathOrArn` for downstream processing service calls.
-6. `StepFunctionStarterService` starts the configured Step Functions state machine.
+3. `SqsTriggerHandler` returns an SQS partial batch response so one failed message does not replay successfully processed messages.
+4. `TriggerMessageProcessor` parses the S3 event body.
+5. `s3:TestEvent` messages are ignored safely.
+6. Object-created records are validated and converted into `StepFunctionInput`, including `fileName`, `s3PathOrArn`, and a stable S3 idempotency key.
+7. `DynamoDbIdempotencyStore`, when `IDEMPOTENCY_TABLE_NAME` is configured, conditionally claims the event before the workflow starts.
+8. `StepFunctionStarterService` starts the configured Step Functions state machine with a deterministic execution name derived from the idempotency key.
+9. Completed duplicate events are skipped; in-progress duplicates are returned as failed SQS batch items so they retry later.
 
 ## Environment Variables
 
@@ -35,8 +38,29 @@ Optional:
 
 - `AWS_REGION`: Region used by AWS SDK v2. If absent, the AWS SDK default region provider chain is used.
 - `LOG_LEVEL`: Logback root level. Defaults to `INFO`.
+- `IDEMPOTENCY_TABLE_NAME`: DynamoDB table used to prevent duplicate S3 event processing. Strongly recommended for every non-local environment.
+- `IDEMPOTENCY_TTL_DAYS`: DynamoDB TTL retention for idempotency records. Defaults to `91`, matching the Step Functions execution-name uniqueness window.
+- `IDEMPOTENCY_IN_PROGRESS_TTL_SECONDS`: Lease for a `STARTING` idempotency claim. Defaults to `900`.
 
 Credentials are not configured in code. The Lambda uses the AWS SDK default credentials provider chain, which should resolve from the Lambda execution role in AWS.
+
+## Idempotency Table
+
+Production deployments should set `IDEMPOTENCY_TABLE_NAME` to a DynamoDB table with this shape:
+
+```text
+Partition key: idempotencyKey (String)
+TTL attribute: expiresAt
+Billing mode: PAY_PER_REQUEST
+```
+
+The Lambda writes one record per S3 object-created event. The key is derived from bucket, object key, event type, and the S3 `sequencer` when present. This allows duplicate S3 or SQS deliveries to be ignored while allowing a later upload of the same key with a new S3 sequence to start a new workflow.
+
+Record statuses:
+
+- `STARTING`: the Lambda claimed the event and is starting Step Functions.
+- `STARTED`: Step Functions was started, or the deterministic execution name already existed.
+- `FAILED`: startup failed before completion; a retry can reclaim the event.
 
 ## S3 Key Metadata Extraction
 
@@ -79,6 +103,7 @@ Logs are emitted as single-line JSON and include:
 - `key`
 - `eventType`
 - `sourceMessageId`
+- `idempotencyKey` inside Step Functions input metadata
 
 ## Build
 
@@ -159,4 +184,17 @@ Object-created event body inside an SQS record:
 
 ## Failure Behavior
 
-This Lambda uses `RequestHandler<SQSEvent, Void>`, so any processing exception is rethrown to let Lambda/SQS retry the batch. Invalid event payloads are rejected with `InvalidTriggerMessageException`. Repeated failures are handled by the SQS redrive policy and moved to the configured DLQ.
+This Lambda uses `RequestHandler<SQSEvent, SQSBatchResponse>` and requires the Lambda event source mapping to include `ReportBatchItemFailures`.
+
+Negative-scenario handling:
+
+- Empty events return success with no failed items.
+- S3 test events are ignored safely.
+- Malformed JSON, missing S3 fields, unsupported S3 event types, DynamoDB claim failures, and Step Functions start failures return only that SQS message id in `batchItemFailures`.
+- Successfully processed records in the same Lambda invocation are not retried when another SQS message fails.
+- Duplicate completed S3 events are logged and skipped.
+- Active in-progress duplicates retry later instead of being deleted prematurely.
+- Step Functions `ExecutionAlreadyExists` is treated as duplicate success because execution names are deterministic.
+- Repeated permanent failures still move to the SQS DLQ through the queue redrive policy.
+
+For a 10,000-file S3 spike, SQS buffers the fan-in, Lambda polls in batches, partial batch response isolates failures, and DynamoDB/Step Functions idempotency prevents duplicate workflow starts from at-least-once S3/SQS delivery.

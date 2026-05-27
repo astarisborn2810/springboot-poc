@@ -6,14 +6,19 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 
 import com.amazonaws.services.lambda.runtime.events.SQSEvent;
 import com.pearl.downstream.trigger.exception.InvalidTriggerMessageException;
+import com.pearl.downstream.trigger.exception.TriggerProcessingException;
+import com.pearl.downstream.trigger.idempotency.IdempotencyClaim;
+import com.pearl.downstream.trigger.idempotency.IdempotencyStore;
 import com.pearl.downstream.trigger.logging.JsonLogger;
 import com.pearl.downstream.trigger.model.StepFunctionInput;
+import com.pearl.downstream.trigger.model.StepFunctionStartResult;
 import com.pearl.downstream.trigger.validator.MessageValidator;
 import java.util.List;
 import java.util.Map;
@@ -43,7 +48,8 @@ class TriggerMessageProcessorTest {
     @Test
     void parsesObjectCreatedEventAndStartsStepFunction() {
         StepFunctionStarterService starterService = mock(StepFunctionStarterService.class);
-        when(starterService.startExecution(any(StepFunctionInput.class))).thenReturn("execution-arn");
+        when(starterService.startExecution(any(StepFunctionInput.class)))
+                .thenReturn(StepFunctionStartResult.started("execution-name", "execution-arn"));
         TriggerMessageProcessor processor = processor(starterService);
 
         List<StepFunctionInput> inputs = processor.process(message("message-2", objectCreatedBody()));
@@ -62,6 +68,7 @@ class TriggerMessageProcessorTest {
         assertEquals("prismhr", input.vendorId());
         assertEquals("batch-20260522", input.batchId());
         assertFalse(input.correlationId().isBlank());
+        assertTrue(input.metadata().get("idempotencyKey").startsWith("s3event#"));
     }
 
     @Test
@@ -89,7 +96,8 @@ class TriggerMessageProcessorTest {
     @Test
     void createsStepFunctionInputWithCorrelationAttributesWhenPresent() {
         StepFunctionStarterService starterService = mock(StepFunctionStarterService.class);
-        when(starterService.startExecution(any(StepFunctionInput.class))).thenReturn("execution-arn");
+        when(starterService.startExecution(any(StepFunctionInput.class)))
+                .thenReturn(StepFunctionStartResult.started("execution-name", "execution-arn"));
         TriggerMessageProcessor processor = processor(starterService);
         SQSEvent.SQSMessage message = message("message-4", objectCreatedBody());
         message.setMessageAttributes(Map.of(
@@ -110,8 +118,45 @@ class TriggerMessageProcessorTest {
         assertEquals("message-4", input.sourceMessageId());
     }
 
+    @Test
+    void skipsDuplicateCompletedS3EventWithoutStartingStepFunction() {
+        StepFunctionStarterService starterService = mock(StepFunctionStarterService.class);
+        IdempotencyStore idempotencyStore = mock(IdempotencyStore.class);
+        when(idempotencyStore.claim(any(), any()))
+                .thenReturn(IdempotencyClaim.duplicateCompleted("s3event#duplicate", "STARTED"));
+        TriggerMessageProcessor processor = processor(starterService, idempotencyStore);
+
+        List<StepFunctionInput> inputs = processor.process(message("message-5", objectCreatedBody()));
+
+        assertEquals(1, inputs.size());
+        verify(starterService, never()).startExecution(any(StepFunctionInput.class));
+    }
+
+    @Test
+    void failsInProgressS3EventSoOnlyThatSqsMessageRetries() {
+        StepFunctionStarterService starterService = mock(StepFunctionStarterService.class);
+        IdempotencyStore idempotencyStore = mock(IdempotencyStore.class);
+        when(idempotencyStore.claim(any(), any()))
+                .thenReturn(IdempotencyClaim.inProgress("s3event#in-progress", "STARTING"));
+        TriggerMessageProcessor processor = processor(starterService, idempotencyStore);
+
+        assertThrows(TriggerProcessingException.class, () -> processor.process(message("message-6", objectCreatedBody())));
+        verify(starterService, never()).startExecution(any(StepFunctionInput.class));
+    }
+
     private static TriggerMessageProcessor processor(StepFunctionStarterService starterService) {
         return new TriggerMessageProcessor(starterService, new MessageValidator(), new CorrelationService(), new JsonLogger());
+    }
+
+    private static TriggerMessageProcessor processor(
+            StepFunctionStarterService starterService,
+            IdempotencyStore idempotencyStore) {
+        return new TriggerMessageProcessor(
+                starterService,
+                new MessageValidator(),
+                new CorrelationService(),
+                idempotencyStore,
+                new JsonLogger());
     }
 
     private static SQSEvent.SQSMessage message(String messageId, String body) {

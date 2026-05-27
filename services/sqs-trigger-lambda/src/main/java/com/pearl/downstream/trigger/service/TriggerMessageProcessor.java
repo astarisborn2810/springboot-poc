@@ -4,10 +4,15 @@ import com.amazonaws.services.lambda.runtime.events.SQSEvent;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.pearl.downstream.trigger.exception.InvalidTriggerMessageException;
 import com.pearl.downstream.trigger.exception.TriggerProcessingException;
+import com.pearl.downstream.trigger.idempotency.DynamoDbIdempotencyStore;
+import com.pearl.downstream.trigger.idempotency.IdempotencyClaim;
+import com.pearl.downstream.trigger.idempotency.IdempotencyStore;
+import com.pearl.downstream.trigger.idempotency.NoOpIdempotencyStore;
 import com.pearl.downstream.trigger.logging.JsonLogger;
 import com.pearl.downstream.trigger.model.CorrelationMetadata;
 import com.pearl.downstream.trigger.model.S3EventMessage;
 import com.pearl.downstream.trigger.model.StepFunctionInput;
+import com.pearl.downstream.trigger.model.StepFunctionStartResult;
 import com.pearl.downstream.trigger.util.JsonUtil;
 import com.pearl.downstream.trigger.util.S3ObjectKeyUtil;
 import com.pearl.downstream.trigger.validator.MessageValidator;
@@ -21,10 +26,16 @@ public class TriggerMessageProcessor {
     private final StepFunctionStarterService stepFunctionStarterService;
     private final MessageValidator messageValidator;
     private final CorrelationService correlationService;
+    private final IdempotencyStore idempotencyStore;
     private final JsonLogger jsonLogger;
 
     public TriggerMessageProcessor() {
-        this(new StepFunctionStarterService(), new MessageValidator(), new CorrelationService(), new JsonLogger());
+        this(
+                new StepFunctionStarterService(),
+                new MessageValidator(),
+                new CorrelationService(),
+                DynamoDbIdempotencyStore.fromEnvironment(System::getenv),
+                new JsonLogger());
     }
 
     public TriggerMessageProcessor(
@@ -32,9 +43,19 @@ public class TriggerMessageProcessor {
             MessageValidator messageValidator,
             CorrelationService correlationService,
             JsonLogger jsonLogger) {
+        this(stepFunctionStarterService, messageValidator, correlationService, new NoOpIdempotencyStore(), jsonLogger);
+    }
+
+    public TriggerMessageProcessor(
+            StepFunctionStarterService stepFunctionStarterService,
+            MessageValidator messageValidator,
+            CorrelationService correlationService,
+            IdempotencyStore idempotencyStore,
+            JsonLogger jsonLogger) {
         this.stepFunctionStarterService = stepFunctionStarterService;
         this.messageValidator = messageValidator;
         this.correlationService = correlationService;
+        this.idempotencyStore = idempotencyStore;
         this.jsonLogger = jsonLogger;
     }
 
@@ -58,11 +79,44 @@ public class TriggerMessageProcessor {
             S3EventMessage eventMessage = toS3EventMessage(record, sqsMessage);
             messageValidator.validate(eventMessage);
             StepFunctionInput input = StepFunctionInput.from(eventMessage);
-            String executionArn = stepFunctionStarterService.startExecution(input);
-            jsonLogger.info("Started Step Function execution: " + executionArn, eventMessage);
+            IdempotencyClaim claim = idempotencyStore.claim(eventMessage, input);
+            if (claim.duplicateCompleted()) {
+                jsonLogger.warn("Skipping duplicate S3 event already started: " + claim.idempotencyKey(), eventMessage);
+                inputs.add(input);
+                continue;
+            }
+            if (claim.inProgress()) {
+                throw new TriggerProcessingException("S3 event is already being processed: " + claim.idempotencyKey());
+            }
+            StepFunctionStartResult startResult = startStepFunction(input, eventMessage, claim);
+            if (startResult.alreadyExists()) {
+                jsonLogger.warn("Step Function execution already exists; treating S3 event as duplicate: "
+                        + startResult.executionName(), eventMessage);
+            } else {
+                jsonLogger.info("Started Step Function execution: " + startResult.executionArn(), eventMessage);
+            }
             inputs.add(input);
         }
         return List.copyOf(inputs);
+    }
+
+    private StepFunctionStartResult startStepFunction(
+            StepFunctionInput input,
+            S3EventMessage eventMessage,
+            IdempotencyClaim claim) {
+        try {
+            StepFunctionStartResult result = stepFunctionStarterService.startExecution(input);
+            idempotencyStore.markStarted(claim, result);
+            return result;
+        } catch (RuntimeException ex) {
+            try {
+                idempotencyStore.release(claim, ex);
+            } catch (RuntimeException releaseEx) {
+                ex.addSuppressed(releaseEx);
+                jsonLogger.error("Failed to release S3 idempotency claim", eventMessage, releaseEx);
+            }
+            throw ex;
+        }
     }
 
     private S3EventMessage toS3EventMessage(JsonNode record, SQSEvent.SQSMessage sqsMessage) {

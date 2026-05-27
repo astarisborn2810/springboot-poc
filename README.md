@@ -42,7 +42,7 @@ The platform separates financial payroll processing from indicative employee and
 - OpenTelemetry, Spring Actuator, JSON logs
 - Windows and IntelliJ compatible
 
-Spring Boot is pinned to the 3.5 line for Java 24 compatibility. Lambda artifacts are compiled as Java 24 bytecode; Lambda container placeholders use a current AWS Java base image that can run Java 24 bytecode.
+Spring Boot services are pinned to the 3.5 line for Java 24 compatibility. The `sqs-trigger-lambda` module is compiled separately for AWS Lambda Java 21 runtime compatibility.
 
 ## Quick Start On Windows
 

@@ -39,8 +39,29 @@ Resources:
         - AttributeName: participantId
           KeyType: HASH
 
+  S3TriggerIdempotencyTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub ${ProjectName}-${EnvironmentName}-s3-trigger-idempotency
+      BillingMode: PAY_PER_REQUEST
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+      AttributeDefinitions:
+        - AttributeName: idempotencyKey
+          AttributeType: S
+      KeySchema:
+        - AttributeName: idempotencyKey
+          KeyType: HASH
+      TimeToLiveSpecification:
+        AttributeName: expiresAt
+        Enabled: true
+
 Outputs:
   BatchStatusTableName:
     Value: !Ref BatchStatusTable
   ParticipantStatusTableName:
     Value: !Ref ParticipantStatusTable
+  S3TriggerIdempotencyTableName:
+    Value: !Ref S3TriggerIdempotencyTable
+  S3TriggerIdempotencyTableArn:
+    Value: !GetAtt S3TriggerIdempotencyTable.Arn

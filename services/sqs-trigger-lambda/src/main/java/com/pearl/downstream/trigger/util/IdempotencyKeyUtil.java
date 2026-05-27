@@ -39,7 +39,12 @@ public final class IdempotencyKeyUtil {
                 normalize(input.bucket()),
                 normalize(input.key()),
                 normalize(input.eventType()),
-                firstNonBlank(input.sequencer(), input.eTag(), number(input.objectSize()), instant(input.eventTime())));
+                eventIdentity(
+                        input.sequencer(),
+                        input.eTag(),
+                        input.objectSize(),
+                        input.eventTime(),
+                        input.sourceMessageId()));
         return KEY_PREFIX + sha256Hex(rawKey);
     }
 
@@ -54,12 +59,29 @@ public final class IdempotencyKeyUtil {
     }
 
     private static String eventIdentity(S3EventMessage message) {
-        return firstNonBlank(
+        return eventIdentity(
                 message.sequencer(),
                 message.eTag(),
-                number(message.objectSize()),
-                instant(message.eventTime()),
+                message.objectSize(),
+                message.eventTime(),
                 message.sourceMessageId());
+    }
+
+    private static String eventIdentity(
+            String sequencer,
+            String eTag,
+            Long objectSize,
+            Instant eventTime,
+            String fallback) {
+        String combined = String.join(":",
+                valueOrUnknown(sequencer),
+                valueOrUnknown(eTag),
+                valueOrUnknown(number(objectSize)),
+                valueOrUnknown(instant(eventTime)));
+        if (combined.replace("unknown", "").replace(":", "").isBlank()) {
+            return firstNonBlank(fallback, "unknown");
+        }
+        return combined;
     }
 
     private static String firstNonBlank(String... values) {
@@ -81,6 +103,10 @@ public final class IdempotencyKeyUtil {
 
     private static String normalize(String value) {
         return value == null ? "unknown" : value.trim().toLowerCase(Locale.ROOT);
+    }
+
+    private static String valueOrUnknown(String value) {
+        return value == null || value.isBlank() ? "unknown" : value.trim();
     }
 
     private static String sha256Hex(String value) {

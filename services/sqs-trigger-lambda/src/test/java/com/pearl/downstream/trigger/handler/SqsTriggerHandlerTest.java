@@ -1,11 +1,12 @@
 package com.pearl.downstream.trigger.handler;
 
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.amazonaws.services.lambda.runtime.events.SQSBatchResponse;
 import com.amazonaws.services.lambda.runtime.events.SQSEvent;
 import com.pearl.downstream.trigger.exception.TriggerProcessingException;
 import com.pearl.downstream.trigger.logging.JsonLogger;
@@ -16,10 +17,12 @@ import org.junit.jupiter.api.Test;
 class SqsTriggerHandlerTest {
 
     @Test
-    void returnsNullForEmptyEvent() {
+    void returnsEmptyBatchResponseForEmptyEvent() {
         SqsTriggerHandler handler = new SqsTriggerHandler(mock(TriggerMessageProcessor.class), new JsonLogger());
 
-        assertNull(handler.handleRequest(new SQSEvent(), null));
+        SQSBatchResponse response = handler.handleRequest(new SQSEvent(), null);
+
+        assertTrue(response.getBatchItemFailures().isEmpty());
     }
 
     @Test
@@ -31,14 +34,15 @@ class SqsTriggerHandlerTest {
         SQSEvent event = new SQSEvent();
         event.setRecords(List.of(first, second));
 
-        assertNull(handler.handleRequest(event, null));
+        SQSBatchResponse response = handler.handleRequest(event, null);
 
+        assertTrue(response.getBatchItemFailures().isEmpty());
         verify(processor).process(first);
         verify(processor).process(second);
     }
 
     @Test
-    void rethrowsProcessingExceptionSoLambdaRetriesBatch() {
+    void returnsOnlyFailedMessageIdForPartialBatchRetry() {
         TriggerMessageProcessor processor = mock(TriggerMessageProcessor.class);
         SQSEvent.SQSMessage message = message("message-1");
         when(processor.process(message)).thenThrow(new TriggerProcessingException("boom"));
@@ -46,7 +50,10 @@ class SqsTriggerHandlerTest {
         SQSEvent event = new SQSEvent();
         event.setRecords(List.of(message));
 
-        assertThrows(TriggerProcessingException.class, () -> handler.handleRequest(event, null));
+        SQSBatchResponse response = handler.handleRequest(event, null);
+
+        assertEquals(1, response.getBatchItemFailures().size());
+        assertEquals("message-1", response.getBatchItemFailures().getFirst().getItemIdentifier());
     }
 
     private static SQSEvent.SQSMessage message(String messageId) {
