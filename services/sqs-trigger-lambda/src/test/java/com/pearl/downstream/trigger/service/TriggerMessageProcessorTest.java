@@ -53,9 +53,12 @@ class TriggerMessageProcessorTest {
         StepFunctionInput input = captor.getValue();
         assertEquals(1, inputs.size());
         assertEquals("payroll-outbound-dev", input.bucket());
-        assertEquals("outbound/prismhr/financial/batch-20260522/payroll-file.json", input.key());
+        assertEquals("outbound/prismhr/financial/batch-20260522/batch-20260522_prismhr_PEARL-401K-PLAN-001.json", input.key());
+        assertEquals("batch-20260522_prismhr_PEARL-401K-PLAN-001", input.fileName());
+        assertEquals("s3://payroll-outbound-dev/outbound/prismhr/financial/batch-20260522/batch-20260522_prismhr_PEARL-401K-PLAN-001.json", input.s3PathOrArn());
         assertEquals("ObjectCreated:Put", input.eventType());
         assertEquals("financial", input.dataType());
+        assertEquals("financial", input.payloadType());
         assertEquals("prismhr", input.vendorId());
         assertEquals("batch-20260522", input.batchId());
         assertFalse(input.correlationId().isBlank());
@@ -74,7 +77,7 @@ class TriggerMessageProcessorTest {
                     "s3": {
                       "bucket": {},
                       "object": {
-                        "key": "outbound/prismhr/financial/batch-20260522/payroll-file.json"
+                        "key": "outbound/prismhr/financial/batch-20260522/batch-20260522_prismhr_PEARL-401K-PLAN-001.json"
                       }
                     }
                   }]
@@ -140,7 +143,7 @@ class TriggerMessageProcessorTest {
                         "arn": "arn:aws:s3:::payroll-outbound-dev"
                       },
                       "object": {
-                        "key": "outbound/prismhr/financial/batch-20260522/payroll-file.json",
+                        "key": "outbound/prismhr/financial/batch-20260522/batch-20260522_prismhr_PEARL-401K-PLAN-001.json",
                         "size": 4096,
                         "eTag": "etag-test",
                         "sequencer": "00664F1D2A5A"

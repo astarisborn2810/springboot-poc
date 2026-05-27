@@ -29,8 +29,11 @@ class StepFunctionStarterServiceTest {
                 "batch-20260522",
                 "prismhr",
                 "financial",
+                "financial",
+                "batch-20260522_prismhr_PEARL-401K-PLAN-001",
+                "s3://payroll-outbound-dev/outbound/prismhr/financial/batch-20260522/batch-20260522_prismhr_PEARL-401K-PLAN-001.json",
                 "payroll-outbound-dev",
-                "outbound/prismhr/financial/batch-20260522/file.json",
+                "outbound/prismhr/financial/batch-20260522/batch-20260522_prismhr_PEARL-401K-PLAN-001.json",
                 "ObjectCreated:Put",
                 Instant.parse("2026-05-24T10:00:00Z"),
                 "ap-south-1",
@@ -49,7 +52,10 @@ class StepFunctionStarterServiceTest {
         assertEquals("state-machine-arn", request.stateMachineArn());
         assertTrue(request.name().length() <= 80);
         assertTrue(request.input().contains("\"correlationId\":\"corr-001\""));
+        assertTrue(request.input().contains("\"payloadType\":\"financial\""));
+        assertTrue(request.input().contains("\"fileName\":\"batch-20260522_prismhr_PEARL-401K-PLAN-001\""));
+        assertTrue(request.input().contains("\"s3PathOrArn\":\"s3://payroll-outbound-dev/outbound/prismhr/financial/batch-20260522/batch-20260522_prismhr_PEARL-401K-PLAN-001.json\""));
         assertTrue(request.input().contains("\"bucket\":\"payroll-outbound-dev\""));
-        assertTrue(request.input().contains("\"key\":\"outbound/prismhr/financial/batch-20260522/file.json\""));
+        assertTrue(request.input().contains("\"key\":\"outbound/prismhr/financial/batch-20260522/batch-20260522_prismhr_PEARL-401K-PLAN-001.json\""));
     }
 }

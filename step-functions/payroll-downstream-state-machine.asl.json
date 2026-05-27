@@ -24,7 +24,24 @@
       "Parameters": {
         "Cluster": "${ECS_CLUSTER_ARN}",
         "TaskDefinition": "${FINANCIAL_TASK_DEFINITION_ARN}",
-        "LaunchType": "EC2"
+        "LaunchType": "EC2",
+        "Overrides": {
+          "ContainerOverrides": [
+            {
+              "Name": "financial-processing-service",
+              "Environment": [
+                {
+                  "Name": "PAYLOAD_FILE_NAME",
+                  "Value.$": "$.fileName"
+                },
+                {
+                  "Name": "S3_PATH_OR_ARN",
+                  "Value.$": "$.s3PathOrArn"
+                }
+              ]
+            }
+          ]
+        }
       },
       "Next": "TrackResult"
     },
@@ -34,7 +51,24 @@
       "Parameters": {
         "Cluster": "${ECS_CLUSTER_ARN}",
         "TaskDefinition": "${INDICATIVE_TASK_DEFINITION_ARN}",
-        "LaunchType": "EC2"
+        "LaunchType": "EC2",
+        "Overrides": {
+          "ContainerOverrides": [
+            {
+              "Name": "indicative-processing-service",
+              "Environment": [
+                {
+                  "Name": "PAYLOAD_FILE_NAME",
+                  "Value.$": "$.fileName"
+                },
+                {
+                  "Name": "S3_PATH_OR_ARN",
+                  "Value.$": "$.s3PathOrArn"
+                }
+              ]
+            }
+          ]
+        }
       },
       "Next": "TrackResult"
     },

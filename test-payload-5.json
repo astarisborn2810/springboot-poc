@@ -1,0 +1,17 @@
+﻿{
+  "dataType": "FINANCIAL",
+  "batchId": "batch-005",
+  "vendorId": "PRISMHR",
+  "planId": "PLAN-1001",
+  "timestamp": "2026-05-27T10:00:00Z",
+  "members": [
+    {
+      "memberId": "MEM-10001",
+      "employeeId": "EMP-9001",
+      "firstName": "John",
+      "lastName": "Doe",
+      "salary": 120000,
+      "contribution": 5000
+    }
+  ]
+}

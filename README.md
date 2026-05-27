@@ -60,6 +60,30 @@ Invoke-RestMethod http://localhost:8081/actuator/health
 Invoke-RestMethod http://localhost:8081/v1/financial/status
 ```
 
+OpenAPI contracts:
+
+```powershell
+Invoke-RestMethod http://localhost:8081/v3/api-docs
+Invoke-RestMethod http://localhost:8082/v3/api-docs
+```
+
+Swagger UI is available at `http://localhost:8081/swagger-ui.html` and `http://localhost:8082/swagger-ui.html` when the financial and indicative services are running.
+
+Financial and indicative Step Functions calls pass only an S3 file pointer:
+
+```json
+{
+  "fileName": "batch-20260522_prismhr_PEARL-401K-PLAN-001",
+  "s3PathOrArn": "s3://payroll-outbound-dev/outbound/prismhr/financial/batch-20260522/batch-20260522_prismhr_PEARL-401K-PLAN-001.json"
+}
+```
+
+The `fileName` must use `batchId_vendorName_plan` format. Financial external API request count is calculated after reading the S3 file, from the combined record count:
+
+```text
+expectedExternalApiRequests = ceil((payrollRecords.size + controlTotalRecords.size) / 500)
+```
+
 Stop local dependencies:
 
 ```powershell
