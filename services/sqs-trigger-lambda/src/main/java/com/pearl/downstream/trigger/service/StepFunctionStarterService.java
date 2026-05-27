@@ -2,13 +2,14 @@ package com.pearl.downstream.trigger.service;
 
 import com.pearl.downstream.trigger.exception.ConfigurationException;
 import com.pearl.downstream.trigger.exception.TriggerProcessingException;
+import com.pearl.downstream.trigger.model.StepFunctionStartResult;
 import com.pearl.downstream.trigger.model.StepFunctionInput;
+import com.pearl.downstream.trigger.util.IdempotencyKeyUtil;
 import com.pearl.downstream.trigger.util.JsonUtil;
-import java.time.Instant;
-import java.util.Optional;
 import java.util.function.Function;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.sfn.SfnClient;
+import software.amazon.awssdk.services.sfn.model.ExecutionAlreadyExistsException;
 import software.amazon.awssdk.services.sfn.model.SfnException;
 import software.amazon.awssdk.services.sfn.model.StartExecutionRequest;
 import software.amazon.awssdk.services.sfn.model.StartExecutionResponse;
@@ -39,15 +40,18 @@ public class StepFunctionStarterService implements AutoCloseable {
         this.closeClient = closeClient;
     }
 
-    public String startExecution(StepFunctionInput input) {
+    public StepFunctionStartResult startExecution(StepFunctionInput input) {
+        String executionName = executionName(input);
         StartExecutionRequest request = StartExecutionRequest.builder()
                 .stateMachineArn(stateMachineArn)
-                .name(executionName(input))
+                .name(executionName)
                 .input(JsonUtil.toJson(input))
                 .build();
         try {
             StartExecutionResponse response = sfnClient.startExecution(request);
-            return response.executionArn();
+            return StepFunctionStartResult.started(executionName, response.executionArn());
+        } catch (ExecutionAlreadyExistsException ex) {
+            return StepFunctionStartResult.alreadyExists(executionName);
         } catch (SfnException ex) {
             throw new TriggerProcessingException("Failed to start Step Function execution", ex);
         }
@@ -76,23 +80,25 @@ public class StepFunctionStarterService implements AutoCloseable {
     }
 
     private static String executionName(StepFunctionInput input) {
-        String rawName = String.join("-",
+        String hash = IdempotencyKeyUtil.shortHash(IdempotencyKeyUtil.forInput(input), 20);
+        String prefix = String.join("-",
                 nullToUnknown(input.vendorId()),
                 nullToUnknown(input.dataType()),
-                nullToUnknown(input.batchId()),
-                input.correlationId(),
-                String.valueOf(Instant.now().toEpochMilli()));
-        String sanitized = rawName.replaceAll("[^A-Za-z0-9_-]", "-");
-        if (sanitized.length() <= MAX_EXECUTION_NAME_LENGTH) {
-            return sanitized;
+                nullToUnknown(input.batchId()));
+        String sanitizedPrefix = prefix.replaceAll("[^A-Za-z0-9_-]", "-").replaceAll("-+", "-");
+        if (sanitizedPrefix.isBlank()) {
+            sanitizedPrefix = "s3-event";
         }
-        String suffix = "-" + Optional.ofNullable(input.correlationId())
-                .map(value -> value.replaceAll("[^A-Za-z0-9_-]", ""))
-                .filter(value -> value.length() >= 12)
-                .map(value -> value.substring(0, 12))
-                .orElse("correlation");
+        String suffix = "-" + hash;
         int prefixLength = Math.max(1, MAX_EXECUTION_NAME_LENGTH - suffix.length());
-        return sanitized.substring(0, prefixLength) + suffix;
+        String trimmedPrefix = sanitizedPrefix.length() > prefixLength
+                ? sanitizedPrefix.substring(0, prefixLength)
+                : sanitizedPrefix;
+        trimmedPrefix = trimmedPrefix.replaceAll("-+$", "");
+        if (trimmedPrefix.isBlank()) {
+            trimmedPrefix = "s3-event";
+        }
+        return trimmedPrefix + suffix;
     }
 
     private static String nullToUnknown(String value) {

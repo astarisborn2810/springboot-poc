@@ -1,6 +1,8 @@
 package com.pearl.downstream.trigger.model;
 
+import com.pearl.downstream.trigger.util.IdempotencyKeyUtil;
 import java.time.Instant;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public record StepFunctionInput(
@@ -24,6 +26,13 @@ public record StepFunctionInput(
 
     public static StepFunctionInput from(S3EventMessage message) {
         CorrelationMetadata correlation = message.correlation();
+        String idempotencyKey = IdempotencyKeyUtil.forEvent(message);
+        Map<String, String> metadata = new LinkedHashMap<>();
+        metadata.put("source", "s3-event-notification");
+        metadata.put("trigger", "sqs-trigger-lambda");
+        metadata.put("idempotencyKey", idempotencyKey);
+        putIfPresent(metadata, "eTag", message.eTag());
+        putIfPresent(metadata, "sequencer", message.sequencer());
         return new StepFunctionInput(
                 correlation.correlationId(),
                 correlation.batchId(),
@@ -41,9 +50,7 @@ public record StepFunctionInput(
                 message.eTag(),
                 message.sequencer(),
                 message.sourceMessageId(),
-                Map.of(
-                        "source", "s3-event-notification",
-                        "trigger", "sqs-trigger-lambda"));
+                Map.copyOf(metadata));
     }
 
     private static String fileName(String objectKey) {
@@ -62,5 +69,11 @@ public record StepFunctionInput(
             return null;
         }
         return "s3://" + bucket + "/" + objectKey;
+    }
+
+    private static void putIfPresent(Map<String, String> metadata, String key, String value) {
+        if (value != null && !value.isBlank()) {
+            metadata.put(key, value);
+        }
     }
 }
