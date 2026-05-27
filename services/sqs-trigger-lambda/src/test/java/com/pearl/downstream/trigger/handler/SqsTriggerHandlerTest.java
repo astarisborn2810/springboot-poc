@@ -56,6 +56,26 @@ class SqsTriggerHandlerTest {
         assertEquals("message-1", response.getBatchItemFailures().getFirst().getItemIdentifier());
     }
 
+    @Test
+    void retriesOnlyFailedRecordInMultiRecordBatch() {
+        TriggerMessageProcessor processor = mock(TriggerMessageProcessor.class);
+        SQSEvent.SQSMessage first = message("message-1");
+        SQSEvent.SQSMessage second = message("message-2");
+        SQSEvent.SQSMessage third = message("message-3");
+        when(processor.process(second)).thenThrow(new TriggerProcessingException("boom"));
+        SqsTriggerHandler handler = new SqsTriggerHandler(processor, new JsonLogger());
+        SQSEvent event = new SQSEvent();
+        event.setRecords(List.of(first, second, third));
+
+        SQSBatchResponse response = handler.handleRequest(event, null);
+
+        assertEquals(1, response.getBatchItemFailures().size());
+        assertEquals("message-2", response.getBatchItemFailures().getFirst().getItemIdentifier());
+        verify(processor).process(first);
+        verify(processor).process(second);
+        verify(processor).process(third);
+    }
+
     private static SQSEvent.SQSMessage message(String messageId) {
         SQSEvent.SQSMessage message = new SQSEvent.SQSMessage();
         message.setMessageId(messageId);

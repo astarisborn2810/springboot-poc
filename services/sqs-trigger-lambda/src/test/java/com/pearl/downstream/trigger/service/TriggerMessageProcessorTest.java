@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
@@ -69,6 +70,23 @@ class TriggerMessageProcessorTest {
         assertEquals("batch-20260522", input.batchId());
         assertFalse(input.correlationId().isBlank());
         assertTrue(input.metadata().get("idempotencyKey").startsWith("s3event#"));
+    }
+
+    @Test
+    void processesMultipleS3RecordsFromOneSqsMessage() {
+        StepFunctionStarterService starterService = mock(StepFunctionStarterService.class);
+        when(starterService.startExecution(any(StepFunctionInput.class)))
+                .thenReturn(StepFunctionStartResult.started("execution-name", "execution-arn"));
+        TriggerMessageProcessor processor = processor(starterService);
+
+        List<StepFunctionInput> inputs = processor.process(message("message-multi", objectCreatedBodyWithTwoRecords()));
+
+        ArgumentCaptor<StepFunctionInput> captor = ArgumentCaptor.forClass(StepFunctionInput.class);
+        verify(starterService, times(2)).startExecution(captor.capture());
+        assertEquals(2, inputs.size());
+        assertEquals("batch-20260522_prismhr_PEARL-401K-PLAN-001", inputs.get(0).fileName());
+        assertEquals("batch-20260522_prismhr_PEARL-401K-PLAN-002", inputs.get(1).fileName());
+        assertEquals(2, captor.getAllValues().size());
     }
 
     @Test
@@ -195,6 +213,53 @@ class TriggerMessageProcessorTest {
                       }
                     }
                   }]
+                }
+                """;
+    }
+
+    private static String objectCreatedBodyWithTwoRecords() {
+        return """
+                {
+                  "Records": [
+                    {
+                      "eventVersion": "2.1",
+                      "eventSource": "aws:s3",
+                      "awsRegion": "ap-south-1",
+                      "eventTime": "2026-05-24T10:00:00.000Z",
+                      "eventName": "ObjectCreated:Put",
+                      "s3": {
+                        "bucket": {
+                          "name": "payroll-outbound-dev",
+                          "arn": "arn:aws:s3:::payroll-outbound-dev"
+                        },
+                        "object": {
+                          "key": "outbound/prismhr/financial/batch-20260522/batch-20260522_prismhr_PEARL-401K-PLAN-001.json",
+                          "size": 4096,
+                          "eTag": "etag-test-1",
+                          "sequencer": "00664F1D2A5A"
+                        }
+                      }
+                    },
+                    {
+                      "eventVersion": "2.1",
+                      "eventSource": "aws:s3",
+                      "awsRegion": "ap-south-1",
+                      "eventTime": "2026-05-24T10:00:01.000Z",
+                      "eventName": "ObjectCreated:Put",
+                      "s3": {
+                        "bucket": {
+                          "name": "payroll-outbound-dev",
+                          "arn": "arn:aws:s3:::payroll-outbound-dev"
+                        },
+                        "object": {
+                          "key": "outbound/prismhr/financial/batch-20260522/batch-20260522_prismhr_PEARL-401K-PLAN-002.json",
+                          "size": 8192,
+                          "eTag": "etag-test-2",
+                          "sequencer": "00664F1D2A5B"
+                        }
+                      }
+                    }
+                  ]
                 }
                 """;
     }
