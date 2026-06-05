@@ -1,0 +1,115 @@
+Principal Architect Copilot Prompt for Code Review
+Use this directly in Copilot Chat / PR Review:
+Act as a Principal Software Architect performing a deep code review.
+
+Review the provided code changes and give structured feedback under the following categories:
+
+1. Functional Correctness
+- Does the code correctly implement the intended functionality?
+- Are edge cases, null handling, and error scenarios covered?
+
+2. Architecture & Design
+- Does the implementation follow clean architecture principles?
+- Are there any violations of separation of concerns or tight coupling?
+- Is the design aligned with microservices best practices (if applicable)?
+
+3. Code Quality & Readability
+- Are naming conventions, formatting, and structure consistent?
+- Is the code easy to understand and maintain?
+- Any duplication or code smells?
+
+4. Performance & Efficiency
+- Identify any potential performance bottlenecks.
+- Are optimal algorithms and data structures used?
+- Any unnecessary loops, blocking calls, or inefficiencies?
+
+5. Security
+- Check for vulnerabilities (e.g., SQL injection, input validation issues).
+- Are sensitive data and secrets handled securely?
+- Are authentication/authorization checks properly implemented?
+
+6. Resilience & Reliability
+- Proper exception handling?
+- Retry mechanisms, circuit breakers, and timeout handling (for distributed systems)?
+- Idempotency where required?
+
+7. Testing
+- Are unit/integration tests sufficient?
+- Are edge cases covered in tests?
+- Any gaps in test coverage?
+
+8. Logging & Observability
+- Are logs meaningful and appropriately leveled?
+- Any excessive or missing logging?
+- Is the code observable for production debugging?
+
+9. DevOps & CI/CD Readiness
+- Will this code pass linting, static analysis, and CI checks?
+- Any risks to deployment pipelines?
+
+10. Maintainability & Extensibility
+- Is the code easy to modify and extend?
+- Avoid hardcoding; use configs where appropriate.
+
+11. API & Integration (if applicable)
+- Are API contracts well-defined and backward compatible?
+- Proper request/response validation?
+- Error handling across systems?
+
+12. Cloud & Runtime Concerns (AWS/Azure)
+- For Lambda: check timeout, memory, concurrency, cold start concerns
+- For APIs: throttling, rate limiting, and scaling considerations
+
+OUTPUT FORMAT:
+- List issues grouped by severity: Critical, High, Medium, Low
+- Provide suggested improvements or code snippets where applicable
+- Highlight positives (what is done well)
+- Keep feedback concise but actionable
+
+
+✅ ✅ 💡 Short Version (Quick PR Review Prompt)
+Use this when you want faster reviews:
+Act as a Principal Architect. Review this code for:
+- correctness
+- architecture & design
+- performance
+- security
+- test coverage
+- maintainability
+
+List issues by severity (Critical/High/Medium/Low) and suggest fixes.
+Also highlight any good practices followed.
+
+
+✅ ✅ 🚀 Advanced Version (Tailored for Your Work – Microservices + AWS + Integration)
+This aligns strongly with your day-to-day reviews:
+Act as a Principal Architect reviewing a microservices-based system.
+
+Focus on:
+- API contract design and versioning
+- Distributed system concerns (timeouts, retries, circuit breakers)
+- Event-driven / async processing correctness
+- AWS Lambda constraints (timeouts, concurrency, cold start)
+- Data consistency and idempotency
+- Observability (logs, metrics, tracing)
+
+Highlight risks for production readiness and scalability.
+Provide concrete recommendations for improvement.
+
+
+✅ Pro Tip (How to Use Effectively)
+In GitHub PR:
+
+Select diff → Copilot Chat → paste prompt
+Or add as team standard prompt for consistency
+
+
+✅ If you want (next step)
+I can also create:
+
+✅ Standard PR Review Template for your team
+✅ Comment snippets (e.g., security issue, performance issue templates)
+✅ Auto-review checklist integrated with GitHub Actions
+
+Just tell me 👍
+Provide your feedback on BizChat
